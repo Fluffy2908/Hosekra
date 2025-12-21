@@ -118,3 +118,52 @@ function hosekra_get_option($field_name, $default = '') {
     }
     return $default;
 }
+
+/**
+ * Register Custom Post Type: Mobilhaus
+ */
+function hosekra_register_mobilhaus_cpt() {
+    $labels = array(
+        'name'                  => 'Mobilhäuser',
+        'singular_name'         => 'Mobilhaus',
+        'menu_name'             => 'Mobilhäuser',
+        'add_new'               => 'Neues Mobilhaus',
+        'add_new_item'          => 'Neues Mobilhaus hinzufügen',
+        'edit_item'             => 'Mobilhaus bearbeiten',
+        'new_item'              => 'Neues Mobilhaus',
+        'view_item'             => 'Mobilhaus ansehen',
+        'search_items'          => 'Mobilhaus suchen',
+        'not_found'             => 'Kein Mobilhaus gefunden',
+        'not_found_in_trash'    => 'Kein Mobilhaus im Papierkorb',
+        'all_items'             => 'Alle Mobilhäuser',
+    );
+
+    $args = array(
+        'labels'              => $labels,
+        'public'              => true,
+        'publicly_queryable'  => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'query_var'           => true,
+        'rewrite'             => array('slug' => 'modelle'),
+        'capability_type'     => 'post',
+        'has_archive'         => true,
+        'hierarchical'        => false,
+        'menu_position'       => 5,
+        'menu_icon'           => 'dashicons-admin-home',
+        'supports'            => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'show_in_rest'        => true,
+    );
+
+    register_post_type('mobilhaus', $args);
+}
+add_action('init', 'hosekra_register_mobilhaus_cpt');
+
+/**
+ * Flush rewrite rules on theme activation
+ */
+function hosekra_rewrite_flush() {
+    hosekra_register_mobilhaus_cpt();
+    flush_rewrite_rules();
+}
+add_action('after_switch_theme', 'hosekra_rewrite_flush');

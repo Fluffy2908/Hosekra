@@ -208,15 +208,40 @@ $defaults = array(
                 <?php endforeach;
             else : ?>
                 <?php
+                // Default models matching Lovable project
                 $default_models = array(
-                    array('title' => 'Alpin Kompakt', 'desc' => 'Kompaktes Mobilheim ideal für Paare.', 'size' => '35 m²', 'rooms' => '2', 'persons' => '2-3', 'price' => 'ab €45.000'),
-                    array('title' => 'Alpin Comfort', 'desc' => 'Geräumiges Mobilheim für die kleine Familie.', 'size' => '50 m²', 'rooms' => '3', 'persons' => '4', 'price' => 'ab €65.000'),
-                    array('title' => 'Alpin Premium', 'desc' => 'Luxuriöses Mobilheim mit gehobener Ausstattung.', 'size' => '70 m²', 'rooms' => '4', 'persons' => '5-6', 'price' => 'ab €89.000'),
+                    array(
+                        'title' => 'Alpin Kompakt',
+                        'desc' => 'Perfekt für Paare oder als Ferienhaus – kompakt und funktional.',
+                        'size' => '25 m²',
+                        'rooms' => '1',
+                        'persons' => '2',
+                        'price' => 'ab €39.900',
+                        'image' => 'model-1.jpg'
+                    ),
+                    array(
+                        'title' => 'Alpin Comfort',
+                        'desc' => 'Unser beliebtestes Modell mit optimaler Raumaufteilung für Familien.',
+                        'size' => '45 m²',
+                        'rooms' => '2',
+                        'persons' => '4',
+                        'price' => 'ab €59.900',
+                        'image' => 'about.jpg'
+                    ),
+                    array(
+                        'title' => 'Alpin Premium',
+                        'desc' => 'Luxuriöses Wohnen mit großzügiger Terrasse und Premium-Ausstattung.',
+                        'size' => '65 m²',
+                        'rooms' => '3',
+                        'persons' => '6',
+                        'price' => 'ab €89.900',
+                        'image' => 'model-2.jpg'
+                    ),
                 );
                 foreach ($default_models as $index => $model) : ?>
                     <div class="model-card">
                         <div class="model-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/model-<?php echo $index + 1; ?>.jpg" alt="<?php echo esc_attr($model['title']); ?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo esc_attr($model['image']); ?>" alt="<?php echo esc_attr($model['title']); ?>">
                             <div class="model-price"><?php echo esc_html($model['price']); ?></div>
                         </div>
                         <div class="model-content">
@@ -236,7 +261,7 @@ $defaults = array(
                                     <span><?php echo esc_html($model['persons']); ?> Pers.</span>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary">
+                            <a href="<?php echo esc_url(home_url('/modelle/alpin-' . strtolower(explode(' ', $model['title'])[1] ?? 'kompakt') . '/')); ?>" class="btn btn-primary">
                                 Details ansehen
                                 <?php echo hosekra_get_icon('arrow-right'); ?>
                             </a>
