@@ -11,17 +11,9 @@
 <?php
 // Get navigation ACF fields
 $nav_logo = hosekra_get_option('nav_logo');
-$nav_cta_text = hosekra_get_option('nav_cta_text', 'Kontaktirajte nas');
+$nav_cta_text = hosekra_get_option('nav_cta_text', 'Beratung anfragen');
 $nav_cta_link = hosekra_get_option('nav_cta_link', '#kontakt');
-
-// Default SVG logo
-$default_logo = '<svg width="180" height="50" viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="5" y="15" width="30" height="25" fill="#2d5a27"/>
-    <polygon points="20,5 40,20 0,20" fill="#1e3d1a"/>
-    <rect x="12" y="25" width="8" height="10" fill="white"/>
-    <rect x="24" y="22" width="6" height="6" fill="white"/>
-    <text x="50" y="35" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#2d5a27">HOSEKRA</text>
-</svg>';
+$contact_phone = hosekra_get_option('contact_phone', '+43 123 456 789');
 ?>
 
 <!-- Navigation -->
@@ -32,7 +24,8 @@ $default_logo = '<svg width="180" height="50" viewBox="0 0 180 50" fill="none" x
             <?php if ($nav_logo && isset($nav_logo['url'])) : ?>
                 <img src="<?php echo esc_url($nav_logo['url']); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
             <?php else : ?>
-                <?php echo $default_logo; ?>
+                <div class="logo-icon">H</div>
+                <span class="logo-text">Hose<span>kra</span></span>
             <?php endif; ?>
         </a>
 
@@ -47,16 +40,20 @@ $default_logo = '<svg width="180" height="50" viewBox="0 0 180 50" fill="none" x
                     'walker' => new Hosekra_Nav_Walker(),
                 ));
             else : ?>
-                <a href="#home">Domov</a>
-                <a href="#modeli">Modeli</a>
-                <a href="#o-nas">O nas</a>
-                <a href="#galerija">Galerija</a>
+                <a href="#home">Startseite</a>
+                <a href="#modelle">Modelle</a>
+                <a href="#vorteile">Vorteile</a>
+                <a href="#about">Über Uns</a>
                 <a href="#kontakt">Kontakt</a>
             <?php endif; ?>
         </div>
 
-        <!-- CTA Button -->
-        <div class="nav-cta">
+        <!-- Right side: Phone + CTA -->
+        <div class="nav-right">
+            <a href="tel:<?php echo esc_attr(preg_replace('/\s+/', '', $contact_phone)); ?>" class="nav-phone">
+                <?php echo hosekra_get_icon('phone'); ?>
+                <span><?php echo esc_html($contact_phone); ?></span>
+            </a>
             <a href="<?php echo esc_url($nav_cta_link); ?>" class="btn btn-primary">
                 <?php echo esc_html($nav_cta_text); ?>
             </a>
@@ -83,10 +80,10 @@ $default_logo = '<svg width="180" height="50" viewBox="0 0 180 50" fill="none" x
                 'walker' => new Hosekra_Nav_Walker(),
             ));
         else : ?>
-            <a href="#home">Domov</a>
-            <a href="#modeli">Modeli</a>
-            <a href="#o-nas">O nas</a>
-            <a href="#galerija">Galerija</a>
+            <a href="#home">Startseite</a>
+            <a href="#modelle">Modelle</a>
+            <a href="#vorteile">Vorteile</a>
+            <a href="#about">Über Uns</a>
             <a href="#kontakt">Kontakt</a>
         <?php endif; ?>
     </div>

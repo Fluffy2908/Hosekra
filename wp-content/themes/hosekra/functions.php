@@ -33,8 +33,8 @@ function hosekra_scripts() {
     wp_enqueue_style('hosekra-style', get_stylesheet_uri(), array(), '1.0.0');
     wp_enqueue_style('hosekra-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0');
 
-    // Google Fonts - Inter
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', array(), null);
+    // Google Fonts - Outfit + DM Sans
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap', array(), null);
 
     wp_enqueue_script('hosekra-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
 }

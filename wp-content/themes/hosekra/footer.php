@@ -1,26 +1,18 @@
 <?php
 // Get footer ACF fields
 $nav_logo_alt = hosekra_get_option('nav_logo_alt');
-$footer_description = hosekra_get_option('footer_description', 'Vaš zanesljiv partner za kakovostne montažne hiše. Že več kot 20 let gradimo domove za družine po vsej Avstriji.');
-$footer_col2_title = hosekra_get_option('footer_col2_title', 'Naši modeli');
+$footer_description = hosekra_get_option('footer_description', 'Ihr Partner für hochwertige Mobilhäuser in Österreich. Qualität, Nachhaltigkeit und modernes Design.');
+$footer_col2_title = hosekra_get_option('footer_col2_title', 'Schnelllinks');
 $footer_col2_links = hosekra_get_option('footer_col2_links');
-$footer_copyright = hosekra_get_option('footer_copyright', 'Hosekra. Vse pravice pridržane.');
+$footer_col3_title = hosekra_get_option('footer_col3_title', 'Modelle');
+$footer_col3_links = hosekra_get_option('footer_col3_links');
+$footer_copyright = hosekra_get_option('footer_copyright', 'Hosekra. Alle Rechte vorbehalten.');
 $footer_legal_links = hosekra_get_option('footer_legal_links');
 
 // Contact info
 $contact_phone = hosekra_get_option('contact_phone', '+43 123 456 789');
 $contact_email = hosekra_get_option('contact_email', 'info@hosekra.at');
-$contact_address = hosekra_get_option('contact_address', 'Musterstraße 123, 1010 Wien');
-$contact_hours = hosekra_get_option('contact_hours', 'Pon - Pet: 8:00 - 17:00');
-
-// Default light logo
-$default_logo_light = '<svg width="180" height="50" viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="5" y="15" width="30" height="25" fill="#4a7c43"/>
-    <polygon points="20,5 40,20 0,20" fill="#2d5a27"/>
-    <rect x="12" y="25" width="8" height="10" fill="white"/>
-    <rect x="24" y="22" width="6" height="6" fill="white"/>
-    <text x="50" y="35" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="white">HOSEKRA</text>
-</svg>';
+$contact_address = hosekra_get_option('contact_address', 'Alpenstraße 1, 5020 Salzburg');
 ?>
 
 <!-- Footer -->
@@ -33,13 +25,14 @@ $default_logo_light = '<svg width="180" height="50" viewBox="0 0 180 50" fill="n
                     <?php if ($nav_logo_alt && isset($nav_logo_alt['url'])) : ?>
                         <img src="<?php echo esc_url($nav_logo_alt['url']); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
                     <?php else : ?>
-                        <?php echo $default_logo_light; ?>
+                        <div class="logo-icon">H</div>
+                        <span class="logo-text">Hose<span>kra</span></span>
                     <?php endif; ?>
                 </div>
                 <p><?php echo esc_html($footer_description); ?></p>
             </div>
 
-            <!-- Column 2 - Models -->
+            <!-- Column 2 - Quick Links -->
             <div class="footer-column">
                 <h4><?php echo esc_html($footer_col2_title); ?></h4>
                 <div class="footer-links">
@@ -48,16 +41,33 @@ $default_logo_light = '<svg width="180" height="50" viewBox="0 0 180 50" fill="n
                             <a href="<?php echo esc_url($link['url']); ?>"><?php echo esc_html($link['text']); ?></a>
                         <?php endforeach;
                     else : ?>
-                        <a href="#modeli">Model Classic</a>
-                        <a href="#modeli">Model Modern</a>
-                        <a href="#modeli">Model Family</a>
-                        <a href="#modeli">Model Premium</a>
-                        <a href="#kontakt">Po meri</a>
+                        <a href="#home">Startseite</a>
+                        <a href="#modelle">Modelle</a>
+                        <a href="#vorteile">Vorteile</a>
+                        <a href="#about">Über Uns</a>
+                        <a href="#kontakt">Kontakt</a>
                     <?php endif; ?>
                 </div>
             </div>
 
-            <!-- Column 3 - Contact -->
+            <!-- Column 3 - Models -->
+            <div class="footer-column">
+                <h4><?php echo esc_html($footer_col3_title); ?></h4>
+                <div class="footer-links">
+                    <?php if ($footer_col3_links) :
+                        foreach ($footer_col3_links as $link) : ?>
+                            <a href="<?php echo esc_url($link['url']); ?>"><?php echo esc_html($link['text']); ?></a>
+                        <?php endforeach;
+                    else : ?>
+                        <a href="#modelle">Alpin Kompakt</a>
+                        <a href="#modelle">Alpin Comfort</a>
+                        <a href="#modelle">Alpin Premium</a>
+                        <a href="#kontakt">Sonderanfertigungen</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <!-- Column 4 - Contact -->
             <div class="footer-column">
                 <h4>Kontakt</h4>
                 <div class="footer-contact-item">
@@ -70,11 +80,7 @@ $default_logo_light = '<svg width="180" height="50" viewBox="0 0 180 50" fill="n
                 </div>
                 <div class="footer-contact-item">
                     <?php echo hosekra_get_icon('location'); ?>
-                    <span><?php echo esc_html($contact_address); ?></span>
-                </div>
-                <div class="footer-contact-item">
-                    <?php echo hosekra_get_icon('clock'); ?>
-                    <span><?php echo esc_html($contact_hours); ?></span>
+                    <span><?php echo nl2br(esc_html($contact_address)); ?></span>
                 </div>
             </div>
         </div>

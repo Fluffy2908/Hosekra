@@ -8,12 +8,13 @@ get_header();
 
 // Default values for fallback
 $defaults = array(
-    'hero_badge' => 'Dobavljivo po celi Avstriji',
-    'hero_title' => 'Gradimo vaš sanjski dom',
-    'hero_subtitle' => 'Vrhunske montažne hiše, izdelane po meri vaših želja. Kakovost, trajnost in moderno oblikovanje v enem.',
-    'hero_btn1_text' => 'Oglejte si modele',
-    'hero_btn1_link' => '#modeli',
-    'hero_btn2_text' => 'Pridobite cenik',
+    'hero_badge' => 'Österreichweit verfügbar',
+    'hero_title' => 'Mehr Freiheit mit',
+    'hero_title_highlight' => 'Mobilhäusern',
+    'hero_subtitle' => 'Entdecken Sie hochwertige Mobilhäuser für ein Leben in Harmonie mit der Natur. Flexibel, nachhaltig und komfortabel – Ihr neues Zuhause wartet.',
+    'hero_btn1_text' => 'Modelle entdecken',
+    'hero_btn1_link' => '#modelle',
+    'hero_btn2_text' => 'Preisliste anfordern',
     'hero_btn2_link' => '#kontakt',
 );
 ?>
@@ -26,49 +27,65 @@ $defaults = array(
         if ($hero_bg) : ?>
             <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="<?php echo esc_attr($hero_bg['alt']); ?>">
         <?php else : ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.jpg" alt="Hosekra montažne hiše">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.jpg" alt="Luxuriöses Mobilheim in den österreichischen Alpen">
         <?php endif; ?>
-        <div class="hero-overlay"></div>
     </div>
     <div class="container">
         <div class="hero-content">
-            <div class="hero-badge">
-                <?php echo esc_html(hosekra_get_field('hero_badge', false, $defaults['hero_badge'])); ?>
+            <div class="hero-badge animate-fade-in">
+                <?php echo hosekra_get_icon('location'); ?>
+                <span><?php echo esc_html(hosekra_get_field('hero_badge', false, $defaults['hero_badge'])); ?></span>
             </div>
-            <h1><?php echo esc_html(hosekra_get_field('hero_title', false, $defaults['hero_title'])); ?></h1>
-            <h2><?php echo esc_html(hosekra_get_field('hero_subtitle', false, $defaults['hero_subtitle'])); ?></h2>
-            <div class="hero-buttons">
-                <a href="<?php echo esc_url(hosekra_get_field('hero_btn1_link', false, $defaults['hero_btn1_link'])); ?>" class="btn btn-primary">
+
+            <h1 class="animate-slide-up">
+                <?php echo esc_html(hosekra_get_field('hero_title', false, $defaults['hero_title'])); ?>
+                <span><?php echo esc_html(hosekra_get_field('hero_title_highlight', false, $defaults['hero_title_highlight'])); ?></span>
+            </h1>
+
+            <p class="hero-text animate-slide-up">
+                <?php echo esc_html(hosekra_get_field('hero_subtitle', false, $defaults['hero_subtitle'])); ?>
+            </p>
+
+            <div class="hero-buttons animate-slide-up">
+                <a href="<?php echo esc_url(hosekra_get_field('hero_btn1_link', false, $defaults['hero_btn1_link'])); ?>" class="btn btn-primary btn-lg">
                     <?php echo esc_html(hosekra_get_field('hero_btn1_text', false, $defaults['hero_btn1_text'])); ?>
                     <?php echo hosekra_get_icon('arrow-right'); ?>
                 </a>
-                <a href="<?php echo esc_url(hosekra_get_field('hero_btn2_link', false, $defaults['hero_btn2_link'])); ?>" class="btn btn-white">
+                <a href="<?php echo esc_url(hosekra_get_field('hero_btn2_link', false, $defaults['hero_btn2_link'])); ?>" class="btn btn-white btn-lg">
                     <?php echo esc_html(hosekra_get_field('hero_btn2_text', false, $defaults['hero_btn2_text'])); ?>
                 </a>
             </div>
-            <span class="hero-divider"></span>
-            <div class="hero-stats">
+
+            <div class="hero-stats animate-fade-in">
                 <?php
                 $stats = get_field('hero_stats');
                 if ($stats) :
-                    foreach ($stats as $stat) : ?>
+                    $first = true;
+                    foreach ($stats as $stat) :
+                        if (!$first) : ?>
+                            <div class="hero-stat-divider"></div>
+                        <?php endif; ?>
                         <div class="hero-stat">
                             <span class="hero-stat-number"><?php echo esc_html($stat['number']); ?></span>
                             <span class="hero-stat-label"><?php echo esc_html($stat['label']); ?></span>
                         </div>
-                    <?php endforeach;
+                    <?php
+                        $first = false;
+                    endforeach;
                 else : ?>
                     <div class="hero-stat">
-                        <span class="hero-stat-number">25+</span>
-                        <span class="hero-stat-label">Let garancije</span>
+                        <span class="hero-stat-number">15+</span>
+                        <span class="hero-stat-label">Jahre Garantie</span>
                     </div>
+                    <div class="hero-stat-divider"></div>
                     <div class="hero-stat">
-                        <span class="hero-stat-number">1500+</span>
-                        <span class="hero-stat-label">Zadovoljnih kupcev</span>
+                        <span class="hero-stat-number">500+</span>
+                        <span class="hero-stat-label">Zufriedene Kunden</span>
                     </div>
+                    <div class="hero-stat-divider"></div>
                     <div class="hero-stat">
                         <span class="hero-stat-number">100%</span>
-                        <span class="hero-stat-label">Made in Austria</span>
+                        <span class="hero-stat-label">Made in EU</span>
                     </div>
                 <?php endif; ?>
             </div>
@@ -77,15 +94,15 @@ $defaults = array(
 </section>
 
 <!-- Section 1 - Features -->
-<section class="features-section" id="prednosti">
+<section class="features-section section-padding" id="vorteile">
     <div class="container">
         <div class="section-header">
-            <h2><?php echo esc_html(hosekra_get_field('features_title', false, 'Zakaj izbrati nas?')); ?></h2>
+            <h2><?php echo esc_html(hosekra_get_field('features_title', false, 'Warum')); ?> <span class="text-primary"><?php echo esc_html(hosekra_get_field('features_title_highlight', false, 'Hosekra')); ?></span>?</h2>
             <?php $features_subtitle = get_field('features_subtitle');
             if ($features_subtitle) : ?>
                 <p><?php echo esc_html($features_subtitle); ?></p>
             <?php else : ?>
-                <p>Ponujamo celovite rešitve za vaš novi dom - od zasnove do ključa v roki.</p>
+                <p>Entdecken Sie die Vorteile unserer hochwertigen Mobilhäuser und warum hunderte Kunden uns vertrauen.</p>
             <?php endif; ?>
         </div>
         <div class="features-grid">
@@ -102,36 +119,35 @@ $defaults = array(
                     </div>
                 <?php endforeach;
             else : ?>
-                <!-- Default features -->
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('shield'); ?></div>
-                    <h3>25 let garancije</h3>
-                    <p>Zaupajte v našo kakovost. Vsaka hiša ima 25-letno garancijo na konstrukcijo.</p>
+                    <div class="feature-icon"><?php echo hosekra_get_icon('location'); ?></div>
+                    <h3>STANDORTE</h3>
+                    <p>Wir helfen Ihnen, den idealen Standort für Ihr neues Mobilhaus in Österreich zu finden.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><?php echo hosekra_get_icon('star'); ?></div>
-                    <h3>Premium kakovost</h3>
-                    <p>Uporabljamo samo najboljše materiale evropskih proizvajalcev.</p>
+                    <h3>PREISLISTE</h3>
+                    <p>Transparente Preise für alle unsere Mobilhaus-Modelle. Fordern Sie jetzt Ihre Preisliste an.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('truck'); ?></div>
-                    <h3>Hitra dostava</h3>
-                    <p>Montaža v roku 3-5 dni. Celoten projekt zaključen v 8-12 tednih.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('tools'); ?></div>
-                    <h3>Ključ v roke</h3>
-                    <p>Popolna storitev od načrtovanja do zadnjega detajla.</p>
+                    <div class="feature-icon"><?php echo hosekra_get_icon('shield'); ?></div>
+                    <h3>GARANTIE</h3>
+                    <p>Auf unsere Mobilhäuser gewähren wir Ihnen bis zu 15 Jahre Garantie für maximale Sicherheit.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><?php echo hosekra_get_icon('leaf'); ?></div>
-                    <h3>Ekološka gradnja</h3>
-                    <p>Trajnostni materiali in energetsko učinkovita gradnja za zeleno prihodnost.</p>
+                    <h3>NATURVERBUNDEN</h3>
+                    <p>Leben Sie frei und im Einklang mit der Natur – nicht nur im Urlaub, sondern jeden Tag.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('home'); ?></div>
-                    <h3>Po meri</h3>
-                    <p>Prilagodimo vsak model vašim željam in potrebam.</p>
+                    <div class="feature-icon"><?php echo hosekra_get_icon('star'); ?></div>
+                    <h3>QUALITÄT</h3>
+                    <p>Höchste Qualitätsstandards und nachhaltige Materialien für langlebige Mobilhäuser.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><?php echo hosekra_get_icon('tools'); ?></div>
+                    <h3>INDIVIDUELL</h3>
+                    <p>Vielfältige Farbauswahl und Anpassungsmöglichkeiten nach Ihren Wünschen und Vorstellungen.</p>
                 </div>
             <?php endif; ?>
         </div>
@@ -139,15 +155,15 @@ $defaults = array(
 </section>
 
 <!-- Section 2 - Models -->
-<section class="models-section" id="modeli">
+<section class="models-section section-padding" id="modelle">
     <div class="container">
         <div class="section-header">
-            <h2><?php echo esc_html(hosekra_get_field('models_title', false, 'Naši modeli')); ?></h2>
+            <h2><?php echo esc_html(hosekra_get_field('models_title', false, 'Unsere')); ?> <span class="text-primary"><?php echo esc_html(hosekra_get_field('models_title_highlight', false, 'Mobilhaus-Modelle')); ?></span></h2>
             <?php $models_subtitle = get_field('models_subtitle');
             if ($models_subtitle) : ?>
                 <p><?php echo esc_html($models_subtitle); ?></p>
             <?php else : ?>
-                <p>Izbirajte med preverjenimi modeli ali pa skupaj ustvarimo dom po vaši meri.</p>
+                <p>Wählen Sie aus verschiedenen Größen und Ausstattungen – individuell anpassbar nach Ihren Wünschen.</p>
             <?php endif; ?>
         </div>
         <div class="models-grid">
@@ -162,6 +178,9 @@ $defaults = array(
                             <?php else : ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/model-placeholder.jpg" alt="<?php echo esc_attr($model['title']); ?>">
                             <?php endif; ?>
+                            <?php if (!empty($model['price'])) : ?>
+                                <div class="model-price"><?php echo esc_html($model['price']); ?></div>
+                            <?php endif; ?>
                         </div>
                         <div class="model-content">
                             <h2><?php echo esc_html($model['title']); ?></h2>
@@ -169,37 +188,36 @@ $defaults = array(
                             <div class="model-specs">
                                 <div class="model-spec">
                                     <?php echo hosekra_get_icon('size'); ?>
-                                    <span><?php echo esc_html($model['size']); ?> m²</span>
+                                    <span><?php echo esc_html($model['size']); ?></span>
                                 </div>
                                 <div class="model-spec">
                                     <?php echo hosekra_get_icon('rooms'); ?>
-                                    <span><?php echo esc_html($model['rooms']); ?> sobe</span>
+                                    <span><?php echo esc_html($model['rooms']); ?> Zimmer</span>
                                 </div>
                                 <div class="model-spec">
                                     <?php echo hosekra_get_icon('users'); ?>
-                                    <span><?php echo esc_html($model['persons']); ?> oseb</span>
+                                    <span><?php echo esc_html($model['persons']); ?> Pers.</span>
                                 </div>
                             </div>
-                            <a href="<?php echo esc_url($model['link'] ?: '#'); ?>" class="btn-arrow">
-                                Oglejte si več
+                            <a href="<?php echo esc_url($model['link'] ?: '#'); ?>" class="btn btn-primary">
+                                Details ansehen
                                 <?php echo hosekra_get_icon('arrow-right'); ?>
                             </a>
                         </div>
                     </div>
                 <?php endforeach;
             else : ?>
-                <!-- Default models -->
                 <?php
                 $default_models = array(
-                    array('title' => 'Model Classic', 'desc' => 'Klasična enodružinska hiša z modernimi elementi.', 'size' => '120', 'rooms' => '4', 'persons' => '4-5'),
-                    array('title' => 'Model Modern', 'desc' => 'Sodoben dizajn z ravno streho in velikimi steklenimi površinami.', 'size' => '150', 'rooms' => '5', 'persons' => '5-6'),
-                    array('title' => 'Model Family', 'desc' => 'Prostorna družinska hiša za večje družine.', 'size' => '180', 'rooms' => '6', 'persons' => '6-7'),
-                    array('title' => 'Model Premium', 'desc' => 'Luksuzna izvedba z vrhunskimi materiali in opremo.', 'size' => '220', 'rooms' => '7', 'persons' => '6-8'),
+                    array('title' => 'Alpin Kompakt', 'desc' => 'Kompaktes Mobilheim ideal für Paare.', 'size' => '35 m²', 'rooms' => '2', 'persons' => '2-3', 'price' => 'ab €45.000'),
+                    array('title' => 'Alpin Comfort', 'desc' => 'Geräumiges Mobilheim für die kleine Familie.', 'size' => '50 m²', 'rooms' => '3', 'persons' => '4', 'price' => 'ab €65.000'),
+                    array('title' => 'Alpin Premium', 'desc' => 'Luxuriöses Mobilheim mit gehobener Ausstattung.', 'size' => '70 m²', 'rooms' => '4', 'persons' => '5-6', 'price' => 'ab €89.000'),
                 );
                 foreach ($default_models as $index => $model) : ?>
                     <div class="model-card">
                         <div class="model-image">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/model-<?php echo $index + 1; ?>.jpg" alt="<?php echo esc_attr($model['title']); ?>">
+                            <div class="model-price"><?php echo esc_html($model['price']); ?></div>
                         </div>
                         <div class="model-content">
                             <h2><?php echo esc_html($model['title']); ?></h2>
@@ -207,19 +225,19 @@ $defaults = array(
                             <div class="model-specs">
                                 <div class="model-spec">
                                     <?php echo hosekra_get_icon('size'); ?>
-                                    <span><?php echo esc_html($model['size']); ?> m²</span>
+                                    <span><?php echo esc_html($model['size']); ?></span>
                                 </div>
                                 <div class="model-spec">
                                     <?php echo hosekra_get_icon('rooms'); ?>
-                                    <span><?php echo esc_html($model['rooms']); ?> sobe</span>
+                                    <span><?php echo esc_html($model['rooms']); ?> Zimmer</span>
                                 </div>
                                 <div class="model-spec">
                                     <?php echo hosekra_get_icon('users'); ?>
-                                    <span><?php echo esc_html($model['persons']); ?> oseb</span>
+                                    <span><?php echo esc_html($model['persons']); ?> Pers.</span>
                                 </div>
                             </div>
-                            <a href="#" class="btn-arrow">
-                                Oglejte si več
+                            <a href="#" class="btn btn-primary">
+                                Details ansehen
                                 <?php echo hosekra_get_icon('arrow-right'); ?>
                             </a>
                         </div>
@@ -229,166 +247,157 @@ $defaults = array(
         </div>
         <div class="models-cta">
             <?php
-            $cta_text = hosekra_get_field('models_cta_text', false, 'Oglejte si vse modele');
+            $cta_text = hosekra_get_field('models_cta_text', false, 'Alle Modelle anzeigen');
             $cta_link = hosekra_get_field('models_cta_link', false, '#');
             ?>
-            <a href="<?php echo esc_url($cta_link); ?>" class="btn btn-primary">
+            <a href="<?php echo esc_url($cta_link); ?>" class="btn btn-outline btn-lg">
                 <?php echo esc_html($cta_text); ?>
-                <?php echo hosekra_get_icon('arrow-right'); ?>
             </a>
         </div>
     </div>
 </section>
 
 <!-- Section 3 - About -->
-<section class="about-section" id="o-nas">
-    <div class="about-wrapper">
-        <div class="about-image">
-            <?php
-            $about_image = get_field('about_image');
-            if ($about_image) : ?>
-                <img src="<?php echo esc_url($about_image['url']); ?>" alt="<?php echo esc_attr($about_image['alt']); ?>">
-            <?php else : ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" alt="O podjetju Hosekra">
-            <?php endif; ?>
-            <div class="about-image-overlay">
-                <p><?php echo esc_html(hosekra_get_field('about_quote', false, '"Naša misija je ustvariti dom, ki presega pričakovanja in postane zatočišče za generacije."')); ?></p>
+<section class="about-section section-padding" id="about">
+    <div class="container">
+        <div class="about-wrapper">
+            <div class="about-image-wrapper">
+                <div class="about-image">
+                    <?php
+                    $about_image = get_field('about_image');
+                    if ($about_image) : ?>
+                        <img src="<?php echo esc_url($about_image['url']); ?>" alt="<?php echo esc_attr($about_image['alt']); ?>">
+                    <?php else : ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" alt="Mobilhaus Innenraum">
+                    <?php endif; ?>
+                </div>
+                <div class="about-badge">
+                    <span><?php echo esc_html(hosekra_get_field('about_years', false, '15+')); ?></span>
+                    <span><?php echo esc_html(hosekra_get_field('about_years_label', false, 'Jahre Erfahrung')); ?></span>
+                </div>
             </div>
-        </div>
-        <div class="about-content">
-            <h2><?php echo esc_html(hosekra_get_field('about_title', false, 'Več kot 20 let izkušenj v gradnji domov')); ?></h2>
-            <?php
-            $about_text1 = get_field('about_text1');
-            $about_text2 = get_field('about_text2');
-            if ($about_text1) : ?>
-                <p><?php echo esc_html($about_text1); ?></p>
-            <?php else : ?>
-                <p>Hosekra je družinsko podjetje, ki že od leta 2003 gradi kakovostne montažne hiše po vsej Avstriji. Naša ekipa izkušenih strokovnjakov skrbi, da vsak projekt izpolni pričakovanja naših strank.</p>
-            <?php endif; ?>
-
-            <?php if ($about_text2) : ?>
-                <p><?php echo esc_html($about_text2); ?></p>
-            <?php else : ?>
-                <p>Zaupajte nam gradnjo vašega sanjskega doma in se prepričajte o naši kakovosti.</p>
-            <?php endif; ?>
-
-            <ul class="about-list">
+            <div class="about-content">
+                <h2><?php echo esc_html(hosekra_get_field('about_title', false, 'Ihr Partner für')); ?> <span class="text-primary"><?php echo esc_html(hosekra_get_field('about_title_highlight', false, 'modernes Wohnen')); ?></span> <?php echo esc_html(hosekra_get_field('about_title_suffix', false, 'in Österreich')); ?></h2>
                 <?php
-                $about_list = get_field('about_list');
-                if ($about_list) :
-                    foreach ($about_list as $item) : ?>
-                        <li>
-                            <?php echo hosekra_get_icon('check'); ?>
-                            <span><?php echo esc_html($item['text']); ?></span>
-                        </li>
-                    <?php endforeach;
-                else : ?>
-                    <li><?php echo hosekra_get_icon('check'); ?><span>Certificirani materiali evropskih proizvajalcev</span></li>
-                    <li><?php echo hosekra_get_icon('check'); ?><span>Lastna proizvodnja v Avstriji</span></li>
-                    <li><?php echo hosekra_get_icon('check'); ?><span>Profesionalna ekipa z več kot 50 zaposlenimi</span></li>
-                    <li><?php echo hosekra_get_icon('check'); ?><span>Individualno načrtovanje po vaših željah</span></li>
-                    <li><?php echo hosekra_get_icon('check'); ?><span>Transparentne cene brez skritih stroškov</span></li>
+                $about_text1 = get_field('about_text1');
+                $about_text2 = get_field('about_text2');
+                if ($about_text1) : ?>
+                    <p><?php echo esc_html($about_text1); ?></p>
+                <?php else : ?>
+                    <p>Hosekra ist Ihr zuverlässiger Partner für hochwertige Mobilhäuser in Österreich. Mit unserer langjährigen Erfahrung und Leidenschaft für qualitatives Wohnen begleiten wir Sie von der ersten Beratung bis zur schlüsselfertigen Übergabe.</p>
                 <?php endif; ?>
-            </ul>
+
+                <?php if ($about_text2) : ?>
+                    <p><?php echo esc_html($about_text2); ?></p>
+                <?php else : ?>
+                    <p>Unsere Mobilhäuser verbinden modernes Design mit traditioneller Handwerkskunst und bieten Ihnen ein nachhaltiges Zuhause im Einklang mit der Natur.</p>
+                <?php endif; ?>
+
+                <ul class="about-list">
+                    <?php
+                    $about_list = get_field('about_list');
+                    if ($about_list) :
+                        foreach ($about_list as $item) : ?>
+                            <li>
+                                <div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div>
+                                <span><?php echo esc_html($item['text']); ?></span>
+                            </li>
+                        <?php endforeach;
+                    else : ?>
+                        <li><div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div><span>Hochwertige Materialien aus europäischer Produktion</span></li>
+                        <li><div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div><span>Energieeffiziente Bauweise mit optimaler Dämmung</span></li>
+                        <li><div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div><span>Schlüsselfertige Lieferung und Aufstellung</span></li>
+                        <li><div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div><span>Persönliche Beratung und individuelle Planung</span></li>
+                        <li><div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div><span>Langfristige Wartung und Service</span></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Section 4 - Contact -->
-<section class="contact-section" id="kontakt">
+<section class="contact-section section-padding" id="kontakt">
     <div class="container">
         <div class="section-header">
-            <h2><?php echo esc_html(hosekra_get_field('contact_title', false, 'Kontaktirajte nas')); ?></h2>
+            <h2><?php echo esc_html(hosekra_get_field('contact_title', false, 'Kontaktieren Sie')); ?> <span class="text-primary"><?php echo esc_html(hosekra_get_field('contact_title_highlight', false, 'uns')); ?></span></h2>
             <?php $contact_subtitle = get_field('contact_subtitle');
             if ($contact_subtitle) : ?>
                 <p><?php echo esc_html($contact_subtitle); ?></p>
             <?php else : ?>
-                <p>Imate vprašanja ali bi želeli pridobiti ponudbo? Pišite nam ali nas pokličite.</p>
+                <p>Haben Sie Fragen oder möchten Sie eine Beratung? Wir freuen uns auf Ihre Nachricht.</p>
             <?php endif; ?>
         </div>
 
-        <div class="contact-info-bar">
-            <h3><?php echo esc_html(hosekra_get_field('contact_bar_title', false, 'Vedno smo vam na voljo')); ?></h3>
-            <?php $bar_text = get_field('contact_bar_text');
-            if ($bar_text) : ?>
-                <p><?php echo esc_html($bar_text); ?></p>
-            <?php else : ?>
-                <p>Naša ekipa vam z veseljem pomaga pri vseh vprašanjih.</p>
-            <?php endif; ?>
-            <div class="contact-info-grid">
-                <div class="contact-info-item">
-                    <?php echo hosekra_get_icon('phone'); ?>
-                    <div>
-                        <p>Telefon</p>
-                        <p><?php echo esc_html(hosekra_get_option('contact_phone', '+43 123 456 789')); ?></p>
+        <div class="contact-wrapper">
+            <div class="contact-info-bar">
+                <h3><?php echo esc_html(hosekra_get_field('contact_bar_title', false, 'Sprechen Sie mit uns')); ?></h3>
+                <?php $bar_text = get_field('contact_bar_text');
+                if ($bar_text) : ?>
+                    <p><?php echo esc_html($bar_text); ?></p>
+                <?php else : ?>
+                    <p>Unser Team steht Ihnen für alle Fragen rund um Mobilhäuser zur Verfügung. Vereinbaren Sie einen Beratungstermin oder besuchen Sie unser Ausstellungsgelände.</p>
+                <?php endif; ?>
+                <div class="contact-info-grid">
+                    <div class="contact-info-item">
+                        <div class="icon-wrapper"><?php echo hosekra_get_icon('phone'); ?></div>
+                        <div class="info-text">
+                            <span>Telefon</span>
+                            <span><?php echo esc_html(hosekra_get_option('contact_phone', '+43 123 456 789')); ?></span>
+                        </div>
                     </div>
-                </div>
-                <div class="contact-info-item">
-                    <?php echo hosekra_get_icon('email'); ?>
-                    <div>
-                        <p>E-pošta</p>
-                        <p><?php echo esc_html(hosekra_get_option('contact_email', 'info@hosekra.at')); ?></p>
+                    <div class="contact-info-item">
+                        <div class="icon-wrapper"><?php echo hosekra_get_icon('email'); ?></div>
+                        <div class="info-text">
+                            <span>E-Mail</span>
+                            <span><?php echo esc_html(hosekra_get_option('contact_email', 'info@hosekra.at')); ?></span>
+                        </div>
                     </div>
-                </div>
-                <div class="contact-info-item">
-                    <?php echo hosekra_get_icon('location'); ?>
-                    <div>
-                        <p>Naslov</p>
-                        <p><?php echo esc_html(hosekra_get_option('contact_address', 'Musterstraße 123, 1010 Wien')); ?></p>
+                    <div class="contact-info-item">
+                        <div class="icon-wrapper"><?php echo hosekra_get_icon('location'); ?></div>
+                        <div class="info-text">
+                            <span>Adresse</span>
+                            <span><?php echo esc_html(hosekra_get_option('contact_address', 'Alpenstraße 1, 5020 Salzburg')); ?></span>
+                        </div>
                     </div>
-                </div>
-                <div class="contact-info-item">
-                    <?php echo hosekra_get_icon('clock'); ?>
-                    <div>
-                        <p>Delovni čas</p>
-                        <p><?php echo esc_html(hosekra_get_option('contact_hours', 'Pon - Pet: 8:00 - 17:00')); ?></p>
+                    <div class="contact-info-item">
+                        <div class="icon-wrapper"><?php echo hosekra_get_icon('clock'); ?></div>
+                        <div class="info-text">
+                            <span>Öffnungszeiten</span>
+                            <span><?php echo esc_html(hosekra_get_option('contact_hours', 'Mo-Fr: 9:00 - 18:00')); ?></span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="contact-form-wrapper">
-            <?php
-            $form_shortcode = get_field('contact_form_shortcode');
-            if ($form_shortcode) :
-                echo do_shortcode($form_shortcode);
-            else : ?>
-                <!-- Default form -->
-                <form class="contact-form" action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Ime in priimek *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-pošta *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefon</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Zadeva</label>
-                        <select id="subject" name="subject">
-                            <option value="">Izberite temo</option>
-                            <option value="ponudba">Želim ponudbo</option>
-                            <option value="ogled">Želim ogled</option>
-                            <option value="vprasanje">Splošno vprašanje</option>
-                            <option value="drugo">Drugo</option>
-                        </select>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="message">Sporočilo *</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <div class="form-submit">
-                        <button type="submit" class="btn btn-primary">
-                            Pošljite sporočilo
-                            <?php echo hosekra_get_icon('arrow-right'); ?>
+            <div class="contact-form-wrapper">
+                <h3>Anfrage senden</h3>
+                <?php
+                $form_shortcode = get_field('contact_form_shortcode');
+                if ($form_shortcode) :
+                    echo do_shortcode($form_shortcode);
+                else : ?>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Ihr Name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="E-Mail Adresse" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Telefonnummer">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="4" placeholder="Ihre Nachricht" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            Nachricht senden
                         </button>
-                    </div>
-                </form>
-            <?php endif; ?>
+                    </form>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </section>
