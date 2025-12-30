@@ -11,11 +11,6 @@
 Thumbs.db
 
 # =========================
-# WordPress (SECURITY)
-# =========================
-wp-config.php
-
-# =========================
 # Node / build (če pride kasneje)
 # =========================
 node_modules/
