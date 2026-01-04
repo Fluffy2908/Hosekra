@@ -1,8 +1,6 @@
 <?php
 /**
- * Hosekra Theme Functions
- *
- * Modular structure based on Curiosity theme pattern
+ * AlpenHomes Theme Functions
  */
 
 // Theme setup and configuration

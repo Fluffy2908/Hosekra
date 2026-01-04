@@ -8,20 +8,20 @@ if (!defined('ABSPATH')) exit;
 /**
  * Register Custom Post Type: Mobilhaus
  */
-function hosekra_register_mobilhaus_cpt() {
+function alpenhomes_register_mobilhaus_cpt() {
     $labels = array(
-        'name'                  => 'Mobilne Hiske',
-        'singular_name'         => 'Mobilna Hiska',
-        'menu_name'             => 'Mobilne Hiske',
+        'name'                  => 'Mobilne Hiške',
+        'singular_name'         => 'Mobilna Hiška',
+        'menu_name'             => 'Mobilne Hiške',
         'add_new'               => 'Dodaj novo',
-        'add_new_item'          => 'Dodaj novo mobilno hisko',
-        'edit_item'             => 'Uredi mobilno hisko',
-        'new_item'              => 'Nova mobilna hiska',
-        'view_item'             => 'Poglej mobilno hisko',
-        'search_items'          => 'Iskanje mobilnih hisk',
-        'not_found'             => 'Ni najdenih mobilnih hisk',
-        'not_found_in_trash'    => 'Ni mobilnih hisk v koshu',
-        'all_items'             => 'Vse mobilne hiske',
+        'add_new_item'          => 'Dodaj novo mobilno hiško',
+        'edit_item'             => 'Uredi mobilno hiško',
+        'new_item'              => 'Nova mobilna hiška',
+        'view_item'             => 'Poglej mobilno hiško',
+        'search_items'          => 'Iskanje mobilnih hišk',
+        'not_found'             => 'Ni najdenih mobilnih hišk',
+        'not_found_in_trash'    => 'Ni mobilnih hišk v košu',
+        'all_items'             => 'Vse mobilne hiške',
     );
 
     $args = array(
@@ -43,13 +43,13 @@ function hosekra_register_mobilhaus_cpt() {
 
     register_post_type('mobilhaus', $args);
 }
-add_action('init', 'hosekra_register_mobilhaus_cpt');
+add_action('init', 'alpenhomes_register_mobilhaus_cpt');
 
 /**
  * Flush rewrite rules on theme activation
  */
-function hosekra_rewrite_flush() {
-    hosekra_register_mobilhaus_cpt();
+function alpenhomes_rewrite_flush() {
+    alpenhomes_register_mobilhaus_cpt();
     flush_rewrite_rules();
 }
-add_action('after_switch_theme', 'hosekra_rewrite_flush');
+add_action('after_switch_theme', 'alpenhomes_rewrite_flush');

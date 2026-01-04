@@ -63,7 +63,7 @@ $category_labels = array(
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <div class="gallery-item" data-category="zunanjost">
                         <div class="gallery-placeholder">
-                            <?php echo hosekra_get_icon('home'); ?>
+                            <?php echo alpenhomes_get_icon('home'); ?>
                             <span>Slika <?php echo $i; ?></span>
                         </div>
                     </div>
@@ -75,8 +75,8 @@ $category_labels = array(
     <!-- Lightbox -->
     <div class="gallery-lightbox" id="gallery-lightbox">
         <button class="lightbox-close">&times;</button>
-        <button class="lightbox-prev"><?php echo hosekra_get_icon('arrow-right'); ?></button>
-        <button class="lightbox-next"><?php echo hosekra_get_icon('arrow-right'); ?></button>
+        <button class="lightbox-prev"><?php echo alpenhomes_get_icon('arrow-right'); ?></button>
+        <button class="lightbox-next"><?php echo alpenhomes_get_icon('arrow-right'); ?></button>
         <div class="lightbox-content">
             <img id="lightbox-image" src="" alt="">
             <div class="lightbox-info">

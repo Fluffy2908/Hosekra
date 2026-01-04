@@ -11,19 +11,19 @@ if (!defined('ABSPATH')) exit;
 /**
  * Register ACF Blocks
  */
-function hosekra_register_acf_blocks() {
+function alpenhomes_register_acf_blocks() {
     if (!function_exists('acf_register_block_type')) {
         return;
     }
 
     // Block Category
-    $category = 'hosekra';
+    $category = 'alpenhomes';
 
     // Hero Block
     acf_register_block_type(array(
-        'name'              => 'hosekra-hero',
-        'title'             => __('Hero Sekcija', 'hosekra'),
-        'description'       => __('Glavna hero sekcija z ozadjem, naslovom in CTA gumbi.', 'hosekra'),
+        'name'              => 'alpenhomes-hero',
+        'title'             => __('Hero Sekcija', 'alpenhomes'),
+        'description'       => __('Glavna hero sekcija z ozadjem, naslovom in CTA gumbi.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-hero.php',
         'category'          => $category,
         'icon'              => 'cover-image',
@@ -39,9 +39,9 @@ function hosekra_register_acf_blocks() {
 
     // Features Block
     acf_register_block_type(array(
-        'name'              => 'hosekra-features',
-        'title'             => __('Prednosti', 'hosekra'),
-        'description'       => __('Mrezha prednosti/storitev z ikonami.', 'hosekra'),
+        'name'              => 'alpenhomes-features',
+        'title'             => __('Prednosti', 'alpenhomes'),
+        'description'       => __('Mreža prednosti/storitev z ikonami.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-features.php',
         'category'          => $category,
         'icon'              => 'grid-view',
@@ -56,13 +56,13 @@ function hosekra_register_acf_blocks() {
 
     // Models Block
     acf_register_block_type(array(
-        'name'              => 'hosekra-models',
-        'title'             => __('Modeli', 'hosekra'),
-        'description'       => __('Prikaz mobilnih hisk/modelov.', 'hosekra'),
+        'name'              => 'alpenhomes-models',
+        'title'             => __('Modeli', 'alpenhomes'),
+        'description'       => __('Prikaz mobilnih hišk/modelov.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-models.php',
         'category'          => $category,
         'icon'              => 'admin-home',
-        'keywords'          => array('models', 'modeli', 'hiske', 'izdelki'),
+        'keywords'          => array('models', 'modeli', 'hiške', 'izdelki'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -73,13 +73,13 @@ function hosekra_register_acf_blocks() {
 
     // About Block
     acf_register_block_type(array(
-        'name'              => 'hosekra-about',
-        'title'             => __('O nas', 'hosekra'),
-        'description'       => __('Sekcija o podjetju s sliko in besedilom.', 'hosekra'),
+        'name'              => 'alpenhomes-about',
+        'title'             => __('O nas', 'alpenhomes'),
+        'description'       => __('Sekcija o podjetju s sliko in besedilom.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-about.php',
         'category'          => $category,
         'icon'              => 'admin-users',
-        'keywords'          => array('about', 'o nas', 'podjetje', 'info'),
+        'keywords'          => array('about', 'o nas', 'podjetje'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -90,13 +90,13 @@ function hosekra_register_acf_blocks() {
 
     // Contact Block
     acf_register_block_type(array(
-        'name'              => 'hosekra-contact',
-        'title'             => __('Kontakt', 'hosekra'),
-        'description'       => __('Kontaktna sekcija z obrazcem in podatki.', 'hosekra'),
+        'name'              => 'alpenhomes-contact',
+        'title'             => __('Kontakt', 'alpenhomes'),
+        'description'       => __('Kontaktna sekcija z obrazcem in podatki.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-contact.php',
         'category'          => $category,
         'icon'              => 'email',
-        'keywords'          => array('contact', 'kontakt', 'obrazec', 'form'),
+        'keywords'          => array('contact', 'kontakt', 'obrazec'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -107,13 +107,13 @@ function hosekra_register_acf_blocks() {
 
     // Gallery Block
     acf_register_block_type(array(
-        'name'              => 'hosekra-gallery',
-        'title'             => __('Galerija', 'hosekra'),
-        'description'       => __('Galerija slik s filtri in lightboxom.', 'hosekra'),
+        'name'              => 'alpenhomes-gallery',
+        'title'             => __('Galerija', 'alpenhomes'),
+        'description'       => __('Galerija slik s filtri in lightboxom.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-gallery.php',
         'category'          => $category,
         'icon'              => 'format-gallery',
-        'keywords'          => array('gallery', 'galerija', 'slike', 'foto'),
+        'keywords'          => array('gallery', 'galerija', 'slike'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -124,13 +124,13 @@ function hosekra_register_acf_blocks() {
 
     // 3D Tour Block
     acf_register_block_type(array(
-        'name'              => 'hosekra-3d-tour',
-        'title'             => __('3D Ogled', 'hosekra'),
-        'description'       => __('Interaktivni 3D ogled ali video predstavitev.', 'hosekra'),
+        'name'              => 'alpenhomes-3d-tour',
+        'title'             => __('3D Ogled', 'alpenhomes'),
+        'description'       => __('Interaktivni 3D ogled ali video predstavitev.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-3d-tour.php',
         'category'          => $category,
         'icon'              => 'visibility',
-        'keywords'          => array('3d', 'tour', 'ogled', 'video', 'virtual'),
+        'keywords'          => array('3d', 'tour', 'ogled'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -141,13 +141,13 @@ function hosekra_register_acf_blocks() {
 
     // Floor Plans Block
     acf_register_block_type(array(
-        'name'              => 'hosekra-floor-plans',
-        'title'             => __('Tlorisi', 'hosekra'),
-        'description'       => __('Prikaz tlorisov in postavitev prostorov.', 'hosekra'),
+        'name'              => 'alpenhomes-floor-plans',
+        'title'             => __('Tlorisi', 'alpenhomes'),
+        'description'       => __('Prikaz tlorisov in postavitev prostorov.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-floor-plans.php',
         'category'          => $category,
         'icon'              => 'layout',
-        'keywords'          => array('floor', 'plan', 'tloris', 'postavitev', 'layout'),
+        'keywords'          => array('tloris', 'layout'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -158,13 +158,13 @@ function hosekra_register_acf_blocks() {
 
     // Interiors Block
     acf_register_block_type(array(
-        'name'              => 'hosekra-interiors',
-        'title'             => __('Notranjost', 'hosekra'),
-        'description'       => __('Predstavitev notranjosti in opreme.', 'hosekra'),
+        'name'              => 'alpenhomes-interiors',
+        'title'             => __('Notranjost', 'alpenhomes'),
+        'description'       => __('Predstavitev notranjosti in opreme.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-interiors.php',
         'category'          => $category,
         'icon'              => 'admin-appearance',
-        'keywords'          => array('interior', 'notranjost', 'oprema', 'dizajn'),
+        'keywords'          => array('interior', 'notranjost'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -175,13 +175,13 @@ function hosekra_register_acf_blocks() {
 
     // CTA Block
     acf_register_block_type(array(
-        'name'              => 'hosekra-cta',
-        'title'             => __('CTA Sekcija', 'hosekra'),
-        'description'       => __('Call-to-action sekcija z gumbom.', 'hosekra'),
+        'name'              => 'alpenhomes-cta',
+        'title'             => __('CTA Sekcija', 'alpenhomes'),
+        'description'       => __('Call-to-action sekcija z gumbom.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-cta.php',
         'category'          => $category,
         'icon'              => 'megaphone',
-        'keywords'          => array('cta', 'action', 'gumb', 'button'),
+        'keywords'          => array('cta', 'action'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -190,37 +190,37 @@ function hosekra_register_acf_blocks() {
         'post_types'        => array('page'),
     ));
 }
-add_action('acf/init', 'hosekra_register_acf_blocks');
+add_action('acf/init', 'alpenhomes_register_acf_blocks');
 
 /**
  * Register custom block category
  */
-function hosekra_block_categories($categories) {
+function alpenhomes_block_categories($categories) {
     return array_merge(
         array(
             array(
-                'slug'  => 'hosekra',
-                'title' => __('Hosekra', 'hosekra'),
+                'slug'  => 'alpenhomes',
+                'title' => __('AlpenHomes', 'alpenhomes'),
                 'icon'  => 'admin-home',
             ),
         ),
         $categories
     );
 }
-add_filter('block_categories_all', 'hosekra_block_categories', 10, 1);
+add_filter('block_categories_all', 'alpenhomes_block_categories', 10, 1);
 
 /**
  * Register ACF Options Pages
  */
-function hosekra_register_options_pages() {
+function alpenhomes_register_options_pages() {
     if (!function_exists('acf_add_options_page')) {
         return;
     }
 
     acf_add_options_page(array(
-        'page_title'    => 'Hosekra Nastavitve',
-        'menu_title'    => 'Hosekra',
-        'menu_slug'     => 'hosekra-settings',
+        'page_title'    => 'AlpenHomes Nastavitve',
+        'menu_title'    => 'AlpenHomes',
+        'menu_slug'     => 'alpenhomes-settings',
         'capability'    => 'edit_posts',
         'redirect'      => false,
         'icon_url'      => 'dashicons-admin-home',
@@ -230,27 +230,27 @@ function hosekra_register_options_pages() {
     acf_add_options_sub_page(array(
         'page_title'    => 'Navigacija',
         'menu_title'    => 'Navigacija',
-        'parent_slug'   => 'hosekra-settings',
+        'parent_slug'   => 'alpenhomes-settings',
     ));
 
     acf_add_options_sub_page(array(
         'page_title'    => 'Footer',
         'menu_title'    => 'Footer',
-        'parent_slug'   => 'hosekra-settings',
+        'parent_slug'   => 'alpenhomes-settings',
     ));
 
     acf_add_options_sub_page(array(
         'page_title'    => 'Kontaktni podatki',
         'menu_title'    => 'Kontakt',
-        'parent_slug'   => 'hosekra-settings',
+        'parent_slug'   => 'alpenhomes-settings',
     ));
 }
-add_action('acf/init', 'hosekra_register_options_pages');
+add_action('acf/init', 'alpenhomes_register_options_pages');
 
 /**
  * Register ACF Field Groups for Blocks
  */
-function hosekra_register_block_fields() {
+function alpenhomes_register_block_fields() {
     if (!function_exists('acf_add_local_field_group')) {
         return;
     }
@@ -350,7 +350,7 @@ function hosekra_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/hosekra-hero',
+                    'value' => 'acf/alpenhomes-hero',
                 ),
             ),
         ),
@@ -425,7 +425,7 @@ function hosekra_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/hosekra-features',
+                    'value' => 'acf/alpenhomes-features',
                 ),
             ),
         ),
@@ -575,7 +575,7 @@ function hosekra_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/hosekra-models',
+                    'value' => 'acf/alpenhomes-models',
                 ),
             ),
         ),
@@ -688,7 +688,7 @@ function hosekra_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/hosekra-3d-tour',
+                    'value' => 'acf/alpenhomes-3d-tour',
                 ),
             ),
         ),
@@ -773,7 +773,7 @@ function hosekra_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/hosekra-floor-plans',
+                    'value' => 'acf/alpenhomes-floor-plans',
                 ),
             ),
         ),
@@ -845,7 +845,7 @@ function hosekra_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/hosekra-interiors',
+                    'value' => 'acf/alpenhomes-interiors',
                 ),
             ),
         ),
@@ -921,7 +921,7 @@ function hosekra_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/hosekra-gallery',
+                    'value' => 'acf/alpenhomes-gallery',
                 ),
             ),
         ),
@@ -1000,7 +1000,7 @@ function hosekra_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/hosekra-about',
+                    'value' => 'acf/alpenhomes-about',
                 ),
             ),
         ),
@@ -1053,7 +1053,7 @@ function hosekra_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/hosekra-contact',
+                    'value' => 'acf/alpenhomes-contact',
                 ),
             ),
         ),
@@ -1110,7 +1110,7 @@ function hosekra_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/hosekra-cta',
+                    'value' => 'acf/alpenhomes-cta',
                 ),
             ),
         ),
@@ -1181,7 +1181,7 @@ function hosekra_register_block_fields() {
                 'label' => 'E-posta',
                 'name' => 'contact_email',
                 'type' => 'email',
-                'default_value' => 'info@hosekra.si',
+                'default_value' => 'info@alpenhomes.si',
             ),
             array(
                 'key' => 'field_contact_address',
@@ -1258,7 +1258,7 @@ function hosekra_register_block_fields() {
                 'label' => 'Copyright tekst',
                 'name' => 'footer_copyright',
                 'type' => 'text',
-                'default_value' => 'Hosekra. Vse pravice pridrzane.',
+                'default_value' => 'AlpenHomes. Vse pravice pridržane.',
             ),
             array(
                 'key' => 'field_footer_legal_links',
@@ -1296,4 +1296,5 @@ function hosekra_register_block_fields() {
         ),
     ));
 }
-add_action('acf/init', 'hosekra_register_block_fields');
+add_action('acf/init', 'alpenhomes_register_block_fields');
+

@@ -51,7 +51,7 @@ if (!$rooms) {
                             <img src="<?php echo esc_url($room['image']['url']); ?>" alt="<?php echo esc_attr($room['name']); ?>">
                         <?php else : ?>
                             <div class="interior-placeholder">
-                                <?php echo hosekra_get_icon('home'); ?>
+                                <?php echo alpenhomes_get_icon('home'); ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -67,7 +67,7 @@ if (!$rooms) {
                                     if (!empty($feature)) :
                                 ?>
                                     <li>
-                                        <?php echo hosekra_get_icon('check'); ?>
+                                        <?php echo alpenhomes_get_icon('check'); ?>
                                         <span><?php echo esc_html($feature); ?></span>
                                     </li>
                                 <?php endif; endforeach; ?>

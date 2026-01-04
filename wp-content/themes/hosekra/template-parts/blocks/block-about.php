@@ -7,7 +7,7 @@ $image = get_field('about_image');
 $badge_number = get_field('about_badge_number') ?: '15+';
 $badge_text = get_field('about_badge_text') ?: 'Let izkusenj';
 $title = get_field('about_title') ?: 'Vas partner za moderno bivanje';
-$text1 = get_field('about_text1') ?: 'Hosekra je vas zanesljiv partner za visokokakovostne mobilne hiske. Z dolgoletnimi izkusnjami in strastjo do kakovostnega bivanja vas spremljamo od prvega posvetovanja do kljucavnicarske predaje.';
+$text1 = get_field('about_text1') ?: 'Alpenhomes je vas zanesljiv partner za visokokakovostne mobilne hiske. Z dolgoletnimi izkusnjami in strastjo do kakovostnega bivanja vas spremljamo od prvega posvetovanja do kljucavnicarske predaje.';
 $text2 = get_field('about_text2') ?: 'Nase mobilne hiske zdruzujejo sodoben dizajn s tradicionalnim rokodelstvom in vam ponujajo trajnostni dom v skladu z naravo.';
 $list = get_field('about_list');
 
@@ -50,7 +50,7 @@ if (!$list) {
                     <ul class="about-list">
                         <?php foreach ($list as $item) : ?>
                             <li>
-                                <div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div>
+                                <div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div>
                                 <span><?php echo esc_html($item['text']); ?></span>
                             </li>
                         <?php endforeach; ?>

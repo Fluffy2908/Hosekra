@@ -27,7 +27,7 @@ $block_id = isset($block['anchor']) ? $block['anchor'] : 'home';
     <div class="container">
         <div class="hero-content">
             <div class="hero-badge animate-fade-in">
-                <?php echo hosekra_get_icon('location'); ?>
+                <?php echo alpenhomes_get_icon('location'); ?>
                 <span><?php echo esc_html($hero_badge); ?></span>
             </div>
 
@@ -43,7 +43,7 @@ $block_id = isset($block['anchor']) ? $block['anchor'] : 'home';
                 <?php if ($hero_btn1_text && $hero_btn1_link) : ?>
                     <a href="<?php echo esc_url($hero_btn1_link); ?>" class="btn btn-primary btn-lg">
                         <?php echo esc_html($hero_btn1_text); ?>
-                        <?php echo hosekra_get_icon('arrow-right'); ?>
+                        <?php echo alpenhomes_get_icon('arrow-right'); ?>
                     </a>
                 <?php endif; ?>
                 <?php if ($hero_btn2_text && $hero_btn2_link) : ?>

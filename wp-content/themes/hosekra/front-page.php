@@ -41,26 +41,26 @@ $defaults = array(
     <div class="container">
         <div class="hero-content">
             <div class="hero-badge animate-fade-in">
-                <?php echo hosekra_get_icon('location'); ?>
-                <span><?php echo esc_html(hosekra_get_field('hero_badge', false, $defaults['hero_badge'])); ?></span>
+                <?php echo alpenhomes_get_icon('location'); ?>
+                <span><?php echo esc_html(alpenhomes_get_field('hero_badge', false, $defaults['hero_badge'])); ?></span>
             </div>
 
             <h1 class="animate-slide-up">
-                <?php echo esc_html(hosekra_get_field('hero_title', false, $defaults['hero_title'])); ?>
-                <span><?php echo esc_html(hosekra_get_field('hero_title_highlight', false, $defaults['hero_title_highlight'])); ?></span>
+                <?php echo esc_html(alpenhomes_get_field('hero_title', false, $defaults['hero_title'])); ?>
+                <span><?php echo esc_html(alpenhomes_get_field('hero_title_highlight', false, $defaults['hero_title_highlight'])); ?></span>
             </h1>
 
             <p class="hero-text animate-slide-up">
-                <?php echo esc_html(hosekra_get_field('hero_subtitle', false, $defaults['hero_subtitle'])); ?>
+                <?php echo esc_html(alpenhomes_get_field('hero_subtitle', false, $defaults['hero_subtitle'])); ?>
             </p>
 
             <div class="hero-buttons animate-slide-up">
-                <a href="<?php echo esc_url(hosekra_get_field('hero_btn1_link', false, $defaults['hero_btn1_link'])); ?>" class="btn btn-primary btn-lg">
-                    <?php echo esc_html(hosekra_get_field('hero_btn1_text', false, $defaults['hero_btn1_text'])); ?>
-                    <?php echo hosekra_get_icon('arrow-right'); ?>
+                <a href="<?php echo esc_url(alpenhomes_get_field('hero_btn1_link', false, $defaults['hero_btn1_link'])); ?>" class="btn btn-primary btn-lg">
+                    <?php echo esc_html(alpenhomes_get_field('hero_btn1_text', false, $defaults['hero_btn1_text'])); ?>
+                    <?php echo alpenhomes_get_icon('arrow-right'); ?>
                 </a>
-                <a href="<?php echo esc_url(hosekra_get_field('hero_btn2_link', false, $defaults['hero_btn2_link'])); ?>" class="btn btn-white btn-lg">
-                    <?php echo esc_html(hosekra_get_field('hero_btn2_text', false, $defaults['hero_btn2_text'])); ?>
+                <a href="<?php echo esc_url(alpenhomes_get_field('hero_btn2_link', false, $defaults['hero_btn2_link'])); ?>" class="btn btn-white btn-lg">
+                    <?php echo esc_html(alpenhomes_get_field('hero_btn2_text', false, $defaults['hero_btn2_text'])); ?>
                 </a>
             </div>
 
@@ -105,7 +105,8 @@ $defaults = array(
 <section class="features-section section-padding" id="vorteile">
     <div class="container">
         <div class="section-header">
-            <h2><?php echo esc_html(hosekra_get_field('features_title', false, 'Warum')); ?> <span class="text-primary"><?php echo esc_html(hosekra_get_field('features_title_highlight', false, 'Hosekra')); ?></span>?</h2>
+            <h2><?php echo esc_html(alpenhomes_get_field('features_title', false, 'Warum')); ?> <span class="text-primary"><?php echo esc_html
+                    (alpenhomes_get_field('features_title_highlight', false, 'Alpenhomes')); ?></span>?</h2>
             <?php $features_subtitle = get_field('features_subtitle');
             if ($features_subtitle) : ?>
                 <p><?php echo esc_html($features_subtitle); ?></p>
@@ -120,7 +121,7 @@ $defaults = array(
                 foreach ($features as $feature) : ?>
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <?php echo hosekra_get_icon($feature['icon']); ?>
+                            <?php echo alpenhomes_get_icon($feature['icon']); ?>
                         </div>
                         <h3><?php echo esc_html($feature['title']); ?></h3>
                         <p><?php echo esc_html($feature['text']); ?></p>
@@ -128,32 +129,32 @@ $defaults = array(
                 <?php endforeach;
             else : ?>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('location'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('location'); ?></div>
                     <h3>STANDORTE</h3>
                     <p>Wir helfen Ihnen, den idealen Standort für Ihr neues Mobilhaus in Österreich zu finden.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('star'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('star'); ?></div>
                     <h3>PREISLISTE</h3>
                     <p>Transparente Preise für alle unsere Mobilhaus-Modelle. Fordern Sie jetzt Ihre Preisliste an.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('shield'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('shield'); ?></div>
                     <h3>GARANTIE</h3>
                     <p>Auf unsere Mobilhäuser gewähren wir Ihnen bis zu 15 Jahre Garantie für maximale Sicherheit.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('leaf'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('leaf'); ?></div>
                     <h3>NATURVERBUNDEN</h3>
                     <p>Leben Sie frei und im Einklang mit der Natur – nicht nur im Urlaub, sondern jeden Tag.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('star'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('star'); ?></div>
                     <h3>QUALITÄT</h3>
                     <p>Höchste Qualitätsstandards und nachhaltige Materialien für langlebige Mobilhäuser.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('tools'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('tools'); ?></div>
                     <h3>INDIVIDUELL</h3>
                     <p>Vielfältige Farbauswahl und Anpassungsmöglichkeiten nach Ihren Wünschen und Vorstellungen.</p>
                 </div>
@@ -166,7 +167,7 @@ $defaults = array(
 <section class="models-section section-padding" id="modelle">
     <div class="container">
         <div class="section-header">
-            <h2><?php echo esc_html(hosekra_get_field('models_title', false, 'Unsere')); ?> <span class="text-primary"><?php echo esc_html(hosekra_get_field('models_title_highlight', false, 'Mobilhaus-Modelle')); ?></span></h2>
+            <h2><?php echo esc_html(alpenhomes_get_field('models_title', false, 'Unsere')); ?> <span class="text-primary"><?php echo esc_html(alpenhomes_get_field('models_title_highlight', false, 'Mobilhaus-Modelle')); ?></span></h2>
             <?php $models_subtitle = get_field('models_subtitle');
             if ($models_subtitle) : ?>
                 <p><?php echo esc_html($models_subtitle); ?></p>
@@ -195,21 +196,21 @@ $defaults = array(
                             <p><?php echo esc_html($model['description']); ?></p>
                             <div class="model-specs">
                                 <div class="model-spec">
-                                    <?php echo hosekra_get_icon('size'); ?>
+                                    <?php echo alpenhomes_get_icon('size'); ?>
                                     <span><?php echo esc_html($model['size']); ?></span>
                                 </div>
                                 <div class="model-spec">
-                                    <?php echo hosekra_get_icon('rooms'); ?>
+                                    <?php echo alpenhomes_get_icon('rooms'); ?>
                                     <span><?php echo esc_html($model['rooms']); ?> Zimmer</span>
                                 </div>
                                 <div class="model-spec">
-                                    <?php echo hosekra_get_icon('users'); ?>
+                                    <?php echo alpenhomes_get_icon('users'); ?>
                                     <span><?php echo esc_html($model['persons']); ?> Pers.</span>
                                 </div>
                             </div>
                             <a href="<?php echo esc_url($model['link'] ?: '#'); ?>" class="btn btn-primary">
                                 Details ansehen
-                                <?php echo hosekra_get_icon('arrow-right'); ?>
+                                <?php echo alpenhomes_get_icon('arrow-right'); ?>
                             </a>
                         </div>
                     </div>
@@ -257,21 +258,21 @@ $defaults = array(
                             <p><?php echo esc_html($model['desc']); ?></p>
                             <div class="model-specs">
                                 <div class="model-spec">
-                                    <?php echo hosekra_get_icon('size'); ?>
+                                    <?php echo alpenhomes_get_icon('size'); ?>
                                     <span><?php echo esc_html($model['size']); ?></span>
                                 </div>
                                 <div class="model-spec">
-                                    <?php echo hosekra_get_icon('rooms'); ?>
+                                    <?php echo alpenhomes_get_icon('rooms'); ?>
                                     <span><?php echo esc_html($model['rooms']); ?> Zimmer</span>
                                 </div>
                                 <div class="model-spec">
-                                    <?php echo hosekra_get_icon('users'); ?>
+                                    <?php echo alpenhomes_get_icon('users'); ?>
                                     <span><?php echo esc_html($model['persons']); ?> Pers.</span>
                                 </div>
                             </div>
                             <a href="<?php echo esc_url(home_url('/modelle/alpin-' . strtolower(explode(' ', $model['title'])[1] ?? 'kompakt') . '/')); ?>" class="btn btn-primary">
                                 Details ansehen
-                                <?php echo hosekra_get_icon('arrow-right'); ?>
+                                <?php echo alpenhomes_get_icon('arrow-right'); ?>
                             </a>
                         </div>
                     </div>
@@ -280,8 +281,8 @@ $defaults = array(
         </div>
         <div class="models-cta">
             <?php
-            $cta_text = hosekra_get_field('models_cta_text', false, 'Alle Modelle anzeigen');
-            $cta_link = hosekra_get_field('models_cta_link', false, '#');
+            $cta_text = alpenhomes_get_field('models_cta_text', false, 'Alle Modelle anzeigen');
+            $cta_link = alpenhomes_get_field('models_cta_link', false, '#');
             ?>
             <a href="<?php echo esc_url($cta_link); ?>" class="btn btn-outline btn-lg">
                 <?php echo esc_html($cta_text); ?>
@@ -305,19 +306,20 @@ $defaults = array(
                     <?php endif; ?>
                 </div>
                 <div class="about-badge">
-                    <span><?php echo esc_html(hosekra_get_field('about_years', false, '15+')); ?></span>
-                    <span><?php echo esc_html(hosekra_get_field('about_years_label', false, 'Jahre Erfahrung')); ?></span>
+                    <span><?php echo esc_html(alpenhomes_get_field('about_years', false, '15+')); ?></span>
+                    <span><?php echo esc_html(alpenhomes_get_field('about_years_label', false, 'Jahre Erfahrung')); ?></span>
                 </div>
             </div>
             <div class="about-content">
-                <h2><?php echo esc_html(hosekra_get_field('about_title', false, 'Ihr Partner für')); ?> <span class="text-primary"><?php echo esc_html(hosekra_get_field('about_title_highlight', false, 'modernes Wohnen')); ?></span> <?php echo esc_html(hosekra_get_field('about_title_suffix', false, 'in Österreich')); ?></h2>
+                <h2><?php echo esc_html(alpenhomes_get_field('about_title', false, 'Ihr Partner für')); ?> <span class="text-primary"><?php echo esc_html(alpenhomes_get_field('about_title_highlight', false, 'modernes Wohnen')); ?></span> <?php echo esc_html(alpenhomes_get_field('about_title_suffix', false, 'in Österreich')); ?></h2>
                 <?php
                 $about_text1 = get_field('about_text1');
                 $about_text2 = get_field('about_text2');
                 if ($about_text1) : ?>
                     <p><?php echo esc_html($about_text1); ?></p>
                 <?php else : ?>
-                    <p>Hosekra ist Ihr zuverlässiger Partner für hochwertige Mobilhäuser in Österreich. Mit unserer langjährigen Erfahrung und Leidenschaft für qualitatives Wohnen begleiten wir Sie von der ersten Beratung bis zur schlüsselfertigen Übergabe.</p>
+                    <p>Alpenhomes ist Ihr zuverlässiger Partner für hochwertige Mobilhäuser in Österreich. Mit unserer langjährigen Erfahrung und
+                        Leidenschaft für qualitatives Wohnen begleiten wir Sie von der ersten Beratung bis zur schlüsselfertigen Übergabe.</p>
                 <?php endif; ?>
 
                 <?php if ($about_text2) : ?>
@@ -332,16 +334,16 @@ $defaults = array(
                     if ($about_list) :
                         foreach ($about_list as $item) : ?>
                             <li>
-                                <div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div>
+                                <div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div>
                                 <span><?php echo esc_html($item['text']); ?></span>
                             </li>
                         <?php endforeach;
                     else : ?>
-                        <li><div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div><span>Hochwertige Materialien aus europäischer Produktion</span></li>
-                        <li><div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div><span>Energieeffiziente Bauweise mit optimaler Dämmung</span></li>
-                        <li><div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div><span>Schlüsselfertige Lieferung und Aufstellung</span></li>
-                        <li><div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div><span>Persönliche Beratung und individuelle Planung</span></li>
-                        <li><div class="check-icon"><?php echo hosekra_get_icon('check'); ?></div><span>Langfristige Wartung und Service</span></li>
+                        <li><div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div><span>Hochwertige Materialien aus europäischer Produktion</span></li>
+                        <li><div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div><span>Energieeffiziente Bauweise mit optimaler Dämmung</span></li>
+                        <li><div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div><span>Schlüsselfertige Lieferung und Aufstellung</span></li>
+                        <li><div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div><span>Persönliche Beratung und individuelle Planung</span></li>
+                        <li><div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div><span>Langfristige Wartung und Service</span></li>
                     <?php endif; ?>
                 </ul>
             </div>
@@ -353,7 +355,7 @@ $defaults = array(
 <section class="contact-section section-padding" id="kontakt">
     <div class="container">
         <div class="section-header">
-            <h2><?php echo esc_html(hosekra_get_field('contact_title', false, 'Kontaktieren Sie')); ?> <span class="text-primary"><?php echo esc_html(hosekra_get_field('contact_title_highlight', false, 'uns')); ?></span></h2>
+            <h2><?php echo esc_html(alpenhomes_get_field('contact_title', false, 'Kontaktieren Sie')); ?> <span class="text-primary"><?php echo esc_html(alpenhomes_get_field('contact_title_highlight', false, 'uns')); ?></span></h2>
             <?php $contact_subtitle = get_field('contact_subtitle');
             if ($contact_subtitle) : ?>
                 <p><?php echo esc_html($contact_subtitle); ?></p>
@@ -364,7 +366,7 @@ $defaults = array(
 
         <div class="contact-wrapper">
             <div class="contact-info-bar">
-                <h3><?php echo esc_html(hosekra_get_field('contact_bar_title', false, 'Sprechen Sie mit uns')); ?></h3>
+                <h3><?php echo esc_html(alpenhomes_get_field('contact_bar_title', false, 'Sprechen Sie mit uns')); ?></h3>
                 <?php $bar_text = get_field('contact_bar_text');
                 if ($bar_text) : ?>
                     <p><?php echo esc_html($bar_text); ?></p>
@@ -373,31 +375,31 @@ $defaults = array(
                 <?php endif; ?>
                 <div class="contact-info-grid">
                     <div class="contact-info-item">
-                        <div class="icon-wrapper"><?php echo hosekra_get_icon('phone'); ?></div>
+                        <div class="icon-wrapper"><?php echo alpenhomes_get_icon('phone'); ?></div>
                         <div class="info-text">
                             <span>Telefon</span>
-                            <span><?php echo esc_html(hosekra_get_option('contact_phone', '+43 123 456 789')); ?></span>
+                            <span><?php echo esc_html(alpenhomes_get_option('contact_phone', '+43 123 456 789')); ?></span>
                         </div>
                     </div>
                     <div class="contact-info-item">
-                        <div class="icon-wrapper"><?php echo hosekra_get_icon('email'); ?></div>
+                        <div class="icon-wrapper"><?php echo alpenhomes_get_icon('email'); ?></div>
                         <div class="info-text">
                             <span>E-Mail</span>
-                            <span><?php echo esc_html(hosekra_get_option('contact_email', 'info@hosekra.at')); ?></span>
+                            <span><?php echo esc_html(alpenhomes_get_option('contact_email', 'info@alpenhomes.at')); ?></span>
                         </div>
                     </div>
                     <div class="contact-info-item">
-                        <div class="icon-wrapper"><?php echo hosekra_get_icon('location'); ?></div>
+                        <div class="icon-wrapper"><?php echo alpenhomes_get_icon('location'); ?></div>
                         <div class="info-text">
                             <span>Adresse</span>
-                            <span><?php echo esc_html(hosekra_get_option('contact_address', 'Alpenstraße 1, 5020 Salzburg')); ?></span>
+                            <span><?php echo esc_html(alpenhomes_get_option('contact_address', 'Alpenstraße 1, 5020 Salzburg')); ?></span>
                         </div>
                     </div>
                     <div class="contact-info-item">
-                        <div class="icon-wrapper"><?php echo hosekra_get_icon('clock'); ?></div>
+                        <div class="icon-wrapper"><?php echo alpenhomes_get_icon('clock'); ?></div>
                         <div class="info-text">
                             <span>Öffnungszeiten</span>
-                            <span><?php echo esc_html(hosekra_get_option('contact_hours', 'Mo-Fr: 9:00 - 18:00')); ?></span>
+                            <span><?php echo esc_html(alpenhomes_get_option('contact_hours', 'Mo-Fr: 9:00 - 18:00')); ?></span>
                         </div>
                     </div>
                 </div>

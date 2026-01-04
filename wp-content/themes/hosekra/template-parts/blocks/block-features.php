@@ -21,7 +21,7 @@ $block_id = isset($block['anchor']) ? $block['anchor'] : 'prednosti';
                 <?php foreach ($features as $feature) : ?>
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <?php echo hosekra_get_icon($feature['icon']); ?>
+                            <?php echo alpenhomes_get_icon($feature['icon']); ?>
                         </div>
                         <h3><?php echo esc_html($feature['title']); ?></h3>
                         <p><?php echo esc_html($feature['text']); ?></p>
@@ -29,32 +29,32 @@ $block_id = isset($block['anchor']) ? $block['anchor'] : 'prednosti';
                 <?php endforeach; ?>
             <?php else : ?>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('location'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('location'); ?></div>
                     <h3>Lokacije</h3>
                     <p>Pomagamo vam najti idealno lokacijo za vaso novo mobilno hisko.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('star'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('star'); ?></div>
                     <h3>Kakovost</h3>
                     <p>Najvisji standardi kakovosti in trajnostni materiali.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('shield'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('shield'); ?></div>
                     <h3>Garancija</h3>
                     <p>Do 15 let garancije na nase mobilne hiske.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('leaf'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('leaf'); ?></div>
                     <h3>Ekolosko</h3>
                     <p>Zivite v skladu z naravo - vsak dan.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('tools'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('tools'); ?></div>
                     <h3>Prilagoditev</h3>
                     <p>Individualne prilagoditve po vasih zeljah.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><?php echo hosekra_get_icon('truck'); ?></div>
+                    <div class="feature-icon"><?php echo alpenhomes_get_icon('truck'); ?></div>
                     <h3>Dostava</h3>
                     <p>Kljucavnicarska dostava in postavitev.</p>
                 </div>

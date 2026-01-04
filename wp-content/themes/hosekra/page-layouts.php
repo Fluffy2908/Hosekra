@@ -85,26 +85,26 @@ get_header();
                                 <div class="floor-plan-card">
                                     <div class="floor-plan-image">
                                         <div class="floor-plan-placeholder">
-                                            <?php echo hosekra_get_icon('grid'); ?>
+                                            <?php echo alpenhomes_get_icon('grid'); ?>
                                             <span>Tloris</span>
                                         </div>
                                         <button class="floor-plan-zoom" title="Povecaj">
-                                            <?php echo hosekra_get_icon('expand'); ?>
+                                            <?php echo alpenhomes_get_icon('expand'); ?>
                                         </button>
                                     </div>
                                     <div class="floor-plan-content">
                                         <h3><?php echo esc_html($plan['name']); ?></h3>
                                         <div class="floor-plan-specs">
                                             <div class="floor-plan-spec">
-                                                <?php echo hosekra_get_icon('size'); ?>
+                                                <?php echo alpenhomes_get_icon('size'); ?>
                                                 <span><?php echo esc_html($plan['size']); ?></span>
                                             </div>
                                             <div class="floor-plan-spec">
-                                                <?php echo hosekra_get_icon('rooms'); ?>
+                                                <?php echo alpenhomes_get_icon('rooms'); ?>
                                                 <span><?php echo esc_html($plan['rooms']); ?></span>
                                             </div>
                                             <div class="floor-plan-spec">
-                                                <?php echo hosekra_get_icon('home'); ?>
+                                                <?php echo alpenhomes_get_icon('home'); ?>
                                                 <span><?php echo esc_html($plan['bathrooms']); ?></span>
                                             </div>
                                         </div>
@@ -169,7 +169,7 @@ get_header();
                                 <div class="interior-card">
                                     <div class="interior-image">
                                         <div class="interior-placeholder">
-                                            <?php echo hosekra_get_icon('home'); ?>
+                                            <?php echo alpenhomes_get_icon('home'); ?>
                                         </div>
                                     </div>
                                     <div class="interior-content">
@@ -178,7 +178,7 @@ get_header();
                                         <ul class="interior-features">
                                             <?php foreach ($room['features'] as $feature) : ?>
                                                 <li>
-                                                    <?php echo hosekra_get_icon('check'); ?>
+                                                    <?php echo alpenhomes_get_icon('check'); ?>
                                                     <span><?php echo esc_html($feature); ?></span>
                                                 </li>
                                             <?php endforeach; ?>
@@ -200,32 +200,32 @@ get_header();
                         <div class="tour-wrapper">
                             <div class="tour-content">
                                 <div class="tour-placeholder">
-                                    <?php echo hosekra_get_icon('cube'); ?>
+                                    <?php echo alpenhomes_get_icon('cube'); ?>
                                     <p>3D ogled bo kmalu na voljo</p>
                                 </div>
                             </div>
                             <div class="tour-features">
                                 <div class="tour-feature">
                                     <div class="tour-feature-icon">
-                                        <?php echo hosekra_get_icon('cube'); ?>
+                                        <?php echo alpenhomes_get_icon('cube'); ?>
                                     </div>
                                     <span>360 stopinjski ogled</span>
                                 </div>
                                 <div class="tour-feature">
                                     <div class="tour-feature-icon">
-                                        <?php echo hosekra_get_icon('expand'); ?>
+                                        <?php echo alpenhomes_get_icon('expand'); ?>
                                     </div>
                                     <span>Celozaslonski nacin</span>
                                 </div>
                                 <div class="tour-feature">
                                     <div class="tour-feature-icon">
-                                        <?php echo hosekra_get_icon('play'); ?>
+                                        <?php echo alpenhomes_get_icon('play'); ?>
                                     </div>
                                     <span>Interaktivna navigacija</span>
                                 </div>
                                 <div class="tour-feature">
                                     <div class="tour-feature-icon">
-                                        <?php echo hosekra_get_icon('grid'); ?>
+                                        <?php echo alpenhomes_get_icon('grid'); ?>
                                     </div>
                                     <span>Ogled vseh prostorov</span>
                                 </div>
@@ -242,7 +242,7 @@ get_header();
                             <p>Kontaktirajte nas za brezplacno posvetovanje in ogled nasih mobilnih hisk.</p>
                             <a href="<?php echo esc_url(home_url('/#kontakt')); ?>" class="btn btn-white btn-lg">
                                 Kontaktirajte nas
-                                <?php echo hosekra_get_icon('arrow-right'); ?>
+                                <?php echo alpenhomes_get_icon('arrow-right'); ?>
                             </a>
                         </div>
                     </div>

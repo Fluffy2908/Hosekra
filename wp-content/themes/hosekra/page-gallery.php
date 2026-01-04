@@ -7,9 +7,9 @@
 get_header();
 
 // Get gallery settings from ACF
-$gallery_title = hosekra_get_field('gallery_title', false, 'Unsere');
-$gallery_title_highlight = hosekra_get_field('gallery_title_highlight', false, 'Galerie');
-$gallery_subtitle = hosekra_get_field('gallery_subtitle', false, 'Entdecken Sie unsere Mobilheime in beeindruckenden Bildern');
+$gallery_title = alpenhomes_get_field('gallery_title', false, 'Unsere');
+$gallery_title_highlight = alpenhomes_get_field('gallery_title_highlight', false, 'Galerie');
+$gallery_subtitle = alpenhomes_get_field('gallery_subtitle', false, 'Entdecken Sie unsere Mobilheime in beeindruckenden Bildern');
 
 // Get gallery images from ACF or use defaults
 $gallery_images = get_field('gallery_images');

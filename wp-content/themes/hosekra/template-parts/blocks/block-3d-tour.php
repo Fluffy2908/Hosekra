@@ -69,7 +69,7 @@ if (!$features) {
                         <img src="<?php echo esc_url($preview_image['url']); ?>" alt="<?php echo esc_attr($preview_image['alt'] ?: $title); ?>">
                         <div class="tour-preview-overlay">
                             <button class="tour-play-btn" data-video="<?php echo esc_attr($video_url); ?>">
-                                <?php echo hosekra_get_icon('play'); ?>
+                                <?php echo alpenhomes_get_icon('play'); ?>
                                 <span>Predvajaj ogled</span>
                             </button>
                         </div>
@@ -77,7 +77,7 @@ if (!$features) {
                 <?php else : ?>
                     <div class="tour-placeholder">
                         <div class="tour-placeholder-content">
-                            <?php echo hosekra_get_icon('cube'); ?>
+                            <?php echo alpenhomes_get_icon('cube'); ?>
                             <p>3D ogled bo kmalu na voljo</p>
                         </div>
                     </div>
@@ -89,7 +89,7 @@ if (!$features) {
                     <?php foreach ($features as $feature) : ?>
                         <div class="tour-feature">
                             <div class="tour-feature-icon">
-                                <?php echo hosekra_get_icon($feature['icon']); ?>
+                                <?php echo alpenhomes_get_icon($feature['icon']); ?>
                             </div>
                             <span><?php echo esc_html($feature['text']); ?></span>
                         </div>
