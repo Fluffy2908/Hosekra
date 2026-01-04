@@ -25,14 +25,14 @@ $defaults = array(
         <?php
         $hero_bg = get_field('hero_background');
 
-        if (is_array($hero_bg) && isset($hero_bg['url'])) : ?>
+        if (is_array($hero_bg) && !empty($hero_bg['url'])) : ?>
             <img
                     src="<?php echo esc_url($hero_bg['url']); ?>"
                     alt="<?php echo esc_attr($hero_bg['alt'] ?? ''); ?>"
             >
         <?php else : ?>
             <img
-                    src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.jpg"
+                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/hero-bg.jpg'); ?>"
                     alt="Luxuriöses Mobilheim in den österreichischen Alpen"
             >
         <?php endif; ?>
@@ -67,17 +67,26 @@ $defaults = array(
             <div class="hero-stats animate-fade-in">
                 <?php
                 $stats = get_field('hero_stats');
-                if ($stats) :
+                $stats = is_array($stats) ? $stats : array();
+
+                if (!empty($stats)) :
                     $first = true;
                     foreach ($stats as $stat) :
+                        $number = is_array($stat) ? ($stat['number'] ?? '') : '';
+                        $label  = is_array($stat) ? ($stat['label'] ?? '') : '';
+
+                        if ($number === '' && $label === '') {
+                            continue;
+                        }
+
                         if (!$first) : ?>
                             <div class="hero-stat-divider"></div>
                         <?php endif; ?>
                         <div class="hero-stat">
-                            <span class="hero-stat-number"><?php echo esc_html($stat['number']); ?></span>
-                            <span class="hero-stat-label"><?php echo esc_html($stat['label']); ?></span>
+                            <span class="hero-stat-number"><?php echo esc_html($number); ?></span>
+                            <span class="hero-stat-label"><?php echo esc_html($label); ?></span>
                         </div>
-                    <?php
+                        <?php
                         $first = false;
                     endforeach;
                 else : ?>
@@ -105,26 +114,40 @@ $defaults = array(
 <section class="features-section section-padding" id="vorteile">
     <div class="container">
         <div class="section-header">
-            <h2><?php echo esc_html(alpenhomes_get_field('features_title', false, 'Warum')); ?> <span class="text-primary"><?php echo esc_html
-                    (alpenhomes_get_field('features_title_highlight', false, 'Alpenhomes')); ?></span>?</h2>
-            <?php $features_subtitle = get_field('features_subtitle');
-            if ($features_subtitle) : ?>
+            <h2>
+                <?php echo esc_html(alpenhomes_get_field('features_title', false, 'Warum')); ?>
+                <span class="text-primary"><?php echo esc_html(alpenhomes_get_field('features_title_highlight', false, 'Alpenhomes')); ?></span>?
+            </h2>
+
+            <?php
+            $features_subtitle = get_field('features_subtitle');
+            if (!empty($features_subtitle)) : ?>
                 <p><?php echo esc_html($features_subtitle); ?></p>
             <?php else : ?>
                 <p>Entdecken Sie die Vorteile unserer hochwertigen Mobilhäuser und warum hunderte Kunden uns vertrauen.</p>
             <?php endif; ?>
         </div>
+
         <div class="features-grid">
             <?php
             $features = get_field('features_items');
-            if ($features) :
-                foreach ($features as $feature) : ?>
+            $features = is_array($features) ? $features : array();
+
+            if (!empty($features)) :
+                foreach ($features as $feature) :
+                    if (!is_array($feature)) {
+                        continue;
+                    }
+                    $icon  = $feature['icon'] ?? 'check';
+                    $title = $feature['title'] ?? '';
+                    $text  = $feature['text'] ?? '';
+                    ?>
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <?php echo alpenhomes_get_icon($feature['icon']); ?>
+                            <?php echo alpenhomes_get_icon($icon); ?>
                         </div>
-                        <h3><?php echo esc_html($feature['title']); ?></h3>
-                        <p><?php echo esc_html($feature['text']); ?></p>
+                        <h3><?php echo esc_html($title); ?></h3>
+                        <p><?php echo esc_html($text); ?></p>
                     </div>
                 <?php endforeach;
             else : ?>
@@ -167,48 +190,75 @@ $defaults = array(
 <section class="models-section section-padding" id="modelle">
     <div class="container">
         <div class="section-header">
-            <h2><?php echo esc_html(alpenhomes_get_field('models_title', false, 'Unsere')); ?> <span class="text-primary"><?php echo esc_html(alpenhomes_get_field('models_title_highlight', false, 'Mobilhaus-Modelle')); ?></span></h2>
-            <?php $models_subtitle = get_field('models_subtitle');
-            if ($models_subtitle) : ?>
+            <h2>
+                <?php echo esc_html(alpenhomes_get_field('models_title', false, 'Unsere')); ?>
+                <span class="text-primary"><?php echo esc_html(alpenhomes_get_field('models_title_highlight', false, 'Mobilhaus-Modelle')); ?></span>
+            </h2>
+
+            <?php
+            $models_subtitle = get_field('models_subtitle');
+            if (!empty($models_subtitle)) : ?>
                 <p><?php echo esc_html($models_subtitle); ?></p>
             <?php else : ?>
                 <p>Wählen Sie aus verschiedenen Größen und Ausstattungen – individuell anpassbar nach Ihren Wünschen.</p>
             <?php endif; ?>
         </div>
+
         <div class="models-grid">
             <?php
             $models = get_field('models_items');
-            if ($models) :
-                foreach ($models as $model) : ?>
+            $models = is_array($models) ? $models : array();
+
+            if (!empty($models)) :
+                foreach ($models as $model) :
+                    if (!is_array($model)) {
+                        continue;
+                    }
+
+                    $title = $model['title'] ?? '';
+                    $desc  = $model['description'] ?? '';
+                    $size  = $model['size'] ?? '';
+                    $rooms = $model['rooms'] ?? '';
+                    $pers  = $model['persons'] ?? '';
+                    $price = $model['price'] ?? '';
+                    $link  = $model['link'] ?? '#';
+
+                    $img = $model['image'] ?? null;
+                    $img_url = (is_array($img) && !empty($img['url'])) ? $img['url'] : '';
+                    ?>
                     <div class="model-card">
                         <div class="model-image">
-                            <?php if ($model['image']) : ?>
-                                <img src="<?php echo esc_url($model['image']['url']); ?>" alt="<?php echo esc_attr($model['title']); ?>">
+                            <?php if ($img_url) : ?>
+                                <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($title); ?>">
                             <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/model-placeholder.jpg" alt="<?php echo esc_attr($model['title']); ?>">
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/model-placeholder.jpg'); ?>" alt="<?php echo esc_attr($title); ?>">
                             <?php endif; ?>
-                            <?php if (!empty($model['price'])) : ?>
-                                <div class="model-price"><?php echo esc_html($model['price']); ?></div>
+
+                            <?php if (!empty($price)) : ?>
+                                <div class="model-price"><?php echo esc_html($price); ?></div>
                             <?php endif; ?>
                         </div>
+
                         <div class="model-content">
-                            <h2><?php echo esc_html($model['title']); ?></h2>
-                            <p><?php echo esc_html($model['description']); ?></p>
+                            <h2><?php echo esc_html($title); ?></h2>
+                            <p><?php echo esc_html($desc); ?></p>
+
                             <div class="model-specs">
                                 <div class="model-spec">
                                     <?php echo alpenhomes_get_icon('size'); ?>
-                                    <span><?php echo esc_html($model['size']); ?></span>
+                                    <span><?php echo esc_html($size); ?></span>
                                 </div>
                                 <div class="model-spec">
                                     <?php echo alpenhomes_get_icon('rooms'); ?>
-                                    <span><?php echo esc_html($model['rooms']); ?> Zimmer</span>
+                                    <span><?php echo esc_html($rooms); ?> Zimmer</span>
                                 </div>
                                 <div class="model-spec">
                                     <?php echo alpenhomes_get_icon('users'); ?>
-                                    <span><?php echo esc_html($model['persons']); ?> Pers.</span>
+                                    <span><?php echo esc_html($pers); ?> Pers.</span>
                                 </div>
                             </div>
-                            <a href="<?php echo esc_url($model['link'] ?: '#'); ?>" class="btn btn-primary">
+
+                            <a href="<?php echo esc_url(!empty($link) ? $link : '#'); ?>" class="btn btn-primary">
                                 Details ansehen
                                 <?php echo alpenhomes_get_icon('arrow-right'); ?>
                             </a>
@@ -217,7 +267,7 @@ $defaults = array(
                 <?php endforeach;
             else : ?>
                 <?php
-                // Default models matching Lovable project
+                // Default models
                 $default_models = array(
                     array(
                         'title' => 'Alpin Kompakt',
@@ -247,15 +297,18 @@ $defaults = array(
                         'image' => 'model-2.jpg'
                     ),
                 );
-                foreach ($default_models as $index => $model) : ?>
+
+                foreach ($default_models as $model) : ?>
                     <div class="model-card">
                         <div class="model-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo esc_attr($model['image']); ?>" alt="<?php echo esc_attr($model['title']); ?>">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $model['image']); ?>" alt="<?php echo esc_attr($model['title']); ?>">
                             <div class="model-price"><?php echo esc_html($model['price']); ?></div>
                         </div>
+
                         <div class="model-content">
                             <h2><?php echo esc_html($model['title']); ?></h2>
                             <p><?php echo esc_html($model['desc']); ?></p>
+
                             <div class="model-specs">
                                 <div class="model-spec">
                                     <?php echo alpenhomes_get_icon('size'); ?>
@@ -270,6 +323,7 @@ $defaults = array(
                                     <span><?php echo esc_html($model['persons']); ?> Pers.</span>
                                 </div>
                             </div>
+
                             <a href="<?php echo esc_url(home_url('/modelle/alpin-' . strtolower(explode(' ', $model['title'])[1] ?? 'kompakt') . '/')); ?>" class="btn btn-primary">
                                 Details ansehen
                                 <?php echo alpenhomes_get_icon('arrow-right'); ?>
@@ -279,6 +333,7 @@ $defaults = array(
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
+
         <div class="models-cta">
             <?php
             $cta_text = alpenhomes_get_field('models_cta_text', false, 'Alle Modelle anzeigen');
@@ -299,30 +354,37 @@ $defaults = array(
                 <div class="about-image">
                     <?php
                     $about_image = get_field('about_image');
-                    if ($about_image) : ?>
-                        <img src="<?php echo esc_url($about_image['url']); ?>" alt="<?php echo esc_attr($about_image['alt']); ?>">
+                    if (is_array($about_image) && !empty($about_image['url'])) : ?>
+                        <img src="<?php echo esc_url($about_image['url']); ?>" alt="<?php echo esc_attr($about_image['alt'] ?? ''); ?>">
                     <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" alt="Mobilhaus Innenraum">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about.jpg'); ?>" alt="Mobilhaus Innenraum">
                     <?php endif; ?>
                 </div>
+
                 <div class="about-badge">
                     <span><?php echo esc_html(alpenhomes_get_field('about_years', false, '15+')); ?></span>
                     <span><?php echo esc_html(alpenhomes_get_field('about_years_label', false, 'Jahre Erfahrung')); ?></span>
                 </div>
             </div>
+
             <div class="about-content">
-                <h2><?php echo esc_html(alpenhomes_get_field('about_title', false, 'Ihr Partner für')); ?> <span class="text-primary"><?php echo esc_html(alpenhomes_get_field('about_title_highlight', false, 'modernes Wohnen')); ?></span> <?php echo esc_html(alpenhomes_get_field('about_title_suffix', false, 'in Österreich')); ?></h2>
+                <h2>
+                    <?php echo esc_html(alpenhomes_get_field('about_title', false, 'Ihr Partner für')); ?>
+                    <span class="text-primary"><?php echo esc_html(alpenhomes_get_field('about_title_highlight', false, 'modernes Wohnen')); ?></span>
+                    <?php echo esc_html(alpenhomes_get_field('about_title_suffix', false, 'in Österreich')); ?>
+                </h2>
+
                 <?php
                 $about_text1 = get_field('about_text1');
                 $about_text2 = get_field('about_text2');
-                if ($about_text1) : ?>
+
+                if (!empty($about_text1)) : ?>
                     <p><?php echo esc_html($about_text1); ?></p>
                 <?php else : ?>
-                    <p>Alpenhomes ist Ihr zuverlässiger Partner für hochwertige Mobilhäuser in Österreich. Mit unserer langjährigen Erfahrung und
-                        Leidenschaft für qualitatives Wohnen begleiten wir Sie von der ersten Beratung bis zur schlüsselfertigen Übergabe.</p>
+                    <p>Alpenhomes ist Ihr zuverlässiger Partner für hochwertige Mobilhäuser in Österreich. Mit unserer langjährigen Erfahrung und Leidenschaft für qualitatives Wohnen begleiten wir Sie von der ersten Beratung bis zur schlüsselfertigen Übergabe.</p>
                 <?php endif; ?>
 
-                <?php if ($about_text2) : ?>
+                <?php if (!empty($about_text2)) : ?>
                     <p><?php echo esc_html($about_text2); ?></p>
                 <?php else : ?>
                     <p>Unsere Mobilhäuser verbinden modernes Design mit traditioneller Handwerkskunst und bieten Ihnen ein nachhaltiges Zuhause im Einklang mit der Natur.</p>
@@ -331,11 +393,21 @@ $defaults = array(
                 <ul class="about-list">
                     <?php
                     $about_list = get_field('about_list');
-                    if ($about_list) :
-                        foreach ($about_list as $item) : ?>
+                    $about_list = is_array($about_list) ? $about_list : array();
+
+                    if (!empty($about_list)) :
+                        foreach ($about_list as $item) :
+                            if (!is_array($item)) {
+                                continue;
+                            }
+                            $text = $item['text'] ?? '';
+                            if ($text === '') {
+                                continue;
+                            }
+                            ?>
                             <li>
                                 <div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div>
-                                <span><?php echo esc_html($item['text']); ?></span>
+                                <span><?php echo esc_html($text); ?></span>
                             </li>
                         <?php endforeach;
                     else : ?>
@@ -355,9 +427,14 @@ $defaults = array(
 <section class="contact-section section-padding" id="kontakt">
     <div class="container">
         <div class="section-header">
-            <h2><?php echo esc_html(alpenhomes_get_field('contact_title', false, 'Kontaktieren Sie')); ?> <span class="text-primary"><?php echo esc_html(alpenhomes_get_field('contact_title_highlight', false, 'uns')); ?></span></h2>
-            <?php $contact_subtitle = get_field('contact_subtitle');
-            if ($contact_subtitle) : ?>
+            <h2>
+                <?php echo esc_html(alpenhomes_get_field('contact_title', false, 'Kontaktieren Sie')); ?>
+                <span class="text-primary"><?php echo esc_html(alpenhomes_get_field('contact_title_highlight', false, 'uns')); ?></span>
+            </h2>
+
+            <?php
+            $contact_subtitle = get_field('contact_subtitle');
+            if (!empty($contact_subtitle)) : ?>
                 <p><?php echo esc_html($contact_subtitle); ?></p>
             <?php else : ?>
                 <p>Haben Sie Fragen oder möchten Sie eine Beratung? Wir freuen uns auf Ihre Nachricht.</p>
@@ -367,12 +444,15 @@ $defaults = array(
         <div class="contact-wrapper">
             <div class="contact-info-bar">
                 <h3><?php echo esc_html(alpenhomes_get_field('contact_bar_title', false, 'Sprechen Sie mit uns')); ?></h3>
-                <?php $bar_text = get_field('contact_bar_text');
-                if ($bar_text) : ?>
+
+                <?php
+                $bar_text = get_field('contact_bar_text');
+                if (!empty($bar_text)) : ?>
                     <p><?php echo esc_html($bar_text); ?></p>
                 <?php else : ?>
                     <p>Unser Team steht Ihnen für alle Fragen rund um Mobilhäuser zur Verfügung. Vereinbaren Sie einen Beratungstermin oder besuchen Sie unser Ausstellungsgelände.</p>
                 <?php endif; ?>
+
                 <div class="contact-info-grid">
                     <div class="contact-info-item">
                         <div class="icon-wrapper"><?php echo alpenhomes_get_icon('phone'); ?></div>
@@ -407,9 +487,10 @@ $defaults = array(
 
             <div class="contact-form-wrapper">
                 <h3>Anfrage senden</h3>
+
                 <?php
                 $form_shortcode = get_field('contact_form_shortcode');
-                if ($form_shortcode) :
+                if (!empty($form_shortcode)) :
                     echo do_shortcode($form_shortcode);
                 else : ?>
                     <form class="contact-form" action="#" method="POST">
