@@ -11,7 +11,7 @@ $footer_legal_links = alpenhomes_get_option('footer_legal_links');
 
 // Contact info
 $contact_phone = alpenhomes_get_option('contact_phone', '+43 123 456 789');
-$contact_email = alpenhomesa_get_option('contact_email', 'info@alpenhomes.at');
+$contact_email = alpenhomes_get_option('contact_email', 'info@alpenhomes.at');
 $contact_address = alpenhomes_get_option('contact_address', 'Alpenstraße 1, 5020 Salzburg');
 ?>
 
