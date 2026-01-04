@@ -24,12 +24,20 @@ $defaults = array(
     <div class="hero-background">
         <?php
         $hero_bg = get_field('hero_background');
-        if ($hero_bg) : ?>
-            <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="<?php echo esc_attr($hero_bg['alt']); ?>">
+
+        if (is_array($hero_bg) && isset($hero_bg['url'])) : ?>
+            <img
+                    src="<?php echo esc_url($hero_bg['url']); ?>"
+                    alt="<?php echo esc_attr($hero_bg['alt'] ?? ''); ?>"
+            >
         <?php else : ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.jpg" alt="Luxuriöses Mobilheim in den österreichischen Alpen">
+            <img
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.jpg"
+                    alt="Luxuriöses Mobilheim in den österreichischen Alpen"
+            >
         <?php endif; ?>
     </div>
+
     <div class="container">
         <div class="hero-content">
             <div class="hero-badge animate-fade-in">
