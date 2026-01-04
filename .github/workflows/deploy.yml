@@ -3,7 +3,7 @@ name: 🚀 Deploy Hosekra Theme to cPanel via SFTP
 on:
   push:
     branches:
-      - main  # spremeni v 'master', če uporabljaš master branch
+      - main  # ali 'master', kar uporabljaš
 
 jobs:
   sftp-deploy:
@@ -13,12 +13,18 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Deploy with SSH key
+      - name: Deploy only theme contents to AlpenHomes folder
         uses: easingthemes/ssh-deploy@v2.2.11
         with:
           REMOTE_HOST: "${{ secrets.SFTP_SERVER }}"
           REMOTE_USER: "${{ secrets.SFTP_USERNAME }}"
           SSH_PRIVATE_KEY: "${{ secrets.SFTP_PRIVATE_KEY }}"
-          TARGET: "${{ secrets.SFTP_REMOTE_PATH }}"
-          SOURCE: "."
+
+          # ✅ Ciljna mapa – točno tja naj gre (tvoja nova tema)
+          TARGET: "/home/curios59/public_html/alpenhomes/wp-content/themes/AlpenHomes"
+
+          # ✅ Samo VSEBINA teme, brez podmap wp-content/themes
+          SOURCE: "wp-content/themes/hosekra/"
+
+          # ✅ Argumenti – brez .git, brez dovoljenj
           ARGS: "-avz --delete --exclude=.git* --exclude=.github --no-perms"
