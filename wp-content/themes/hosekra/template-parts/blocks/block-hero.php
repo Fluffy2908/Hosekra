@@ -1,25 +1,32 @@
 <?php
 /**
- * Block Template: Hero
+ * Block Template: Hero (with Group Field)
  */
 
-$hero_bg = get_field('hero_background');
-$hero_badge = get_field('hero_badge') ?: 'Dobavljivo po celi Sloveniji';
-$hero_title = get_field('hero_title') ?: 'Gradimo vas sanjski dom';
-$hero_subtitle = get_field('hero_subtitle') ?: 'Vrhunske montazne hiske, izdelane po meri vasih zelja.';
-$hero_btn1_text = get_field('hero_btn1_text') ?: 'Oglejte si modele';
-$hero_btn1_link = get_field('hero_btn1_link') ?: '#modeli';
-$hero_btn2_text = get_field('hero_btn2_text') ?: 'Pridobite cenik';
-$hero_btn2_link = get_field('hero_btn2_link') ?: '#kontakt';
-$hero_stats = get_field('hero_stats');
+// Pridobi celoten group field
+$hero = get_field('hero_block');
+
+if (!$hero) {
+    return; // Če group ni nastavljen, ne prikazuj bloka
+}
+
+$hero_bg         = $hero['hero_background'] ?? null;
+$hero_badge      = $hero['hero_badge'] ?? 'Österreichweit verfügbar';
+$hero_title      = $hero['hero_title'] ?? 'Wir bauen Ihr Traumhaus mit';
+$hero_subtitle   = $hero['hero_subtitle'] ?? 'Hochwertige, maßgefertigte Fertighäuser';
+$hero_btn1_text  = $hero['hero_btn1_text'] ?? 'Modelle entdecken';
+$hero_btn1_link  = $hero['hero_btn1_link'] ?? '#modeli';
+$hero_btn2_text  = $hero['hero_btn2_text'] ?? 'Preisliste anfordern';
+$hero_btn2_link  = $hero['hero_btn2_link'] ?? '#kontakt';
+$hero_stats      = $hero['hero_stats'] ?? [];
 
 $block_id = isset($block['anchor']) ? $block['anchor'] : 'home';
 ?>
 
 <section class="hero-section" id="<?php echo esc_attr($block_id); ?>">
     <div class="hero-background">
-        <?php if ($hero_bg) : ?>
-            <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="<?php echo esc_attr($hero_bg['alt']); ?>">
+        <?php if (!empty($hero_bg)) : ?>
+            <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="<?php echo esc_attr($hero_bg['alt'] ?? 'Hero ozadje'); ?>">
         <?php else : ?>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.jpg" alt="Hero ozadje">
         <?php endif; ?>
@@ -31,13 +38,9 @@ $block_id = isset($block['anchor']) ? $block['anchor'] : 'home';
                 <span><?php echo esc_html($hero_badge); ?></span>
             </div>
 
-            <h1 class="animate-slide-up">
-                <?php echo esc_html($hero_title); ?>
-            </h1>
+            <h1 class="animate-slide-up"><?php echo esc_html($hero_title); ?></h1>
 
-            <p class="hero-text animate-slide-up">
-                <?php echo esc_html($hero_subtitle); ?>
-            </p>
+            <p class="hero-text animate-slide-up"><?php echo esc_html($hero_subtitle); ?></p>
 
             <div class="hero-buttons animate-slide-up">
                 <?php if ($hero_btn1_text && $hero_btn1_link) : ?>
@@ -53,7 +56,7 @@ $block_id = isset($block['anchor']) ? $block['anchor'] : 'home';
                 <?php endif; ?>
             </div>
 
-            <?php if ($hero_stats) : ?>
+            <?php if (!empty($hero_stats) && is_array($hero_stats)) : ?>
                 <div class="hero-stats animate-fade-in">
                     <?php $first = true; foreach ($hero_stats as $stat) : ?>
                         <?php if (!$first) : ?><div class="hero-stat-divider"></div><?php endif; ?>
@@ -61,7 +64,8 @@ $block_id = isset($block['anchor']) ? $block['anchor'] : 'home';
                             <span class="hero-stat-number"><?php echo esc_html($stat['number']); ?></span>
                             <span class="hero-stat-label"><?php echo esc_html($stat['label']); ?></span>
                         </div>
-                    <?php $first = false; endforeach; ?>
+                        <?php $first = false; ?>
+                    <?php endforeach; ?>
                 </div>
             <?php else : ?>
                 <div class="hero-stats animate-fade-in">
