@@ -10,18 +10,18 @@ if (!defined('ABSPATH')) exit;
  */
 function alpenhomes_register_mobilhaus_cpt() {
     $labels = array(
-        'name'                  => 'Mobilne Hiške',
-        'singular_name'         => 'Mobilna Hiška',
-        'menu_name'             => 'Mobilne Hiške',
-        'add_new'               => 'Dodaj novo',
-        'add_new_item'          => 'Dodaj novo mobilno hiško',
-        'edit_item'             => 'Uredi mobilno hiško',
-        'new_item'              => 'Nova mobilna hiška',
-        'view_item'             => 'Poglej mobilno hiško',
-        'search_items'          => 'Iskanje mobilnih hišk',
-        'not_found'             => 'Ni najdenih mobilnih hišk',
-        'not_found_in_trash'    => 'Ni mobilnih hišk v košu',
-        'all_items'             => 'Vse mobilne hiške',
+        'name'                  => 'Mobilhäuser',
+        'singular_name'         => 'Mobilhaus',
+        'menu_name'             => 'Mobilhäuser',
+        'add_new'               => 'Neu hinzufügen',
+        'add_new_item'          => 'Neues Mobilhaus hinzufügen',
+        'edit_item'             => 'Mobilhaus bearbeiten',
+        'new_item'              => 'Neues Mobilhaus',
+        'view_item'             => 'Mobilhaus ansehen',
+        'search_items'          => 'Mobilhäuser durchsuchen',
+        'not_found'             => 'Keine Mobilhäuser gefunden',
+        'not_found_in_trash'    => 'Keine Mobilhäuser im Papierkorb',
+        'all_items'             => 'Alle Mobilhäuser',
     );
 
     $args = array(
@@ -31,7 +31,7 @@ function alpenhomes_register_mobilhaus_cpt() {
         'show_ui'             => true,
         'show_in_menu'        => true,
         'query_var'           => true,
-        'rewrite'             => array('slug' => 'modeli'),
+        'rewrite'             => array('slug' => 'modelle'),
         'capability_type'     => 'post',
         'has_archive'         => true,
         'hierarchical'        => false,
