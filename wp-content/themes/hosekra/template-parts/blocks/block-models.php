@@ -3,15 +3,15 @@
  * Block Template: Models
  */
 
-$title = get_field('models_title') ?: 'Nasi modeli';
-$subtitle = get_field('models_subtitle') ?: 'Izberite med razlicnimi velikostmi in opremami.';
+$title = get_field('models_title') ?: 'Unsere Modelle';
+$subtitle = get_field('models_subtitle') ?: 'Wählen Sie zwischen verschiedenen Größen und Ausstattungen.';
 $source = get_field('models_source') ?: 'cpt';
 $count = get_field('models_count') ?: 3;
 $manual_models = get_field('models_items');
-$cta_text = get_field('models_cta_text') ?: 'Oglejte si vse modele';
-$cta_link = get_field('models_cta_link') ?: '/modeli/';
+$cta_text = get_field('models_cta_text') ?: 'Alle Modelle ansehen';
+$cta_link = get_field('models_cta_link') ?: '/modelle/';
 
-$block_id = isset($block['anchor']) ? $block['anchor'] : 'modeli';
+$block_id = isset($block['anchor']) ? $block['anchor'] : 'modelle';
 
 // Get models from CPT or manual
 $models = array();
@@ -49,29 +49,29 @@ if (empty($models)) {
     $models = array(
         array(
             'title' => 'Alpin Kompakt',
-            'description' => 'Popoln za pare ali kot pocitniski dom.',
-            'size' => '25 m2',
+            'description' => 'Perfekt für Paare oder als Ferienhaus.',
+            'size' => '25 m²',
             'rooms' => '1',
             'persons' => '2',
-            'price' => 'od 39.900 EUR',
+            'price' => 'ab 39.900 EUR',
             'link' => '#',
         ),
         array(
             'title' => 'Alpin Comfort',
-            'description' => 'Nas najbolj priljubljen model z optimalno razporeditvijo.',
-            'size' => '45 m2',
+            'description' => 'Unser beliebtestes Modell mit optimaler Raumaufteilung.',
+            'size' => '45 m²',
             'rooms' => '2',
             'persons' => '4',
-            'price' => 'od 59.900 EUR',
+            'price' => 'ab 59.900 EUR',
             'link' => '#',
         ),
         array(
             'title' => 'Alpin Premium',
-            'description' => 'Luksuzno bivanje z veliko teraso in premium opremo.',
-            'size' => '65 m2',
+            'description' => 'Luxuriöses Wohnen mit großer Terrasse und Premium-Ausstattung.',
+            'size' => '65 m²',
             'rooms' => '3',
             'persons' => '6',
-            'price' => 'od 89.900 EUR',
+            'price' => 'ab 89.900 EUR',
             'link' => '#',
         ),
     );

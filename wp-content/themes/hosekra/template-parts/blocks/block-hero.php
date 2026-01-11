@@ -3,20 +3,20 @@
  * Block Template: Hero (with Group Field)
  */
 
-// Pridobi celoten group field
+// Get entire group field
 $hero = get_field('hero_block');
 
 if (!$hero) {
-    return; // Če group ni nastavljen, ne prikazuj bloka
+    return; // If group is not set, don't display block
 }
 
 $hero_bg         = $hero['hero_background'] ?? null;
 $hero_badge      = $hero['hero_badge'] ?? 'Österreichweit verfügbar';
-$hero_title      = $hero['hero_title'] ?? 'Wir bauen Ihr Traumhaus mit';
+$hero_title      = $hero['hero_title'] ?? 'Wir bauen Ihr Traumhaus';
 $hero_subtitle   = $hero['hero_subtitle'] ?? 'Hochwertige, maßgefertigte Fertighäuser';
-$hero_btn1_text  = $hero['hero_btn1_text'] ?? 'Modelle entdecken';
-$hero_btn1_link  = $hero['hero_btn1_link'] ?? '#modeli';
-$hero_btn2_text  = $hero['hero_btn2_text'] ?? 'Preisliste anfordern';
+$hero_btn1_text  = $hero['hero_btn1_text'] ?? 'Modelle ansehen';
+$hero_btn1_link  = $hero['hero_btn1_link'] ?? '#modelle';
+$hero_btn2_text  = $hero['hero_btn2_text'] ?? 'Preisliste erhalten';
 $hero_btn2_link  = $hero['hero_btn2_link'] ?? '#kontakt';
 $hero_stats      = $hero['hero_stats'] ?? [];
 
@@ -26,9 +26,9 @@ $block_id = isset($block['anchor']) ? $block['anchor'] : 'home';
 <section class="hero-section" id="<?php echo esc_attr($block_id); ?>">
     <div class="hero-background">
         <?php if (!empty($hero_bg)) : ?>
-            <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="<?php echo esc_attr($hero_bg['alt'] ?? 'Hero ozadje'); ?>">
+            <img src="<?php echo esc_url($hero_bg['url']); ?>" alt="<?php echo esc_attr($hero_bg['alt'] ?? 'Hero-Hintergrund'); ?>">
         <?php else : ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.jpg" alt="Hero ozadje">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.jpg" alt="Hero-Hintergrund">
         <?php endif; ?>
     </div>
     <div class="container">
@@ -71,12 +71,12 @@ $block_id = isset($block['anchor']) ? $block['anchor'] : 'home';
                 <div class="hero-stats animate-fade-in">
                     <div class="hero-stat">
                         <span class="hero-stat-number">15+</span>
-                        <span class="hero-stat-label">Let garancije</span>
+                        <span class="hero-stat-label">Jahre Garantie</span>
                     </div>
                     <div class="hero-stat-divider"></div>
                     <div class="hero-stat">
                         <span class="hero-stat-number">500+</span>
-                        <span class="hero-stat-label">Zadovoljnih strank</span>
+                        <span class="hero-stat-label">Zufriedene Kunden</span>
                     </div>
                     <div class="hero-stat-divider"></div>
                     <div class="hero-stat">
