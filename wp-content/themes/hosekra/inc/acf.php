@@ -22,12 +22,12 @@ function alpenhomes_register_acf_blocks() {
     // Hero Block
     acf_register_block_type(array(
         'name'              => 'alpenhomes-hero',
-        'title'             => __('Hero Sekcija', 'alpenhomes'),
-        'description'       => __('Glavna hero sekcija z ozadjem, naslovom in CTA gumbi.', 'alpenhomes'),
+        'title'             => __('Hero-Bereich', 'alpenhomes'),
+        'description'       => __('Hauptbereich mit Hintergrund, Titel und CTA-Buttons.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-hero.php',
         'category'          => $category,
         'icon'              => 'cover-image',
-        'keywords'          => array('hero', 'header', 'banner', 'naslov'),
+        'keywords'          => array('hero', 'header', 'banner', 'titel'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -40,12 +40,12 @@ function alpenhomes_register_acf_blocks() {
     // Features Block
     acf_register_block_type(array(
         'name'              => 'alpenhomes-features',
-        'title'             => __('Prednosti', 'alpenhomes'),
-        'description'       => __('Mreža prednosti/storitev z ikonami.', 'alpenhomes'),
+        'title'             => __('Vorteile', 'alpenhomes'),
+        'description'       => __('Raster von Vorteilen/Dienstleistungen mit Icons.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-features.php',
         'category'          => $category,
         'icon'              => 'grid-view',
-        'keywords'          => array('features', 'prednosti', 'storitve', 'ikone'),
+        'keywords'          => array('features', 'vorteile', 'dienste', 'icons'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -57,12 +57,12 @@ function alpenhomes_register_acf_blocks() {
     // Models Block
     acf_register_block_type(array(
         'name'              => 'alpenhomes-models',
-        'title'             => __('Modeli', 'alpenhomes'),
-        'description'       => __('Prikaz mobilnih hišk/modelov.', 'alpenhomes'),
+        'title'             => __('Modelle', 'alpenhomes'),
+        'description'       => __('Darstellung von Mobilhäusern/Modellen.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-models.php',
         'category'          => $category,
         'icon'              => 'admin-home',
-        'keywords'          => array('models', 'modeli', 'hiške', 'izdelki'),
+        'keywords'          => array('models', 'modelle', 'häuser', 'produkte'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -74,12 +74,12 @@ function alpenhomes_register_acf_blocks() {
     // About Block
     acf_register_block_type(array(
         'name'              => 'alpenhomes-about',
-        'title'             => __('O nas', 'alpenhomes'),
-        'description'       => __('Sekcija o podjetju s sliko in besedilom.', 'alpenhomes'),
+        'title'             => __('Über uns', 'alpenhomes'),
+        'description'       => __('Bereich über das Unternehmen mit Bild und Text.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-about.php',
         'category'          => $category,
         'icon'              => 'admin-users',
-        'keywords'          => array('about', 'o nas', 'podjetje'),
+        'keywords'          => array('about', 'über uns', 'unternehmen'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -92,11 +92,11 @@ function alpenhomes_register_acf_blocks() {
     acf_register_block_type(array(
         'name'              => 'alpenhomes-contact',
         'title'             => __('Kontakt', 'alpenhomes'),
-        'description'       => __('Kontaktna sekcija z obrazcem in podatki.', 'alpenhomes'),
+        'description'       => __('Kontaktbereich mit Formular und Daten.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-contact.php',
         'category'          => $category,
         'icon'              => 'email',
-        'keywords'          => array('contact', 'kontakt', 'obrazec'),
+        'keywords'          => array('contact', 'kontakt', 'formular'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -108,12 +108,12 @@ function alpenhomes_register_acf_blocks() {
     // Gallery Block
     acf_register_block_type(array(
         'name'              => 'alpenhomes-gallery',
-        'title'             => __('Galerija', 'alpenhomes'),
-        'description'       => __('Galerija slik s filtri in lightboxom.', 'alpenhomes'),
+        'title'             => __('Galerie', 'alpenhomes'),
+        'description'       => __('Bildergalerie mit Filtern und Lightbox.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-gallery.php',
         'category'          => $category,
         'icon'              => 'format-gallery',
-        'keywords'          => array('gallery', 'galerija', 'slike'),
+        'keywords'          => array('gallery', 'galerie', 'bilder'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -125,12 +125,12 @@ function alpenhomes_register_acf_blocks() {
     // 3D Tour Block
     acf_register_block_type(array(
         'name'              => 'alpenhomes-3d-tour',
-        'title'             => __('3D Ogled', 'alpenhomes'),
-        'description'       => __('Interaktivni 3D ogled ali video predstavitev.', 'alpenhomes'),
+        'title'             => __('3D Rundgang', 'alpenhomes'),
+        'description'       => __('Interaktive 3D-Tour oder Video-Präsentation.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-3d-tour.php',
         'category'          => $category,
         'icon'              => 'visibility',
-        'keywords'          => array('3d', 'tour', 'ogled'),
+        'keywords'          => array('3d', 'tour', 'rundgang'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -142,12 +142,12 @@ function alpenhomes_register_acf_blocks() {
     // Floor Plans Block
     acf_register_block_type(array(
         'name'              => 'alpenhomes-floor-plans',
-        'title'             => __('Tlorisi', 'alpenhomes'),
-        'description'       => __('Prikaz tlorisov in postavitev prostorov.', 'alpenhomes'),
+        'title'             => __('Grundrisse', 'alpenhomes'),
+        'description'       => __('Darstellung von Grundrissen und Raumlayouts.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-floor-plans.php',
         'category'          => $category,
         'icon'              => 'layout',
-        'keywords'          => array('tloris', 'layout'),
+        'keywords'          => array('grundriss', 'layout'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -159,12 +159,12 @@ function alpenhomes_register_acf_blocks() {
     // Interiors Block
     acf_register_block_type(array(
         'name'              => 'alpenhomes-interiors',
-        'title'             => __('Notranjost', 'alpenhomes'),
-        'description'       => __('Predstavitev notranjosti in opreme.', 'alpenhomes'),
+        'title'             => __('Innenausstattung', 'alpenhomes'),
+        'description'       => __('Darstellung von Innenausstattung und Einrichtung.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-interiors.php',
         'category'          => $category,
         'icon'              => 'admin-appearance',
-        'keywords'          => array('interior', 'notranjost'),
+        'keywords'          => array('interior', 'innenausstattung'),
         'supports'          => array(
             'align' => array('full', 'wide'),
             'anchor' => true,
@@ -176,8 +176,8 @@ function alpenhomes_register_acf_blocks() {
     // CTA Block
     acf_register_block_type(array(
         'name'              => 'alpenhomes-cta',
-        'title'             => __('CTA Sekcija', 'alpenhomes'),
-        'description'       => __('Call-to-action sekcija z gumbom.', 'alpenhomes'),
+        'title'             => __('CTA-Bereich', 'alpenhomes'),
+        'description'       => __('Call-to-Action-Bereich mit Button.', 'alpenhomes'),
         'render_template'   => 'template-parts/blocks/block-cta.php',
         'category'          => $category,
         'icon'              => 'megaphone',
@@ -258,87 +258,87 @@ function alpenhomes_register_block_fields() {
     // Hero Block Fields
     acf_add_local_field_group(array(
         'key' => 'group_block_hero',
-        'title' => 'Hero Blok',
+        'title' => 'Hero-Block',
         'fields' => array(
             array(
                 'key' => 'field_block_hero_background',
-                'label' => 'Ozadje slika',
+                'label' => 'Hintergrundbild',
                 'name' => 'hero_background',
                 'type' => 'image',
                 'return_format' => 'array',
                 'preview_size' => 'large',
-                'instructions' => 'Priporocena velikost: 1920x1080px',
+                'instructions' => 'Empfohlene Größe: 1920x1080px',
             ),
             array(
                 'key' => 'field_block_hero_badge',
-                'label' => 'Badge tekst',
+                'label' => 'Badge-Text',
                 'name' => 'hero_badge',
                 'type' => 'text',
-                'default_value' => 'Dobavljivo po celi Sloveniji',
+                'default_value' => 'Österreichweit verfügbar',
             ),
             array(
                 'key' => 'field_block_hero_title',
-                'label' => 'Naslov',
+                'label' => 'Titel',
                 'name' => 'hero_title',
                 'type' => 'text',
-                'default_value' => 'Gradimo vas sanjski dom',
+                'default_value' => 'Wir bauen Ihr Traumhaus',
             ),
             array(
                 'key' => 'field_block_hero_subtitle',
-                'label' => 'Podnaslov',
+                'label' => 'Untertitel',
                 'name' => 'hero_subtitle',
                 'type' => 'textarea',
                 'rows' => 2,
             ),
             array(
                 'key' => 'field_block_hero_btn1_text',
-                'label' => 'Gumb 1 - Tekst',
+                'label' => 'Button 1 - Text',
                 'name' => 'hero_btn1_text',
                 'type' => 'text',
-                'default_value' => 'Oglejte si modele',
+                'default_value' => 'Modelle ansehen',
                 'wrapper' => array('width' => '50'),
             ),
             array(
                 'key' => 'field_block_hero_btn1_link',
-                'label' => 'Gumb 1 - Povezava',
+                'label' => 'Button 1 - Link',
                 'name' => 'hero_btn1_link',
                 'type' => 'url',
                 'wrapper' => array('width' => '50'),
             ),
             array(
                 'key' => 'field_block_hero_btn2_text',
-                'label' => 'Gumb 2 - Tekst',
+                'label' => 'Button 2 - Text',
                 'name' => 'hero_btn2_text',
                 'type' => 'text',
-                'default_value' => 'Pridobite cenik',
+                'default_value' => 'Preisliste erhalten',
                 'wrapper' => array('width' => '50'),
             ),
             array(
                 'key' => 'field_block_hero_btn2_link',
-                'label' => 'Gumb 2 - Povezava',
+                'label' => 'Button 2 - Link',
                 'name' => 'hero_btn2_link',
                 'type' => 'url',
                 'wrapper' => array('width' => '50'),
             ),
             array(
                 'key' => 'field_block_hero_stats',
-                'label' => 'Statistika',
+                'label' => 'Statistik',
                 'name' => 'hero_stats',
                 'type' => 'repeater',
                 'min' => 0,
                 'max' => 4,
                 'layout' => 'table',
-                'button_label' => 'Dodaj statistiko',
+                'button_label' => 'Statistik hinzufügen',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_block_hero_stat_number',
-                        'label' => 'Stevilka',
+                        'label' => 'Zahl',
                         'name' => 'number',
                         'type' => 'text',
                     ),
                     array(
                         'key' => 'field_block_hero_stat_label',
-                        'label' => 'Oznaka',
+                        'label' => 'Bezeichnung',
                         'name' => 'label',
                         'type' => 'text',
                     ),
@@ -359,60 +359,60 @@ function alpenhomes_register_block_fields() {
     // Features Block Fields
     acf_add_local_field_group(array(
         'key' => 'group_block_features',
-        'title' => 'Prednosti Blok',
+        'title' => 'Vorteile-Block',
         'fields' => array(
             array(
                 'key' => 'field_block_features_title',
-                'label' => 'Naslov',
+                'label' => 'Titel',
                 'name' => 'features_title',
                 'type' => 'text',
-                'default_value' => 'Zakaj izbrati nas?',
+                'default_value' => 'Warum AlpenHomes wählen?',
             ),
             array(
                 'key' => 'field_block_features_subtitle',
-                'label' => 'Podnaslov',
+                'label' => 'Untertitel',
                 'name' => 'features_subtitle',
                 'type' => 'textarea',
                 'rows' => 2,
             ),
             array(
                 'key' => 'field_block_features_items',
-                'label' => 'Prednosti',
+                'label' => 'Vorteile',
                 'name' => 'features_items',
                 'type' => 'repeater',
                 'min' => 1,
                 'max' => 6,
                 'layout' => 'block',
-                'button_label' => 'Dodaj prednost',
+                'button_label' => 'Vorteil hinzufügen',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_block_feature_icon',
-                        'label' => 'Ikona',
+                        'label' => 'Icon',
                         'name' => 'icon',
                         'type' => 'select',
                         'choices' => array(
-                            'shield' => 'Scit (garancija)',
-                            'star' => 'Zvezda (kakovost)',
-                            'truck' => 'Dostava',
-                            'tools' => 'Orodja (storitev)',
-                            'leaf' => 'List (ekologija)',
-                            'home' => 'Hisa',
-                            'check' => 'Kljukica',
-                            'users' => 'Uporabniki',
-                            'location' => 'Lokacija',
+                            'shield' => 'Schild (Garantie)',
+                            'star' => 'Stern (Qualität)',
+                            'truck' => 'Lieferung',
+                            'tools' => 'Werkzeuge (Service)',
+                            'leaf' => 'Blatt (Ökologie)',
+                            'home' => 'Haus',
+                            'check' => 'Häkchen',
+                            'users' => 'Benutzer',
+                            'location' => 'Standort',
                         ),
                         'wrapper' => array('width' => '30'),
                     ),
                     array(
                         'key' => 'field_block_feature_title',
-                        'label' => 'Naslov',
+                        'label' => 'Titel',
                         'name' => 'title',
                         'type' => 'text',
                         'wrapper' => array('width' => '70'),
                     ),
                     array(
                         'key' => 'field_block_feature_text',
-                        'label' => 'Besedilo',
+                        'label' => 'Text',
                         'name' => 'text',
                         'type' => 'textarea',
                         'rows' => 2,
@@ -434,36 +434,36 @@ function alpenhomes_register_block_fields() {
     // Models Block Fields
     acf_add_local_field_group(array(
         'key' => 'group_block_models',
-        'title' => 'Modeli Blok',
+        'title' => 'Modelle-Block',
         'fields' => array(
             array(
                 'key' => 'field_block_models_title',
-                'label' => 'Naslov',
+                'label' => 'Titel',
                 'name' => 'models_title',
                 'type' => 'text',
-                'default_value' => 'Nasi modeli',
+                'default_value' => 'Unsere Modelle',
             ),
             array(
                 'key' => 'field_block_models_subtitle',
-                'label' => 'Podnaslov',
+                'label' => 'Untertitel',
                 'name' => 'models_subtitle',
                 'type' => 'textarea',
                 'rows' => 2,
             ),
             array(
                 'key' => 'field_block_models_source',
-                'label' => 'Vir podatkov',
+                'label' => 'Datenquelle',
                 'name' => 'models_source',
                 'type' => 'select',
                 'choices' => array(
-                    'cpt' => 'Iz custom post type (Mobilne Hiske)',
-                    'manual' => 'Rocni vnos',
+                    'cpt' => 'Aus Custom Post Type (Mobilhäuser)',
+                    'manual' => 'Manuelle Eingabe',
                 ),
                 'default_value' => 'cpt',
             ),
             array(
                 'key' => 'field_block_models_count',
-                'label' => 'Stevilo modelov',
+                'label' => 'Anzahl der Modelle',
                 'name' => 'models_count',
                 'type' => 'number',
                 'default_value' => 3,
@@ -479,13 +479,13 @@ function alpenhomes_register_block_fields() {
             ),
             array(
                 'key' => 'field_block_models_items',
-                'label' => 'Modeli',
+                'label' => 'Modelle',
                 'name' => 'models_items',
                 'type' => 'repeater',
                 'min' => 1,
                 'max' => 8,
                 'layout' => 'block',
-                'button_label' => 'Dodaj model',
+                'button_label' => 'Modell hinzufügen',
                 'conditional_logic' => array(
                     array(
                         array(
@@ -498,7 +498,7 @@ function alpenhomes_register_block_fields() {
                 'sub_fields' => array(
                     array(
                         'key' => 'field_block_model_image',
-                        'label' => 'Slika',
+                        'label' => 'Bild',
                         'name' => 'image',
                         'type' => 'image',
                         'return_format' => 'array',
@@ -506,49 +506,49 @@ function alpenhomes_register_block_fields() {
                     ),
                     array(
                         'key' => 'field_block_model_title',
-                        'label' => 'Naziv modela',
+                        'label' => 'Modellname',
                         'name' => 'title',
                         'type' => 'text',
                         'wrapper' => array('width' => '50'),
                     ),
                     array(
                         'key' => 'field_block_model_link',
-                        'label' => 'Povezava',
+                        'label' => 'Link',
                         'name' => 'link',
                         'type' => 'url',
                         'wrapper' => array('width' => '50'),
                     ),
                     array(
                         'key' => 'field_block_model_description',
-                        'label' => 'Opis',
+                        'label' => 'Beschreibung',
                         'name' => 'description',
                         'type' => 'textarea',
                         'rows' => 2,
                     ),
                     array(
                         'key' => 'field_block_model_size',
-                        'label' => 'Velikost (m2)',
+                        'label' => 'Größe (m²)',
                         'name' => 'size',
                         'type' => 'text',
                         'wrapper' => array('width' => '33'),
                     ),
                     array(
                         'key' => 'field_block_model_rooms',
-                        'label' => 'Stevilo sob',
+                        'label' => 'Anzahl Zimmer',
                         'name' => 'rooms',
                         'type' => 'text',
                         'wrapper' => array('width' => '33'),
                     ),
                     array(
                         'key' => 'field_block_model_persons',
-                        'label' => 'Stevilo oseb',
+                        'label' => 'Anzahl Personen',
                         'name' => 'persons',
                         'type' => 'text',
                         'wrapper' => array('width' => '34'),
                     ),
                     array(
                         'key' => 'field_block_model_price',
-                        'label' => 'Cena',
+                        'label' => 'Preis',
                         'name' => 'price',
                         'type' => 'text',
                     ),
@@ -556,15 +556,15 @@ function alpenhomes_register_block_fields() {
             ),
             array(
                 'key' => 'field_block_models_cta_text',
-                'label' => 'CTA gumb tekst',
+                'label' => 'CTA-Button Text',
                 'name' => 'models_cta_text',
                 'type' => 'text',
-                'default_value' => 'Oglejte si vse modele',
+                'default_value' => 'Alle Modelle ansehen',
                 'wrapper' => array('width' => '50'),
             ),
             array(
                 'key' => 'field_block_models_cta_link',
-                'label' => 'CTA gumb povezava',
+                'label' => 'CTA-Button Link',
                 'name' => 'models_cta_link',
                 'type' => 'url',
                 'wrapper' => array('width' => '50'),
@@ -584,31 +584,31 @@ function alpenhomes_register_block_fields() {
     // 3D Tour Block Fields
     acf_add_local_field_group(array(
         'key' => 'group_block_3d_tour',
-        'title' => '3D Ogled Blok',
+        'title' => '3D Rundgang-Block',
         'fields' => array(
             array(
                 'key' => 'field_block_3d_title',
-                'label' => 'Naslov',
+                'label' => 'Titel',
                 'name' => 'tour_title',
                 'type' => 'text',
-                'default_value' => 'Virtualni ogled',
+                'default_value' => 'Virtueller Rundgang',
             ),
             array(
                 'key' => 'field_block_3d_subtitle',
-                'label' => 'Podnaslov',
+                'label' => 'Untertitel',
                 'name' => 'tour_subtitle',
                 'type' => 'textarea',
                 'rows' => 2,
             ),
             array(
                 'key' => 'field_block_3d_type',
-                'label' => 'Tip vsebine',
+                'label' => 'Inhaltstyp',
                 'name' => 'tour_type',
                 'type' => 'select',
                 'choices' => array(
                     'video' => 'Video (YouTube/Vimeo)',
-                    'iframe' => 'Iframe (3D ogled)',
-                    'image' => 'Slika s predogledom',
+                    'iframe' => 'Iframe (3D-Rundgang)',
+                    'image' => 'Bild mit Vorschau',
                 ),
                 'default_value' => 'video',
             ),
@@ -617,7 +617,7 @@ function alpenhomes_register_block_fields() {
                 'label' => 'Video URL',
                 'name' => 'tour_video_url',
                 'type' => 'url',
-                'instructions' => 'YouTube ali Vimeo povezava',
+                'instructions' => 'YouTube oder Vimeo Link',
                 'conditional_logic' => array(
                     array(
                         array(
@@ -630,10 +630,10 @@ function alpenhomes_register_block_fields() {
             ),
             array(
                 'key' => 'field_block_3d_iframe',
-                'label' => 'Iframe koda',
+                'label' => 'Iframe-Code',
                 'name' => 'tour_iframe',
                 'type' => 'textarea',
-                'instructions' => 'Vnesite embed kodo za 3D ogled (Matterport, etc.)',
+                'instructions' => 'Embed-Code für 3D-Rundgang eingeben (Matterport, etc.)',
                 'conditional_logic' => array(
                     array(
                         array(
@@ -646,7 +646,7 @@ function alpenhomes_register_block_fields() {
             ),
             array(
                 'key' => 'field_block_3d_preview_image',
-                'label' => 'Predogledna slika',
+                'label' => 'Vorschaubild',
                 'name' => 'tour_preview_image',
                 'type' => 'image',
                 'return_format' => 'array',
@@ -654,29 +654,29 @@ function alpenhomes_register_block_fields() {
             ),
             array(
                 'key' => 'field_block_3d_features',
-                'label' => 'Znacilnosti',
+                'label' => 'Merkmale',
                 'name' => 'tour_features',
                 'type' => 'repeater',
                 'min' => 0,
                 'max' => 4,
                 'layout' => 'table',
-                'button_label' => 'Dodaj znacilnost',
+                'button_label' => 'Merkmal hinzufügen',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_block_3d_feature_icon',
-                        'label' => 'Ikona',
+                        'label' => 'Icon',
                         'name' => 'icon',
                         'type' => 'select',
                         'choices' => array(
-                            'cube' => '3D Kocka',
-                            'expand' => 'Razsiri',
-                            'play' => 'Predvajaj',
-                            'grid' => 'Mrezha',
+                            'cube' => '3D-Würfel',
+                            'expand' => 'Erweitern',
+                            'play' => 'Abspielen',
+                            'grid' => 'Raster',
                         ),
                     ),
                     array(
                         'key' => 'field_block_3d_feature_text',
-                        'label' => 'Besedilo',
+                        'label' => 'Text',
                         'name' => 'text',
                         'type' => 'text',
                     ),
@@ -697,41 +697,41 @@ function alpenhomes_register_block_fields() {
     // Floor Plans Block Fields
     acf_add_local_field_group(array(
         'key' => 'group_block_floor_plans',
-        'title' => 'Tlorisi Blok',
+        'title' => 'Grundrisse-Block',
         'fields' => array(
             array(
                 'key' => 'field_block_floor_title',
-                'label' => 'Naslov',
+                'label' => 'Titel',
                 'name' => 'floor_title',
                 'type' => 'text',
-                'default_value' => 'Tlorisi in postavitve',
+                'default_value' => 'Grundrisse und Layouts',
             ),
             array(
                 'key' => 'field_block_floor_subtitle',
-                'label' => 'Podnaslov',
+                'label' => 'Untertitel',
                 'name' => 'floor_subtitle',
                 'type' => 'textarea',
                 'rows' => 2,
             ),
             array(
                 'key' => 'field_block_floor_plans',
-                'label' => 'Tlorisi',
+                'label' => 'Grundrisse',
                 'name' => 'floor_plans',
                 'type' => 'repeater',
                 'min' => 1,
                 'max' => 10,
                 'layout' => 'block',
-                'button_label' => 'Dodaj tloris',
+                'button_label' => 'Grundriss hinzufügen',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_block_floor_plan_name',
-                        'label' => 'Naziv',
+                        'label' => 'Bezeichnung',
                         'name' => 'name',
                         'type' => 'text',
                     ),
                     array(
                         'key' => 'field_block_floor_plan_image',
-                        'label' => 'Slika tlorisa',
+                        'label' => 'Grundriss-Bild',
                         'name' => 'image',
                         'type' => 'image',
                         'return_format' => 'array',
@@ -739,28 +739,28 @@ function alpenhomes_register_block_fields() {
                     ),
                     array(
                         'key' => 'field_block_floor_plan_size',
-                        'label' => 'Velikost',
+                        'label' => 'Größe',
                         'name' => 'size',
                         'type' => 'text',
                         'wrapper' => array('width' => '33'),
                     ),
                     array(
                         'key' => 'field_block_floor_plan_rooms',
-                        'label' => 'Sobe',
+                        'label' => 'Zimmer',
                         'name' => 'rooms',
                         'type' => 'text',
                         'wrapper' => array('width' => '33'),
                     ),
                     array(
                         'key' => 'field_block_floor_plan_bath',
-                        'label' => 'Kopalnice',
+                        'label' => 'Badezimmer',
                         'name' => 'bathrooms',
                         'type' => 'text',
                         'wrapper' => array('width' => '34'),
                     ),
                     array(
                         'key' => 'field_block_floor_plan_desc',
-                        'label' => 'Opis',
+                        'label' => 'Beschreibung',
                         'name' => 'description',
                         'type' => 'textarea',
                         'rows' => 2,
@@ -782,41 +782,41 @@ function alpenhomes_register_block_fields() {
     // Interiors Block Fields
     acf_add_local_field_group(array(
         'key' => 'group_block_interiors',
-        'title' => 'Notranjost Blok',
+        'title' => 'Innenausstattung-Block',
         'fields' => array(
             array(
                 'key' => 'field_block_interior_title',
-                'label' => 'Naslov',
+                'label' => 'Titel',
                 'name' => 'interior_title',
                 'type' => 'text',
-                'default_value' => 'Notranjost',
+                'default_value' => 'Innenausstattung',
             ),
             array(
                 'key' => 'field_block_interior_subtitle',
-                'label' => 'Podnaslov',
+                'label' => 'Untertitel',
                 'name' => 'interior_subtitle',
                 'type' => 'textarea',
                 'rows' => 2,
             ),
             array(
                 'key' => 'field_block_interior_rooms',
-                'label' => 'Prostori',
+                'label' => 'Räume',
                 'name' => 'interior_rooms',
                 'type' => 'repeater',
                 'min' => 1,
                 'max' => 8,
                 'layout' => 'block',
-                'button_label' => 'Dodaj prostor',
+                'button_label' => 'Raum hinzufügen',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_block_interior_room_name',
-                        'label' => 'Naziv prostora',
+                        'label' => 'Raumbezeichnung',
                         'name' => 'name',
                         'type' => 'text',
                     ),
                     array(
                         'key' => 'field_block_interior_room_image',
-                        'label' => 'Slika',
+                        'label' => 'Bild',
                         'name' => 'image',
                         'type' => 'image',
                         'return_format' => 'array',
@@ -824,18 +824,18 @@ function alpenhomes_register_block_fields() {
                     ),
                     array(
                         'key' => 'field_block_interior_room_desc',
-                        'label' => 'Opis',
+                        'label' => 'Beschreibung',
                         'name' => 'description',
                         'type' => 'textarea',
                         'rows' => 2,
                     ),
                     array(
                         'key' => 'field_block_interior_room_features',
-                        'label' => 'Znacilnosti',
+                        'label' => 'Merkmale',
                         'name' => 'features',
                         'type' => 'textarea',
                         'rows' => 3,
-                        'instructions' => 'Vsaka znacilnost v novi vrstici',
+                        'instructions' => 'Jedes Merkmal in einer neuen Zeile',
                     ),
                 ),
             ),
@@ -854,25 +854,25 @@ function alpenhomes_register_block_fields() {
     // Gallery Block Fields
     acf_add_local_field_group(array(
         'key' => 'group_block_gallery',
-        'title' => 'Galerija Blok',
+        'title' => 'Galerie-Block',
         'fields' => array(
             array(
                 'key' => 'field_block_gallery_title',
-                'label' => 'Naslov',
+                'label' => 'Titel',
                 'name' => 'gallery_title',
                 'type' => 'text',
-                'default_value' => 'Galerija',
+                'default_value' => 'Galerie',
             ),
             array(
                 'key' => 'field_block_gallery_subtitle',
-                'label' => 'Podnaslov',
+                'label' => 'Untertitel',
                 'name' => 'gallery_subtitle',
                 'type' => 'textarea',
                 'rows' => 2,
             ),
             array(
                 'key' => 'field_block_gallery_show_filters',
-                'label' => 'Prikazi filtre',
+                'label' => 'Filter anzeigen',
                 'name' => 'gallery_show_filters',
                 'type' => 'true_false',
                 'default_value' => 1,
@@ -880,16 +880,16 @@ function alpenhomes_register_block_fields() {
             ),
             array(
                 'key' => 'field_block_gallery_images',
-                'label' => 'Slike',
+                'label' => 'Bilder',
                 'name' => 'gallery_images',
                 'type' => 'repeater',
                 'min' => 1,
                 'layout' => 'block',
-                'button_label' => 'Dodaj sliko',
+                'button_label' => 'Bild hinzufügen',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_block_gallery_image',
-                        'label' => 'Slika',
+                        'label' => 'Bild',
                         'name' => 'image',
                         'type' => 'image',
                         'return_format' => 'array',
@@ -897,20 +897,20 @@ function alpenhomes_register_block_fields() {
                     ),
                     array(
                         'key' => 'field_block_gallery_image_title',
-                        'label' => 'Naslov',
+                        'label' => 'Titel',
                         'name' => 'title',
                         'type' => 'text',
                     ),
                     array(
                         'key' => 'field_block_gallery_image_category',
-                        'label' => 'Kategorija',
+                        'label' => 'Kategorie',
                         'name' => 'category',
                         'type' => 'select',
                         'choices' => array(
-                            'zunanjost' => 'Zunanjost',
-                            'notranjost' => 'Notranjost',
-                            'terasa' => 'Terasa',
-                            'detajli' => 'Detajli',
+                            'außenbereich' => 'Außenbereich',
+                            'innenbereich' => 'Innenbereich',
+                            'terrasse' => 'Terrasse',
+                            'details' => 'Details',
                         ),
                     ),
                 ),
@@ -930,11 +930,11 @@ function alpenhomes_register_block_fields() {
     // About Block Fields
     acf_add_local_field_group(array(
         'key' => 'group_block_about',
-        'title' => 'O nas Blok',
+        'title' => 'Über uns-Block',
         'fields' => array(
             array(
                 'key' => 'field_block_about_image',
-                'label' => 'Slika',
+                'label' => 'Bild',
                 'name' => 'about_image',
                 'type' => 'image',
                 'return_format' => 'array',
@@ -942,7 +942,7 @@ function alpenhomes_register_block_fields() {
             ),
             array(
                 'key' => 'field_block_about_badge_number',
-                'label' => 'Badge - Stevilka',
+                'label' => 'Badge - Zahl',
                 'name' => 'about_badge_number',
                 'type' => 'text',
                 'default_value' => '15+',
@@ -950,45 +950,45 @@ function alpenhomes_register_block_fields() {
             ),
             array(
                 'key' => 'field_block_about_badge_text',
-                'label' => 'Badge - Tekst',
+                'label' => 'Badge - Text',
                 'name' => 'about_badge_text',
                 'type' => 'text',
-                'default_value' => 'Let izkusenj',
+                'default_value' => 'Jahre Erfahrung',
                 'wrapper' => array('width' => '50'),
             ),
             array(
                 'key' => 'field_block_about_title',
-                'label' => 'Naslov',
+                'label' => 'Titel',
                 'name' => 'about_title',
                 'type' => 'text',
             ),
             array(
                 'key' => 'field_block_about_text1',
-                'label' => 'Besedilo 1',
+                'label' => 'Text 1',
                 'name' => 'about_text1',
                 'type' => 'textarea',
                 'rows' => 3,
             ),
             array(
                 'key' => 'field_block_about_text2',
-                'label' => 'Besedilo 2',
+                'label' => 'Text 2',
                 'name' => 'about_text2',
                 'type' => 'textarea',
                 'rows' => 3,
             ),
             array(
                 'key' => 'field_block_about_list',
-                'label' => 'Seznam prednosti',
+                'label' => 'Liste der Vorteile',
                 'name' => 'about_list',
                 'type' => 'repeater',
                 'min' => 1,
                 'max' => 10,
                 'layout' => 'table',
-                'button_label' => 'Dodaj tocko',
+                'button_label' => 'Punkt hinzufügen',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_block_about_list_item',
-                        'label' => 'Besedilo',
+                        'label' => 'Text',
                         'name' => 'text',
                         'type' => 'text',
                     ),
@@ -1009,42 +1009,42 @@ function alpenhomes_register_block_fields() {
     // Contact Block Fields
     acf_add_local_field_group(array(
         'key' => 'group_block_contact',
-        'title' => 'Kontakt Blok',
+        'title' => 'Kontakt-Block',
         'fields' => array(
             array(
                 'key' => 'field_block_contact_title',
-                'label' => 'Naslov',
+                'label' => 'Titel',
                 'name' => 'contact_title',
                 'type' => 'text',
-                'default_value' => 'Kontaktirajte nas',
+                'default_value' => 'Kontaktieren Sie uns',
             ),
             array(
                 'key' => 'field_block_contact_subtitle',
-                'label' => 'Podnaslov',
+                'label' => 'Untertitel',
                 'name' => 'contact_subtitle',
                 'type' => 'textarea',
                 'rows' => 2,
             ),
             array(
                 'key' => 'field_block_contact_bar_title',
-                'label' => 'Info bar - Naslov',
+                'label' => 'Info-Leiste - Titel',
                 'name' => 'contact_bar_title',
                 'type' => 'text',
-                'default_value' => 'Vedno smo vam na voljo',
+                'default_value' => 'Wir sind immer für Sie da',
             ),
             array(
                 'key' => 'field_block_contact_bar_text',
-                'label' => 'Info bar - Besedilo',
+                'label' => 'Info-Leiste - Text',
                 'name' => 'contact_bar_text',
                 'type' => 'textarea',
                 'rows' => 2,
             ),
             array(
                 'key' => 'field_block_contact_form_shortcode',
-                'label' => 'Kontaktni obrazec (shortcode)',
+                'label' => 'Kontaktformular (Shortcode)',
                 'name' => 'contact_form_shortcode',
                 'type' => 'text',
-                'instructions' => 'Vnesite shortcode za kontaktni obrazec (npr. Contact Form 7)',
+                'instructions' => 'Shortcode für Kontaktformular eingeben (z.B. Contact Form 7)',
                 'placeholder' => '[contact-form-7 id="123"]',
             ),
         ),
@@ -1062,45 +1062,45 @@ function alpenhomes_register_block_fields() {
     // CTA Block Fields
     acf_add_local_field_group(array(
         'key' => 'group_block_cta',
-        'title' => 'CTA Blok',
+        'title' => 'CTA-Block',
         'fields' => array(
             array(
                 'key' => 'field_block_cta_title',
-                'label' => 'Naslov',
+                'label' => 'Titel',
                 'name' => 'cta_title',
                 'type' => 'text',
             ),
             array(
                 'key' => 'field_block_cta_text',
-                'label' => 'Besedilo',
+                'label' => 'Text',
                 'name' => 'cta_text',
                 'type' => 'textarea',
                 'rows' => 2,
             ),
             array(
                 'key' => 'field_block_cta_btn_text',
-                'label' => 'Gumb tekst',
+                'label' => 'Button-Text',
                 'name' => 'cta_btn_text',
                 'type' => 'text',
-                'default_value' => 'Kontaktirajte nas',
+                'default_value' => 'Kontaktieren Sie uns',
                 'wrapper' => array('width' => '50'),
             ),
             array(
                 'key' => 'field_block_cta_btn_link',
-                'label' => 'Gumb povezava',
+                'label' => 'Button-Link',
                 'name' => 'cta_btn_link',
                 'type' => 'url',
                 'wrapper' => array('width' => '50'),
             ),
             array(
                 'key' => 'field_block_cta_background',
-                'label' => 'Ozadje',
+                'label' => 'Hintergrund',
                 'name' => 'cta_background',
                 'type' => 'select',
                 'choices' => array(
-                    'primary' => 'Zelena',
-                    'dark' => 'Temna',
-                    'light' => 'Svetla',
+                    'primary' => 'Grün',
+                    'dark' => 'Dunkel',
+                    'light' => 'Hell',
                 ),
                 'default_value' => 'primary',
             ),
@@ -1119,7 +1119,7 @@ function alpenhomes_register_block_fields() {
     // Navigation Options Fields
     acf_add_local_field_group(array(
         'key' => 'group_navigation',
-        'title' => 'Navigacija',
+        'title' => 'Navigation',
         'fields' => array(
             array(
                 'key' => 'field_nav_logo',
@@ -1128,11 +1128,11 @@ function alpenhomes_register_block_fields() {
                 'type' => 'image',
                 'return_format' => 'array',
                 'preview_size' => 'medium',
-                'instructions' => 'Nalozite SVG ali PNG logo',
+                'instructions' => 'SVG oder PNG Logo hochladen',
             ),
             array(
                 'key' => 'field_nav_logo_alt',
-                'label' => 'Logo Alt (za footer/temno ozadje)',
+                'label' => 'Logo Alt (für Footer/dunkler Hintergrund)',
                 'name' => 'nav_logo_alt',
                 'type' => 'image',
                 'return_format' => 'array',
@@ -1140,14 +1140,14 @@ function alpenhomes_register_block_fields() {
             ),
             array(
                 'key' => 'field_nav_cta_text',
-                'label' => 'CTA gumb tekst',
+                'label' => 'CTA-Button Text',
                 'name' => 'nav_cta_text',
                 'type' => 'text',
-                'default_value' => 'Kontaktirajte nas',
+                'default_value' => 'Kontaktieren Sie uns',
             ),
             array(
                 'key' => 'field_nav_cta_link',
-                'label' => 'CTA gumb povezava',
+                'label' => 'CTA-Button Link',
                 'name' => 'nav_cta_link',
                 'type' => 'text',
                 'default_value' => '#kontakt',
@@ -1167,36 +1167,36 @@ function alpenhomes_register_block_fields() {
     // Contact Info Options Fields
     acf_add_local_field_group(array(
         'key' => 'group_contact_info',
-        'title' => 'Kontaktni podatki',
+        'title' => 'Kontaktdaten',
         'fields' => array(
             array(
                 'key' => 'field_contact_phone',
                 'label' => 'Telefon',
                 'name' => 'contact_phone',
                 'type' => 'text',
-                'default_value' => '+386 1 234 5678',
+                'default_value' => '+43 123 456 789',
             ),
             array(
                 'key' => 'field_contact_email',
-                'label' => 'E-posta',
+                'label' => 'E-Mail',
                 'name' => 'contact_email',
                 'type' => 'email',
-                'default_value' => 'info@alpenhomes.si',
+                'default_value' => 'info@alpenhomes.at',
             ),
             array(
                 'key' => 'field_contact_address',
-                'label' => 'Naslov',
+                'label' => 'Adresse',
                 'name' => 'contact_address',
                 'type' => 'textarea',
                 'rows' => 2,
-                'default_value' => 'Ulica 123, 1000 Ljubljana',
+                'default_value' => 'Musterstraße 123, 1010 Wien',
             ),
             array(
                 'key' => 'field_contact_hours',
-                'label' => 'Delovni cas',
+                'label' => 'Öffnungszeiten',
                 'name' => 'contact_hours',
                 'type' => 'text',
-                'default_value' => 'Pon - Pet: 8:00 - 17:00',
+                'default_value' => 'Mo - Fr: 8:00 - 17:00',
             ),
         ),
         'location' => array(
@@ -1217,31 +1217,31 @@ function alpenhomes_register_block_fields() {
         'fields' => array(
             array(
                 'key' => 'field_footer_description',
-                'label' => 'Opis podjetja',
+                'label' => 'Unternehmensbeschreibung',
                 'name' => 'footer_description',
                 'type' => 'textarea',
                 'rows' => 3,
             ),
             array(
                 'key' => 'field_footer_col2_title',
-                'label' => 'Stolpec 2 - Naslov',
+                'label' => 'Spalte 2 - Titel',
                 'name' => 'footer_col2_title',
                 'type' => 'text',
-                'default_value' => 'Nasi modeli',
+                'default_value' => 'Unsere Modelle',
             ),
             array(
                 'key' => 'field_footer_col2_links',
-                'label' => 'Stolpec 2 - Povezave',
+                'label' => 'Spalte 2 - Links',
                 'name' => 'footer_col2_links',
                 'type' => 'repeater',
                 'min' => 1,
                 'max' => 10,
                 'layout' => 'table',
-                'button_label' => 'Dodaj povezavo',
+                'button_label' => 'Link hinzufügen',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_footer_link_text',
-                        'label' => 'Tekst',
+                        'label' => 'Text',
                         'name' => 'text',
                         'type' => 'text',
                     ),
@@ -1255,24 +1255,24 @@ function alpenhomes_register_block_fields() {
             ),
             array(
                 'key' => 'field_footer_copyright',
-                'label' => 'Copyright tekst',
+                'label' => 'Copyright-Text',
                 'name' => 'footer_copyright',
                 'type' => 'text',
-                'default_value' => 'AlpenHomes. Vse pravice pridržane.',
+                'default_value' => 'AlpenHomes. Alle Rechte vorbehalten.',
             ),
             array(
                 'key' => 'field_footer_legal_links',
-                'label' => 'Pravne povezave',
+                'label' => 'Rechtliche Links',
                 'name' => 'footer_legal_links',
                 'type' => 'repeater',
                 'min' => 1,
                 'max' => 5,
                 'layout' => 'table',
-                'button_label' => 'Dodaj povezavo',
+                'button_label' => 'Link hinzufügen',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_legal_link_text',
-                        'label' => 'Tekst',
+                        'label' => 'Text',
                         'name' => 'text',
                         'type' => 'text',
                     ),
@@ -1299,8 +1299,8 @@ function alpenhomes_register_block_fields() {
 add_action('acf/init', 'alpenhomes_register_block_fields');
 
 /**
- * Globalna Options Page (ACF)
- * Vse ACF registracije naj tečejo na acf/init.
+ * Global Options Page (ACF)
+ * All ACF registrations should run on acf/init.
  */
 add_action('acf/init', function () {
     if (!function_exists('acf_add_options_page')) {
@@ -1308,8 +1308,8 @@ add_action('acf/init', function () {
     }
 
     acf_add_options_page([
-        'page_title'  => 'Nastavitve strani',
-        'menu_title'  => 'Nastavitve',
+        'page_title'  => 'Seiteneinstellungen',
+        'menu_title'  => 'Einstellungen',
         'menu_slug'   => 'site-settings',
         'capability'  => 'edit_posts',
         'redirect'    => false,
