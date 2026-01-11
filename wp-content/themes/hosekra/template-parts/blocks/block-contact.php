@@ -3,10 +3,10 @@
  * Block Template: Contact
  */
 
-$title = get_field('contact_title') ?: 'Kontaktirajte nas';
-$subtitle = get_field('contact_subtitle') ?: 'Imate vprasanja ali zelite posvetovanje? Veselimo se vase poizvedbe.';
-$bar_title = get_field('contact_bar_title') ?: 'Pogovorite se z nami';
-$bar_text = get_field('contact_bar_text') ?: 'Nasa ekipa vam je na voljo za vsa vprasanja o mobilnih hiskah.';
+$title = get_field('contact_title') ?: 'Kontaktieren Sie uns';
+$subtitle = get_field('contact_subtitle') ?: 'Haben Sie Fragen oder möchten Sie eine Beratung? Wir freuen uns auf Ihre Anfrage.';
+$bar_title = get_field('contact_bar_title') ?: 'Sprechen Sie mit uns';
+$bar_text = get_field('contact_bar_text') ?: 'Unser Team steht Ihnen für alle Fragen zu Mobilhäusern zur Verfügung.';
 $form_shortcode = get_field('contact_form_shortcode');
 
 $block_id = isset($block['anchor']) ? $block['anchor'] : 'kontakt';
@@ -40,21 +40,21 @@ $hours = alpenhomes_get_option('contact_hours', 'Pon - Pet: 8:00 - 17:00');
                     <div class="contact-info-item">
                         <div class="icon-wrapper"><?php echo alpenhomes_get_icon('email'); ?></div>
                         <div class="info-text">
-                            <span>E-posta</span>
+                            <span>E-Mail</span>
                             <a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a>
                         </div>
                     </div>
                     <div class="contact-info-item">
                         <div class="icon-wrapper"><?php echo alpenhomes_get_icon('location'); ?></div>
                         <div class="info-text">
-                            <span>Naslov</span>
+                            <span>Adresse</span>
                             <span><?php echo esc_html($address); ?></span>
                         </div>
                     </div>
                     <div class="contact-info-item">
                         <div class="icon-wrapper"><?php echo alpenhomes_get_icon('clock'); ?></div>
                         <div class="info-text">
-                            <span>Delovni cas</span>
+                            <span>Öffnungszeiten</span>
                             <span><?php echo esc_html($hours); ?></span>
                         </div>
                     </div>
