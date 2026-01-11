@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Archive Template: Mobilhaus Models
  *
@@ -98,7 +98,7 @@ get_header();
                                     <?php the_post_thumbnail('large'); ?>
                                 <?php else : ?>
                                     <div class="model-card-placeholder">
-                                        <?php echo alpenhomes_get_icon('home'); ?>
+                                        <?php echo wohnegruen_get_icon('home'); ?>
                                         <span><?php the_title(); ?></span>
                                     </div>
                                 <?php endif; ?>
@@ -114,21 +114,21 @@ get_header();
                                 <div class="model-card-specs">
                                     <?php if ($size) : ?>
                                         <div class="model-card-spec">
-                                            <?php echo alpenhomes_get_icon('size'); ?>
+                                            <?php echo wohnegruen_get_icon('size'); ?>
                                             <span><?php echo esc_html($size); ?></span>
                                         </div>
                                     <?php endif; ?>
 
                                     <?php if ($rooms) : ?>
                                         <div class="model-card-spec">
-                                            <?php echo alpenhomes_get_icon('rooms'); ?>
+                                            <?php echo wohnegruen_get_icon('rooms'); ?>
                                             <span><?php echo esc_html($rooms); ?> Zimmer</span>
                                         </div>
                                     <?php endif; ?>
 
                                     <?php if ($persons) : ?>
                                         <div class="model-card-spec">
-                                            <?php echo alpenhomes_get_icon('users'); ?>
+                                            <?php echo wohnegruen_get_icon('users'); ?>
                                             <span><?php echo esc_html($persons); ?> Personen</span>
                                         </div>
                                     <?php endif; ?>
@@ -142,7 +142,7 @@ get_header();
 
                                 <a href="<?php the_permalink(); ?>" class="btn btn-primary btn-block">
                                     Details ansehen
-                                    <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                                    <?php echo wohnegruen_get_icon('arrow-right'); ?>
                                 </a>
                             </div>
                         </article>
@@ -171,13 +171,13 @@ get_header();
             <?php else : ?>
                 <div class="no-models">
                     <div class="no-models-icon">
-                        <?php echo alpenhomes_get_icon('home'); ?>
+                        <?php echo wohnegruen_get_icon('home'); ?>
                     </div>
                     <h2>Keine Modelle gefunden</h2>
                     <p>Derzeit sind keine Mobilhäuser verfügbar. Bitte schauen Sie später wieder vorbei oder kontaktieren Sie uns für weitere Informationen.</p>
                     <a href="<?php echo esc_url(home_url('/#kontakt')); ?>" class="btn btn-primary">
                         Kontaktieren Sie uns
-                        <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                        <?php echo wohnegruen_get_icon('arrow-right'); ?>
                     </a>
                 </div>
             <?php endif; ?>
@@ -192,7 +192,7 @@ get_header();
                 <p>Kontaktieren Sie uns für eine persönliche Beratung oder vereinbaren Sie einen Besichtigungstermin.</p>
                 <a href="<?php echo esc_url(home_url('/#kontakt')); ?>" class="btn btn-white btn-lg">
                     Beratung anfragen
-                    <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                    <?php echo wohnegruen_get_icon('arrow-right'); ?>
                 </a>
             </div>
         </div>

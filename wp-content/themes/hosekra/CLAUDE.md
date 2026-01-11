@@ -1,10 +1,10 @@
-# CLAUDE.md
+﻿# CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Theme Overview
 
-**AlpenHomes/Hosekra** is a custom WordPress theme for a mobile homes company. It uses **ACF Pro** with a Gutenberg block-based architecture. There is **no build system** - all CSS/JS files are served directly without compilation.
+**wohnegruen/Hosekra** is a custom WordPress theme for a mobile homes company. It uses **ACF Pro** with a Gutenberg block-based architecture. There is **no build system** - all CSS/JS files are served directly without compilation.
 
 ## Architecture
 
@@ -20,16 +20,16 @@ template-parts/blocks/block-name.php  → Block template rendering
 **Critical Pattern:** Blocks use `get_field()` directly on block context, NOT page context. Fields are scoped to the block instance, not the page.
 
 **10 Registered Blocks:**
-- `alpenhomes-hero` - Hero section with CTA buttons
-- `alpenhomes-features` - Feature grid with icons
-- `alpenhomes-models` - Model showcase (can pull from CPT or manual)
-- `alpenhomes-about` - Company info section
-- `alpenhomes-contact` - Contact form + info
-- `alpenhomes-gallery` - Filterable image gallery with lightbox
-- `alpenhomes-3d-tour` - Video/Matterport 3D tours
-- `alpenhomes-floor-plans` - Floor plan showcase
-- `alpenhomes-interiors` - Interior design showcase
-- `alpenhomes-cta` - Call-to-action banner
+- `wohnegruen-hero` - Hero section with CTA buttons
+- `wohnegruen-features` - Feature grid with icons
+- `wohnegruen-models` - Model showcase (can pull from CPT or manual)
+- `wohnegruen-about` - Company info section
+- `wohnegruen-contact` - Contact form + info
+- `wohnegruen-gallery` - Filterable image gallery with lightbox
+- `wohnegruen-3d-tour` - Video/Matterport 3D tours
+- `wohnegruen-floor-plans` - Floor plan showcase
+- `wohnegruen-interiors` - Interior design showcase
+- `wohnegruen-cta` - Call-to-action banner
 
 ### File Structure
 
@@ -69,14 +69,14 @@ Global settings stored in ACF options pages:
 - **Footer:** Description, footer links, copyright
 - **Contact:** Phone, email, address, business hours
 
-Access via: `alpenhomes_get_option('field_name', 'default')`
+Access via: `wohnegruen_get_option('field_name', 'default')`
 
 ### Helper Functions (`inc/theme.php`)
 
 ```php
-alpenhomes_get_field($field_name, $post_id, $default)  // ACF field with fallback
-alpenhomes_get_option($field_name, $default)           // ACF option with fallback
-alpenhomes_get_icon($icon_name)                        // SVG icon rendering
+wohnegruen_get_field($field_name, $post_id, $default)  // ACF field with fallback
+wohnegruen_get_option($field_name, $default)           // ACF option with fallback
+wohnegruen_get_icon($icon_name)                        // SVG icon rendering
 ```
 
 **Available Icons:** phone, email, location, clock, check, arrow-right, home, size, rooms, users, shield, star, truck, tools, leaf, play, cube, expand, grid
@@ -124,10 +124,10 @@ This theme has **no npm, webpack, or build process**. To modify:
 1. Register block in `inc/acf.php`:
    ```php
    acf_register_block_type(array(
-       'name'              => 'alpenhomes-newblock',
-       'title'             => __('New Block', 'alpenhomes'),
+       'name'              => 'wohnegruen-newblock',
+       'title'             => __('New Block', 'wohnegruen'),
        'render_template'   => 'template-parts/blocks/block-newblock.php',
-       'category'          => 'alpenhomes',
+       'category'          => 'wohnegruen',
        'icon'              => 'admin-home',
        'supports'          => array('align' => array('full', 'wide'), 'anchor' => true),
    ));
@@ -141,7 +141,7 @@ This theme has **no npm, webpack, or build process**. To modify:
        'location' => array(array(array(
            'param' => 'block',
            'operator' => '==',
-           'value' => 'acf/alpenhomes-newblock',
+           'value' => 'acf/wohnegruen-newblock',
        ))),
        'fields' => array(/* field definitions */),
    ));
@@ -172,7 +172,7 @@ If converting to Gutenberg blocks:
 **Current State:** Mixed Slovenian/German
 - Admin labels: Slovenian (`inc/acf.php`, `inc/cpt/cpt-mobilhaus.php`)
 - Frontend defaults: Some German, some Slovenian
-- Text domain: `alpenhomes`
+- Text domain: `wohnegruen`
 
 When translating:
 - ACF field labels in `inc/acf.php` (lines 253-1318)
@@ -185,7 +185,7 @@ When translating:
 ### ACF Options Pages Structure
 
 ```
-AlpenHomes Settings (main menu, position 2)
+wohnegruen Settings (main menu, position 2)
 ├── Navigation (logo, CTA, phone)
 ├── Footer (description, links, copyright)
 └── Kontakt (phone, email, address, hours)
@@ -240,26 +240,26 @@ echo wp_get_attachment_image($image['ID'], 'large');
 
 ### Modifying Navigation
 
-Navigation settings: **WP Admin → AlpenHomes Settings → Navigation**
+Navigation settings: **WP Admin → wohnegruen Settings → Navigation**
 - Logo: ACF field `nav_logo`
 - CTA button: `nav_cta_text`, `nav_cta_link`
-- Access via: `alpenhomes_get_option('nav_logo')`
+- Access via: `wohnegruen_get_option('nav_logo')`
 
 ### Modifying Footer
 
-Footer settings: **WP Admin → AlpenHomes Settings → Footer**
-- Access via: `alpenhomes_get_option('footer_description')`
+Footer settings: **WP Admin → wohnegruen Settings → Footer**
+- Access via: `wohnegruen_get_option('footer_description')`
 - Template: `footer.php` (lines 16-113)
 
 ### Adding SVG Icons
 
-Add to `alpenhomes_get_icon()` function in `inc/theme.php`:
+Add to `wohnegruen_get_icon()` function in `inc/theme.php`:
 ```php
 case 'new-icon':
     return '<svg>...</svg>';
 ```
 
-Then use: `<?php echo alpenhomes_get_icon('new-icon'); ?>`
+Then use: `<?php echo wohnegruen_get_icon('new-icon'); ?>`
 
 ### Customizing Mobile Menu
 
@@ -293,7 +293,7 @@ git commit -m "Backup before [change description]"
 # Make changes, then commit with descriptive message
 git commit -m "Feature: Add new block for testimonials
 
-- Register alpenhomes-testimonials block
+- Register wohnegruen-testimonials block
 - Create template in template-parts/blocks/
 - Add ACF field group for testimonial data
 - Style testimonial cards with grid layout"
@@ -375,7 +375,7 @@ echo '</pre>';
 ```
 
 **JavaScript Console:**
-Use `console.log()` liberally. Check `alpenhomesData` object for available data.
+Use `console.log()` liberally. Check `wohnegruenData` object for available data.
 
 ## References
 

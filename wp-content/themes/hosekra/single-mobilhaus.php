@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Single Mobilhaus Template
  * Template for displaying single mobilhaus/model posts
@@ -8,19 +8,19 @@ get_header();
 
 // Get model fields
 $model_name = get_the_title();
-$model_description = alpenhomes_get_field('model_short_description', get_the_ID(), get_the_excerpt());
-$model_full_description = alpenhomes_get_field('model_full_description', get_the_ID(), get_the_content());
-$model_price = alpenhomes_get_field('model_price', get_the_ID(), 'ab €45.000');
-$model_size = alpenhomes_get_field('model_size', get_the_ID(), '35 m²');
-$model_beds = alpenhomes_get_field('model_beds', get_the_ID(), '2');
-$model_persons = alpenhomes_get_field('model_persons', get_the_ID(), '4');
+$model_description = wohnegruen_get_field('model_short_description', get_the_ID(), get_the_excerpt());
+$model_full_description = wohnegruen_get_field('model_full_description', get_the_ID(), get_the_content());
+$model_price = wohnegruen_get_field('model_price', get_the_ID(), 'ab €45.000');
+$model_size = wohnegruen_get_field('model_size', get_the_ID(), '35 m²');
+$model_beds = wohnegruen_get_field('model_beds', get_the_ID(), '2');
+$model_persons = wohnegruen_get_field('model_persons', get_the_ID(), '4');
 $model_image = get_field('model_image') ?: get_the_post_thumbnail_url(get_the_ID(), 'full');
 $model_features = get_field('model_features');
 $model_specifications = get_field('model_specifications');
 
 // Contact info
-$contact_phone = alpenhomes_get_option('contact_phone', '+43 123 456 789');
-$contact_email = alpenhomes_get_option('contact_email', 'info@alpenhomes.at');
+$contact_phone = wohnegruen_get_option('contact_phone', '+43 123 456 789');
+$contact_email = wohnegruen_get_option('contact_email', 'info@wohnegruen.at');
 ?>
 
 <!-- Model Hero Section -->
@@ -61,17 +61,17 @@ $contact_email = alpenhomes_get_option('contact_email', 'info@alpenhomes.at');
                 <!-- Quick Stats -->
                 <div class="model-quick-stats">
                     <div class="quick-stat">
-                        <?php echo alpenhomes_get_icon('size'); ?>
+                        <?php echo wohnegruen_get_icon('size'); ?>
                         <div class="quick-stat-value"><?php echo esc_html($model_size); ?></div>
                         <div class="quick-stat-label">Wohnfläche</div>
                     </div>
                     <div class="quick-stat">
-                        <?php echo alpenhomes_get_icon('rooms'); ?>
+                        <?php echo wohnegruen_get_icon('rooms'); ?>
                         <div class="quick-stat-value"><?php echo esc_html($model_beds); ?> Zimmer</div>
                         <div class="quick-stat-label">Schlafzimmer</div>
                     </div>
                     <div class="quick-stat">
-                        <?php echo alpenhomes_get_icon('users'); ?>
+                        <?php echo wohnegruen_get_icon('users'); ?>
                         <div class="quick-stat-value"><?php echo esc_html($model_persons); ?> Pers.</div>
                         <div class="quick-stat-label">Kapazität</div>
                     </div>
@@ -84,7 +84,7 @@ $contact_email = alpenhomes_get_option('contact_email', 'info@alpenhomes.at');
                         <?php if ($model_features) :
                             foreach ($model_features as $feature) : ?>
                                 <div class="model-feature-item">
-                                    <div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div>
+                                    <div class="check-icon"><?php echo wohnegruen_get_icon('check'); ?></div>
                                     <span><?php echo esc_html($feature['feature']); ?></span>
                                 </div>
                             <?php endforeach;
@@ -99,7 +99,7 @@ $contact_email = alpenhomes_get_option('contact_email', 'info@alpenhomes.at');
                             );
                             foreach ($default_features as $feature) : ?>
                                 <div class="model-feature-item">
-                                    <div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div>
+                                    <div class="check-icon"><?php echo wohnegruen_get_icon('check'); ?></div>
                                     <span><?php echo esc_html($feature); ?></span>
                                 </div>
                             <?php endforeach;
@@ -156,11 +156,11 @@ $contact_email = alpenhomes_get_option('contact_email', 'info@alpenhomes.at');
                     <div class="sidebar-contact">
                         <h3>Haben Sie Fragen?</h3>
                         <a href="tel:<?php echo esc_attr(preg_replace('/\s+/', '', $contact_phone)); ?>" class="contact-link">
-                            <?php echo alpenhomes_get_icon('phone'); ?>
+                            <?php echo wohnegruen_get_icon('phone'); ?>
                             <?php echo esc_html($contact_phone); ?>
                         </a>
                         <a href="mailto:<?php echo esc_attr($contact_email); ?>" class="contact-link">
-                            <?php echo alpenhomes_get_icon('email'); ?>
+                            <?php echo wohnegruen_get_icon('email'); ?>
                             <?php echo esc_html($contact_email); ?>
                         </a>
                     </div>
@@ -185,9 +185,9 @@ if ($other_models->have_posts()) : ?>
         <div class="other-models-grid">
             <?php while ($other_models->have_posts()) : $other_models->the_post();
                 $other_image = get_field('model_image') ?: get_the_post_thumbnail_url(get_the_ID(), 'medium');
-                $other_size = alpenhomes_get_field('model_size', get_the_ID(), '35 m²');
-                $other_beds = alpenhomes_get_field('model_beds', get_the_ID(), '2');
-                $other_price = alpenhomes_get_field('model_price', get_the_ID(), 'ab €45.000');
+                $other_size = wohnegruen_get_field('model_size', get_the_ID(), '35 m²');
+                $other_beds = wohnegruen_get_field('model_beds', get_the_ID(), '2');
+                $other_price = wohnegruen_get_field('model_price', get_the_ID(), 'ab €45.000');
             ?>
                 <a href="<?php the_permalink(); ?>" class="other-model-card">
                     <div class="other-model-image">

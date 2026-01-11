@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Block Template: CTA
  */
@@ -21,7 +21,7 @@ $bg_class = 'cta-bg-' . $background;
             <?php if ($btn_text && $btn_link) : ?>
                 <a href="<?php echo esc_url($btn_link); ?>" class="btn <?php echo $background === 'primary' ? 'btn-white' : 'btn-primary'; ?> btn-lg">
                     <?php echo esc_html($btn_text); ?>
-                    <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                    <?php echo wohnegruen_get_icon('arrow-right'); ?>
                 </a>
             <?php endif; ?>
         </div>

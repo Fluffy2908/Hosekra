@@ -1,6 +1,6 @@
-<?php
+﻿<?php
 /**
- * AlpenHomes Theme Functions
+ * WohneGrün Theme Functions
  */
 
 // Theme setup and configuration

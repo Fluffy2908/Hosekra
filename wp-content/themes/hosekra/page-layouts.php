@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Grundrisse & Innenausstattung
  * Template for displaying house layouts and interiors
@@ -85,26 +85,26 @@ get_header();
                                 <div class="floor-plan-card">
                                     <div class="floor-plan-image">
                                         <div class="floor-plan-placeholder">
-                                            <?php echo alpenhomes_get_icon('grid'); ?>
+                                            <?php echo wohnegruen_get_icon('grid'); ?>
                                             <span>Grundriss</span>
                                         </div>
                                         <button class="floor-plan-zoom" title="Vergrößern">
-                                            <?php echo alpenhomes_get_icon('expand'); ?>
+                                            <?php echo wohnegruen_get_icon('expand'); ?>
                                         </button>
                                     </div>
                                     <div class="floor-plan-content">
                                         <h3><?php echo esc_html($plan['name']); ?></h3>
                                         <div class="floor-plan-specs">
                                             <div class="floor-plan-spec">
-                                                <?php echo alpenhomes_get_icon('size'); ?>
+                                                <?php echo wohnegruen_get_icon('size'); ?>
                                                 <span><?php echo esc_html($plan['size']); ?></span>
                                             </div>
                                             <div class="floor-plan-spec">
-                                                <?php echo alpenhomes_get_icon('rooms'); ?>
+                                                <?php echo wohnegruen_get_icon('rooms'); ?>
                                                 <span><?php echo esc_html($plan['rooms']); ?></span>
                                             </div>
                                             <div class="floor-plan-spec">
-                                                <?php echo alpenhomes_get_icon('home'); ?>
+                                                <?php echo wohnegruen_get_icon('home'); ?>
                                                 <span><?php echo esc_html($plan['bathrooms']); ?></span>
                                             </div>
                                         </div>
@@ -169,7 +169,7 @@ get_header();
                                 <div class="interior-card">
                                     <div class="interior-image">
                                         <div class="interior-placeholder">
-                                            <?php echo alpenhomes_get_icon('home'); ?>
+                                            <?php echo wohnegruen_get_icon('home'); ?>
                                         </div>
                                     </div>
                                     <div class="interior-content">
@@ -178,7 +178,7 @@ get_header();
                                         <ul class="interior-features">
                                             <?php foreach ($room['features'] as $feature) : ?>
                                                 <li>
-                                                    <?php echo alpenhomes_get_icon('check'); ?>
+                                                    <?php echo wohnegruen_get_icon('check'); ?>
                                                     <span><?php echo esc_html($feature); ?></span>
                                                 </li>
                                             <?php endforeach; ?>
@@ -200,32 +200,32 @@ get_header();
                         <div class="tour-wrapper">
                             <div class="tour-content">
                                 <div class="tour-placeholder">
-                                    <?php echo alpenhomes_get_icon('cube'); ?>
+                                    <?php echo wohnegruen_get_icon('cube'); ?>
                                     <p>3D-Rundgang in Kürze verfügbar</p>
                                 </div>
                             </div>
                             <div class="tour-features">
                                 <div class="tour-feature">
                                     <div class="tour-feature-icon">
-                                        <?php echo alpenhomes_get_icon('cube'); ?>
+                                        <?php echo wohnegruen_get_icon('cube'); ?>
                                     </div>
                                     <span>360-Grad-Ansicht</span>
                                 </div>
                                 <div class="tour-feature">
                                     <div class="tour-feature-icon">
-                                        <?php echo alpenhomes_get_icon('expand'); ?>
+                                        <?php echo wohnegruen_get_icon('expand'); ?>
                                     </div>
                                     <span>Vollbildmodus</span>
                                 </div>
                                 <div class="tour-feature">
                                     <div class="tour-feature-icon">
-                                        <?php echo alpenhomes_get_icon('play'); ?>
+                                        <?php echo wohnegruen_get_icon('play'); ?>
                                     </div>
                                     <span>Interaktive Navigation</span>
                                 </div>
                                 <div class="tour-feature">
                                     <div class="tour-feature-icon">
-                                        <?php echo alpenhomes_get_icon('grid'); ?>
+                                        <?php echo wohnegruen_get_icon('grid'); ?>
                                     </div>
                                     <span>Alle Räume ansehen</span>
                                 </div>
@@ -242,7 +242,7 @@ get_header();
                             <p>Kontaktieren Sie uns für eine kostenlose Beratung und Besichtigung unserer Mobilhäuser.</p>
                             <a href="<?php echo esc_url(home_url('/#kontakt')); ?>" class="btn btn-white btn-lg">
                                 Kontaktieren Sie uns
-                                <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                                <?php echo wohnegruen_get_icon('arrow-right'); ?>
                             </a>
                         </div>
                     </div>

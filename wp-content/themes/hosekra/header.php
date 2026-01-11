@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
@@ -10,10 +10,10 @@
 
 <?php
 // Get navigation ACF fields
-$nav_logo = alpenhomes_get_option('nav_logo');
-$nav_cta_text = alpenhomes_get_option('nav_cta_text', 'Beratung anfragen');
-$nav_cta_link = alpenhomes_get_option('nav_cta_link', '#kontakt');
-$contact_phone = alpenhomes_get_option('contact_phone', '+43 123 456 789');
+$nav_logo = wohnegruen_get_option('nav_logo');
+$nav_cta_text = wohnegruen_get_option('nav_cta_text', 'Beratung anfragen');
+$nav_cta_link = wohnegruen_get_option('nav_cta_link', '#kontakt');
+$contact_phone = wohnegruen_get_option('contact_phone', '+43 123 456 789');
 ?>
 
 <!-- Navigation -->
@@ -37,7 +37,7 @@ $contact_phone = alpenhomes_get_option('contact_phone', '+43 123 456 789');
                     'theme_location' => 'primary',
                     'container' => false,
                     'items_wrap' => '%3$s',
-                    'walker' => new Alpenhomes_Nav_Walker(),
+                    'walker' => new wohnegruen_Nav_Walker(),
                 ));
             else : ?>
                 <a href="#home">Startseite</a>
@@ -51,7 +51,7 @@ $contact_phone = alpenhomes_get_option('contact_phone', '+43 123 456 789');
         <!-- Right side: Phone + CTA -->
         <div class="nav-right">
             <a href="tel:<?php echo esc_attr(preg_replace('/\s+/', '', $contact_phone)); ?>" class="nav-phone">
-                <?php echo alpenhomes_get_icon('phone'); ?>
+                <?php echo wohnegruen_get_icon('phone'); ?>
                 <span><?php echo esc_html($contact_phone); ?></span>
             </a>
             <a href="<?php echo esc_url($nav_cta_link); ?>" class="btn btn-primary">
@@ -77,7 +77,7 @@ $contact_phone = alpenhomes_get_option('contact_phone', '+43 123 456 789');
                 'theme_location' => 'primary',
                 'container' => false,
                 'items_wrap' => '%3$s',
-                'walker' => new Alpenhomes_Nav_Walker(),
+                'walker' => new wohnegruen_Nav_Walker(),
             ));
         else : ?>
             <a href="#home">Startseite</a>

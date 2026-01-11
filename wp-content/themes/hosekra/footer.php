@@ -1,18 +1,18 @@
-<?php
+﻿<?php
 // Get footer ACF fields
-$nav_logo_alt = alpenhomes_get_option('nav_logo_alt');
-$footer_description = alpenhomes_get_option('footer_description', 'Ihr Partner für hochwertige Mobilhäuser in Österreich. Qualität, Nachhaltigkeit und modernes Design.');
-$footer_col2_title = alpenhomes_get_option('footer_col2_title', 'Schnelllinks');
-$footer_col2_links = alpenhomes_get_option('footer_col2_links');
-$footer_col3_title = alpenhomes_get_option('footer_col3_title', 'Modelle');
-$footer_col3_links = alpenhomes_get_option('footer_col3_links');
-$footer_copyright = alpenhomes_get_option('footer_copyright', 'Alpenhomes. Alle Rechte vorbehalten.');
-$footer_legal_links = alpenhomes_get_option('footer_legal_links');
+$nav_logo_alt = wohnegruen_get_option('nav_logo_alt');
+$footer_description = wohnegruen_get_option('footer_description', 'Ihr Partner für hochwertige Mobilhäuser in Österreich. Qualität, Nachhaltigkeit und modernes Design.');
+$footer_col2_title = wohnegruen_get_option('footer_col2_title', 'Schnelllinks');
+$footer_col2_links = wohnegruen_get_option('footer_col2_links');
+$footer_col3_title = wohnegruen_get_option('footer_col3_title', 'Modelle');
+$footer_col3_links = wohnegruen_get_option('footer_col3_links');
+$footer_copyright = wohnegruen_get_option('footer_copyright', 'wohnegruen. Alle Rechte vorbehalten.');
+$footer_legal_links = wohnegruen_get_option('footer_legal_links');
 
 // Contact info
-$contact_phone = alpenhomes_get_option('contact_phone', '+43 123 456 789');
-$contact_email = alpenhomes_get_option('contact_email', 'info@alpenhomes.at');
-$contact_address = alpenhomes_get_option('contact_address', 'Alpenstraße 1, 5020 Salzburg');
+$contact_phone = wohnegruen_get_option('contact_phone', '+43 123 456 789');
+$contact_email = wohnegruen_get_option('contact_email', 'info@wohnegruen.at');
+$contact_address = wohnegruen_get_option('contact_address', 'Alpenstraße 1, 5020 Salzburg');
 ?>
 
 <!-- Footer -->
@@ -71,15 +71,15 @@ $contact_address = alpenhomes_get_option('contact_address', 'Alpenstraße 1, 502
             <div class="footer-column">
                 <h4>Kontakt</h4>
                 <div class="footer-contact-item">
-                    <?php echo alpenhomes_get_icon('phone'); ?>
+                    <?php echo wohnegruen_get_icon('phone'); ?>
                     <span><?php echo esc_html($contact_phone); ?></span>
                 </div>
                 <div class="footer-contact-item">
-                    <?php echo alpenhomes_get_icon('email'); ?>
+                    <?php echo wohnegruen_get_icon('email'); ?>
                     <span><?php echo esc_html($contact_email); ?></span>
                 </div>
                 <div class="footer-contact-item">
-                    <?php echo alpenhomes_get_icon('location'); ?>
+                    <?php echo wohnegruen_get_icon('location'); ?>
                     <span><?php echo nl2br(esc_html($contact_address)); ?></span>
                 </div>
             </div>

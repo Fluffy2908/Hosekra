@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * ACF Pro Blocks Registration for Gutenberg
  *
@@ -11,19 +11,19 @@ if (!defined('ABSPATH')) exit;
 /**
  * Register ACF Blocks
  */
-function alpenhomes_register_acf_blocks() {
+function wohnegruen_register_acf_blocks() {
     if (!function_exists('acf_register_block_type')) {
         return;
     }
 
     // Block Category
-    $category = 'alpenhomes';
+    $category = 'wohnegruen';
 
     // Hero Block
     acf_register_block_type(array(
-        'name'              => 'alpenhomes-hero',
-        'title'             => __('Hero-Bereich', 'alpenhomes'),
-        'description'       => __('Hauptbereich mit Hintergrund, Titel und CTA-Buttons.', 'alpenhomes'),
+        'name'              => 'wohnegruen-hero',
+        'title'             => __('Hero-Bereich', 'wohnegruen'),
+        'description'       => __('Hauptbereich mit Hintergrund, Titel und CTA-Buttons.', 'wohnegruen'),
         'render_template'   => 'template-parts/blocks/block-hero.php',
         'category'          => $category,
         'icon'              => 'cover-image',
@@ -39,9 +39,9 @@ function alpenhomes_register_acf_blocks() {
 
     // Features Block
     acf_register_block_type(array(
-        'name'              => 'alpenhomes-features',
-        'title'             => __('Vorteile', 'alpenhomes'),
-        'description'       => __('Raster von Vorteilen/Dienstleistungen mit Icons.', 'alpenhomes'),
+        'name'              => 'wohnegruen-features',
+        'title'             => __('Vorteile', 'wohnegruen'),
+        'description'       => __('Raster von Vorteilen/Dienstleistungen mit Icons.', 'wohnegruen'),
         'render_template'   => 'template-parts/blocks/block-features.php',
         'category'          => $category,
         'icon'              => 'grid-view',
@@ -56,9 +56,9 @@ function alpenhomes_register_acf_blocks() {
 
     // Models Block
     acf_register_block_type(array(
-        'name'              => 'alpenhomes-models',
-        'title'             => __('Modelle', 'alpenhomes'),
-        'description'       => __('Darstellung von Mobilhäusern/Modellen.', 'alpenhomes'),
+        'name'              => 'wohnegruen-models',
+        'title'             => __('Modelle', 'wohnegruen'),
+        'description'       => __('Darstellung von Mobilhäusern/Modellen.', 'wohnegruen'),
         'render_template'   => 'template-parts/blocks/block-models.php',
         'category'          => $category,
         'icon'              => 'admin-home',
@@ -73,9 +73,9 @@ function alpenhomes_register_acf_blocks() {
 
     // About Block
     acf_register_block_type(array(
-        'name'              => 'alpenhomes-about',
-        'title'             => __('Über uns', 'alpenhomes'),
-        'description'       => __('Bereich über das Unternehmen mit Bild und Text.', 'alpenhomes'),
+        'name'              => 'wohnegruen-about',
+        'title'             => __('Über uns', 'wohnegruen'),
+        'description'       => __('Bereich über das Unternehmen mit Bild und Text.', 'wohnegruen'),
         'render_template'   => 'template-parts/blocks/block-about.php',
         'category'          => $category,
         'icon'              => 'admin-users',
@@ -90,9 +90,9 @@ function alpenhomes_register_acf_blocks() {
 
     // Contact Block
     acf_register_block_type(array(
-        'name'              => 'alpenhomes-contact',
-        'title'             => __('Kontakt', 'alpenhomes'),
-        'description'       => __('Kontaktbereich mit Formular und Daten.', 'alpenhomes'),
+        'name'              => 'wohnegruen-contact',
+        'title'             => __('Kontakt', 'wohnegruen'),
+        'description'       => __('Kontaktbereich mit Formular und Daten.', 'wohnegruen'),
         'render_template'   => 'template-parts/blocks/block-contact.php',
         'category'          => $category,
         'icon'              => 'email',
@@ -107,9 +107,9 @@ function alpenhomes_register_acf_blocks() {
 
     // Gallery Block
     acf_register_block_type(array(
-        'name'              => 'alpenhomes-gallery',
-        'title'             => __('Galerie', 'alpenhomes'),
-        'description'       => __('Bildergalerie mit Filtern und Lightbox.', 'alpenhomes'),
+        'name'              => 'wohnegruen-gallery',
+        'title'             => __('Galerie', 'wohnegruen'),
+        'description'       => __('Bildergalerie mit Filtern und Lightbox.', 'wohnegruen'),
         'render_template'   => 'template-parts/blocks/block-gallery.php',
         'category'          => $category,
         'icon'              => 'format-gallery',
@@ -124,9 +124,9 @@ function alpenhomes_register_acf_blocks() {
 
     // 3D Tour Block
     acf_register_block_type(array(
-        'name'              => 'alpenhomes-3d-tour',
-        'title'             => __('3D Rundgang', 'alpenhomes'),
-        'description'       => __('Interaktive 3D-Tour oder Video-Präsentation.', 'alpenhomes'),
+        'name'              => 'wohnegruen-3d-tour',
+        'title'             => __('3D Rundgang', 'wohnegruen'),
+        'description'       => __('Interaktive 3D-Tour oder Video-Präsentation.', 'wohnegruen'),
         'render_template'   => 'template-parts/blocks/block-3d-tour.php',
         'category'          => $category,
         'icon'              => 'visibility',
@@ -141,9 +141,9 @@ function alpenhomes_register_acf_blocks() {
 
     // Floor Plans Block
     acf_register_block_type(array(
-        'name'              => 'alpenhomes-floor-plans',
-        'title'             => __('Grundrisse', 'alpenhomes'),
-        'description'       => __('Darstellung von Grundrissen und Raumlayouts.', 'alpenhomes'),
+        'name'              => 'wohnegruen-floor-plans',
+        'title'             => __('Grundrisse', 'wohnegruen'),
+        'description'       => __('Darstellung von Grundrissen und Raumlayouts.', 'wohnegruen'),
         'render_template'   => 'template-parts/blocks/block-floor-plans.php',
         'category'          => $category,
         'icon'              => 'layout',
@@ -158,9 +158,9 @@ function alpenhomes_register_acf_blocks() {
 
     // Interiors Block
     acf_register_block_type(array(
-        'name'              => 'alpenhomes-interiors',
-        'title'             => __('Innenausstattung', 'alpenhomes'),
-        'description'       => __('Darstellung von Innenausstattung und Einrichtung.', 'alpenhomes'),
+        'name'              => 'wohnegruen-interiors',
+        'title'             => __('Innenausstattung', 'wohnegruen'),
+        'description'       => __('Darstellung von Innenausstattung und Einrichtung.', 'wohnegruen'),
         'render_template'   => 'template-parts/blocks/block-interiors.php',
         'category'          => $category,
         'icon'              => 'admin-appearance',
@@ -175,9 +175,9 @@ function alpenhomes_register_acf_blocks() {
 
     // CTA Block
     acf_register_block_type(array(
-        'name'              => 'alpenhomes-cta',
-        'title'             => __('CTA-Bereich', 'alpenhomes'),
-        'description'       => __('Call-to-Action-Bereich mit Button.', 'alpenhomes'),
+        'name'              => 'wohnegruen-cta',
+        'title'             => __('CTA-Bereich', 'wohnegruen'),
+        'description'       => __('Call-to-Action-Bereich mit Button.', 'wohnegruen'),
         'render_template'   => 'template-parts/blocks/block-cta.php',
         'category'          => $category,
         'icon'              => 'megaphone',
@@ -190,37 +190,37 @@ function alpenhomes_register_acf_blocks() {
         'post_types'        => array('page'),
     ));
 }
-add_action('acf/init', 'alpenhomes_register_acf_blocks');
+add_action('acf/init', 'wohnegruen_register_acf_blocks');
 
 /**
  * Register custom block category
  */
-function alpenhomes_block_categories($categories) {
+function wohnegruen_block_categories($categories) {
     return array_merge(
         array(
             array(
-                'slug'  => 'alpenhomes',
-                'title' => __('AlpenHomes', 'alpenhomes'),
+                'slug'  => 'wohnegruen',
+                'title' => __('wohnegruen', 'wohnegruen'),
                 'icon'  => 'admin-home',
             ),
         ),
         $categories
     );
 }
-add_filter('block_categories_all', 'alpenhomes_block_categories', 10, 1);
+add_filter('block_categories_all', 'wohnegruen_block_categories', 10, 1);
 
 /**
  * Register ACF Options Pages
  */
-function alpenhomes_register_options_pages() {
+function wohnegruen_register_options_pages() {
     if (!function_exists('acf_add_options_page')) {
         return;
     }
 
     acf_add_options_page(array(
-        'page_title'    => 'AlpenHomes Nastavitve',
-        'menu_title'    => 'AlpenHomes',
-        'menu_slug'     => 'alpenhomes-settings',
+        'page_title'    => 'wohnegruen Nastavitve',
+        'menu_title'    => 'wohnegruen',
+        'menu_slug'     => 'wohnegruen-settings',
         'capability'    => 'edit_posts',
         'redirect'      => false,
         'icon_url'      => 'dashicons-admin-home',
@@ -230,27 +230,27 @@ function alpenhomes_register_options_pages() {
     acf_add_options_sub_page(array(
         'page_title'    => 'Navigacija',
         'menu_title'    => 'Navigacija',
-        'parent_slug'   => 'alpenhomes-settings',
+        'parent_slug'   => 'wohnegruen-settings',
     ));
 
     acf_add_options_sub_page(array(
         'page_title'    => 'Footer',
         'menu_title'    => 'Footer',
-        'parent_slug'   => 'alpenhomes-settings',
+        'parent_slug'   => 'wohnegruen-settings',
     ));
 
     acf_add_options_sub_page(array(
         'page_title'    => 'Kontaktni podatki',
         'menu_title'    => 'Kontakt',
-        'parent_slug'   => 'alpenhomes-settings',
+        'parent_slug'   => 'wohnegruen-settings',
     ));
 }
-add_action('acf/init', 'alpenhomes_register_options_pages');
+add_action('acf/init', 'wohnegruen_register_options_pages');
 
 /**
  * Register ACF Field Groups for Blocks
  */
-function alpenhomes_register_block_fields() {
+function wohnegruen_register_block_fields() {
     if (!function_exists('acf_add_local_field_group')) {
         return;
     }
@@ -350,7 +350,7 @@ function alpenhomes_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/alpenhomes-hero',
+                    'value' => 'acf/wohnegruen-hero',
                 ),
             ),
         ),
@@ -366,7 +366,7 @@ function alpenhomes_register_block_fields() {
                 'label' => 'Titel',
                 'name' => 'features_title',
                 'type' => 'text',
-                'default_value' => 'Warum AlpenHomes wählen?',
+                'default_value' => 'Warum WohneGrün wählen?',
             ),
             array(
                 'key' => 'field_block_features_subtitle',
@@ -425,7 +425,7 @@ function alpenhomes_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/alpenhomes-features',
+                    'value' => 'acf/wohnegruen-features',
                 ),
             ),
         ),
@@ -575,7 +575,7 @@ function alpenhomes_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/alpenhomes-models',
+                    'value' => 'acf/wohnegruen-models',
                 ),
             ),
         ),
@@ -688,7 +688,7 @@ function alpenhomes_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/alpenhomes-3d-tour',
+                    'value' => 'acf/wohnegruen-3d-tour',
                 ),
             ),
         ),
@@ -773,7 +773,7 @@ function alpenhomes_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/alpenhomes-floor-plans',
+                    'value' => 'acf/wohnegruen-floor-plans',
                 ),
             ),
         ),
@@ -845,7 +845,7 @@ function alpenhomes_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/alpenhomes-interiors',
+                    'value' => 'acf/wohnegruen-interiors',
                 ),
             ),
         ),
@@ -921,7 +921,7 @@ function alpenhomes_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/alpenhomes-gallery',
+                    'value' => 'acf/wohnegruen-gallery',
                 ),
             ),
         ),
@@ -1000,7 +1000,7 @@ function alpenhomes_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/alpenhomes-about',
+                    'value' => 'acf/wohnegruen-about',
                 ),
             ),
         ),
@@ -1053,7 +1053,7 @@ function alpenhomes_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/alpenhomes-contact',
+                    'value' => 'acf/wohnegruen-contact',
                 ),
             ),
         ),
@@ -1110,7 +1110,7 @@ function alpenhomes_register_block_fields() {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/alpenhomes-cta',
+                    'value' => 'acf/wohnegruen-cta',
                 ),
             ),
         ),
@@ -1181,7 +1181,7 @@ function alpenhomes_register_block_fields() {
                 'label' => 'E-Mail',
                 'name' => 'contact_email',
                 'type' => 'email',
-                'default_value' => 'info@alpenhomes.at',
+                'default_value' => 'info@wohnegruen.at',
             ),
             array(
                 'key' => 'field_contact_address',
@@ -1258,7 +1258,7 @@ function alpenhomes_register_block_fields() {
                 'label' => 'Copyright-Text',
                 'name' => 'footer_copyright',
                 'type' => 'text',
-                'default_value' => 'AlpenHomes. Alle Rechte vorbehalten.',
+                'default_value' => 'WohneGrün. Alle Rechte vorbehalten.',
             ),
             array(
                 'key' => 'field_footer_legal_links',
@@ -1296,7 +1296,7 @@ function alpenhomes_register_block_fields() {
         ),
     ));
 }
-add_action('acf/init', 'alpenhomes_register_block_fields');
+add_action('acf/init', 'wohnegruen_register_block_fields');
 
 /**
  * Global Options Page (ACF)

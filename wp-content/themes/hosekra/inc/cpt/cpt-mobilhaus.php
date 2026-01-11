@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Custom Post Type: Mobilhaus
  */
@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) exit;
 /**
  * Register Custom Post Type: Mobilhaus
  */
-function alpenhomes_register_mobilhaus_cpt() {
+function wohnegruen_register_mobilhaus_cpt() {
     $labels = array(
         'name'                  => 'Mobilhäuser',
         'singular_name'         => 'Mobilhaus',
@@ -43,13 +43,13 @@ function alpenhomes_register_mobilhaus_cpt() {
 
     register_post_type('mobilhaus', $args);
 }
-add_action('init', 'alpenhomes_register_mobilhaus_cpt');
+add_action('init', 'wohnegruen_register_mobilhaus_cpt');
 
 /**
  * Flush rewrite rules on theme activation
  */
-function alpenhomes_rewrite_flush() {
-    alpenhomes_register_mobilhaus_cpt();
+function wohnegruen_rewrite_flush() {
+    wohnegruen_register_mobilhaus_cpt();
     flush_rewrite_rules();
 }
-add_action('after_switch_theme', 'alpenhomes_rewrite_flush');
+add_action('after_switch_theme', 'wohnegruen_rewrite_flush');

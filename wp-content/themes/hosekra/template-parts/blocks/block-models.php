@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Block Template: Models
  */
@@ -106,21 +106,21 @@ if (empty($models)) {
                         <p><?php echo esc_html($model['description']); ?></p>
                         <div class="model-specs">
                             <div class="model-spec">
-                                <?php echo alpenhomes_get_icon('size'); ?>
+                                <?php echo wohnegruen_get_icon('size'); ?>
                                 <span><?php echo esc_html($model['size']); ?></span>
                             </div>
                             <div class="model-spec">
-                                <?php echo alpenhomes_get_icon('rooms'); ?>
+                                <?php echo wohnegruen_get_icon('rooms'); ?>
                                 <span><?php echo esc_html($model['rooms']); ?> sob</span>
                             </div>
                             <div class="model-spec">
-                                <?php echo alpenhomes_get_icon('users'); ?>
+                                <?php echo wohnegruen_get_icon('users'); ?>
                                 <span><?php echo esc_html($model['persons']); ?> oseb</span>
                             </div>
                         </div>
                         <a href="<?php echo esc_url($model['link'] ?: '#'); ?>" class="btn btn-primary">
                             Podrobnosti
-                            <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                            <?php echo wohnegruen_get_icon('arrow-right'); ?>
                         </a>
                     </div>
                 </div>

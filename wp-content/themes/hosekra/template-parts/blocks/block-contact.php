@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Block Template: Contact
  */
@@ -12,10 +12,10 @@ $form_shortcode = get_field('contact_form_shortcode');
 $block_id = isset($block['anchor']) ? $block['anchor'] : 'kontakt';
 
 // Get contact info from options
-$phone = alpenhomes_get_option('contact_phone', '+386 1 234 5678');
-$email = alpenhomes_get_option('contact_email', 'info@hosekra.si');
-$address = alpenhomes_get_option('contact_address', 'Ulica 123, 1000 Ljubljana');
-$hours = alpenhomes_get_option('contact_hours', 'Pon - Pet: 8:00 - 17:00');
+$phone = wohnegruen_get_option('contact_phone', '+386 1 234 5678');
+$email = wohnegruen_get_option('contact_email', 'info@hosekra.si');
+$address = wohnegruen_get_option('contact_address', 'Ulica 123, 1000 Ljubljana');
+$hours = wohnegruen_get_option('contact_hours', 'Pon - Pet: 8:00 - 17:00');
 ?>
 
 <section class="contact-section section-padding" id="<?php echo esc_attr($block_id); ?>">
@@ -31,28 +31,28 @@ $hours = alpenhomes_get_option('contact_hours', 'Pon - Pet: 8:00 - 17:00');
                 <p><?php echo esc_html($bar_text); ?></p>
                 <div class="contact-info-grid">
                     <div class="contact-info-item">
-                        <div class="icon-wrapper"><?php echo alpenhomes_get_icon('phone'); ?></div>
+                        <div class="icon-wrapper"><?php echo wohnegruen_get_icon('phone'); ?></div>
                         <div class="info-text">
                             <span>Telefon</span>
                             <a href="tel:<?php echo esc_attr(preg_replace('/\s+/', '', $phone)); ?>"><?php echo esc_html($phone); ?></a>
                         </div>
                     </div>
                     <div class="contact-info-item">
-                        <div class="icon-wrapper"><?php echo alpenhomes_get_icon('email'); ?></div>
+                        <div class="icon-wrapper"><?php echo wohnegruen_get_icon('email'); ?></div>
                         <div class="info-text">
                             <span>E-Mail</span>
                             <a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a>
                         </div>
                     </div>
                     <div class="contact-info-item">
-                        <div class="icon-wrapper"><?php echo alpenhomes_get_icon('location'); ?></div>
+                        <div class="icon-wrapper"><?php echo wohnegruen_get_icon('location'); ?></div>
                         <div class="info-text">
                             <span>Adresse</span>
                             <span><?php echo esc_html($address); ?></span>
                         </div>
                     </div>
                     <div class="contact-info-item">
-                        <div class="icon-wrapper"><?php echo alpenhomes_get_icon('clock'); ?></div>
+                        <div class="icon-wrapper"><?php echo wohnegruen_get_icon('clock'); ?></div>
                         <div class="info-text">
                             <span>Öffnungszeiten</span>
                             <span><?php echo esc_html($hours); ?></span>
@@ -83,7 +83,7 @@ $hours = alpenhomes_get_option('contact_hours', 'Pon - Pet: 8:00 - 17:00');
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg">
                             Poslji sporocilo
-                            <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                            <?php echo wohnegruen_get_icon('arrow-right'); ?>
                         </button>
                     </form>
                 <?php endif; ?>

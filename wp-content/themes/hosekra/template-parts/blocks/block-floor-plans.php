@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Block Template: Floor Plans
  */
@@ -52,27 +52,27 @@ if (!$floor_plans) {
                             <img src="<?php echo esc_url($plan['image']['url']); ?>" alt="<?php echo esc_attr($plan['name']); ?>">
                         <?php else : ?>
                             <div class="floor-plan-placeholder">
-                                <?php echo alpenhomes_get_icon('grid'); ?>
+                                <?php echo wohnegruen_get_icon('grid'); ?>
                                 <span>Grundriss</span>
                             </div>
                         <?php endif; ?>
                         <button class="floor-plan-zoom" title="Vergrößern">
-                            <?php echo alpenhomes_get_icon('expand'); ?>
+                            <?php echo wohnegruen_get_icon('expand'); ?>
                         </button>
                     </div>
                     <div class="floor-plan-content">
                         <h3><?php echo esc_html($plan['name']); ?></h3>
                         <div class="floor-plan-specs">
                             <div class="floor-plan-spec">
-                                <?php echo alpenhomes_get_icon('size'); ?>
+                                <?php echo wohnegruen_get_icon('size'); ?>
                                 <span><?php echo esc_html($plan['size']); ?></span>
                             </div>
                             <div class="floor-plan-spec">
-                                <?php echo alpenhomes_get_icon('rooms'); ?>
+                                <?php echo wohnegruen_get_icon('rooms'); ?>
                                 <span><?php echo esc_html($plan['rooms']); ?></span>
                             </div>
                             <div class="floor-plan-spec">
-                                <?php echo alpenhomes_get_icon('home'); ?>
+                                <?php echo wohnegruen_get_icon('home'); ?>
                                 <span><?php echo esc_html($plan['bathrooms']); ?></span>
                             </div>
                         </div>

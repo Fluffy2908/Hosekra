@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Front Page Template (Gutenberg Block-based)
  *
@@ -6,16 +6,16 @@
  * Blocks are managed via the WordPress Block Editor (Gutenberg).
  *
  * Available ACF Blocks:
- * - Hero-Bereich (alpenhomes-hero)
- * - Vorteile (alpenhomes-features)
- * - Modelle (alpenhomes-models)
- * - Über uns (alpenhomes-about)
- * - Kontakt (alpenhomes-contact)
- * - Galerie (alpenhomes-gallery)
- * - 3D Rundgang (alpenhomes-3d-tour)
- * - Grundrisse (alpenhomes-floor-plans)
- * - Innenausstattung (alpenhomes-interiors)
- * - CTA-Bereich (alpenhomes-cta)
+ * - Hero-Bereich (wohnegruen-hero)
+ * - Vorteile (wohnegruen-features)
+ * - Modelle (wohnegruen-models)
+ * - Über uns (wohnegruen-about)
+ * - Kontakt (wohnegruen-contact)
+ * - Galerie (wohnegruen-gallery)
+ * - 3D Rundgang (wohnegruen-3d-tour)
+ * - Grundrisse (wohnegruen-floor-plans)
+ * - Innenausstattung (wohnegruen-interiors)
+ * - CTA-Bereich (wohnegruen-cta)
  */
 
 get_header();

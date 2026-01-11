@@ -1,9 +1,9 @@
-<?php get_header(); ?>
+﻿<?php get_header(); ?>
 
 <!-- Hero Section -->
 <section class="hero-section" id="home">
     <div class="hero-background">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.jpg" alt="Alpenhomes montažne hiše">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-bg.jpg" alt="wohnegruen montažne hiše">
         <div class="hero-overlay"></div>
     </div>
     <div class="container">
@@ -14,7 +14,7 @@
             <div class="hero-buttons">
                 <a href="#modeli" class="btn btn-primary">
                     Oglejte si modele
-                    <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                    <?php echo wohnegruen_get_icon('arrow-right'); ?>
                 </a>
                 <a href="#kontakt" class="btn btn-white">Pridobite cenik</a>
             </div>
@@ -47,42 +47,42 @@
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">
-                    <?php echo alpenhomes_get_icon('shield'); ?>
+                    <?php echo wohnegruen_get_icon('shield'); ?>
                 </div>
                 <h3>25 let garancije</h3>
                 <p>Zaupajte v našo kakovost. Vsaka hiša ima 25-letno garancijo na konstrukcijo.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <?php echo alpenhomes_get_icon('star'); ?>
+                    <?php echo wohnegruen_get_icon('star'); ?>
                 </div>
                 <h3>Premium kakovost</h3>
                 <p>Uporabljamo samo najboljše materiale evropskih proizvajalcev.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <?php echo alpenhomes_get_icon('truck'); ?>
+                    <?php echo wohnegruen_get_icon('truck'); ?>
                 </div>
                 <h3>Hitra dostava</h3>
                 <p>Montaža v roku 3-5 dni. Celoten projekt zaključen v 8-12 tednih.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <?php echo alpenhomes_get_icon('tools'); ?>
+                    <?php echo wohnegruen_get_icon('tools'); ?>
                 </div>
                 <h3>Ključ v roke</h3>
                 <p>Popolna storitev od načrtovanja do zadnjega detajla.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <?php echo alpenhomes_get_icon('leaf'); ?>
+                    <?php echo wohnegruen_get_icon('leaf'); ?>
                 </div>
                 <h3>Ekološka gradnja</h3>
                 <p>Trajnostni materiali in energetsko učinkovita gradnja za zeleno prihodnost.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <?php echo alpenhomes_get_icon('home'); ?>
+                    <?php echo wohnegruen_get_icon('home'); ?>
                 </div>
                 <h3>Po meri</h3>
                 <p>Prilagodimo vsak model vašim željam in potrebam.</p>
@@ -109,21 +109,21 @@
                     <p>Klasična enodružinska hiša z modernimi elementi.</p>
                     <div class="model-specs">
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('size'); ?>
+                            <?php echo wohnegruen_get_icon('size'); ?>
                             <span>120 m²</span>
                         </div>
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('rooms'); ?>
+                            <?php echo wohnegruen_get_icon('rooms'); ?>
                             <span>4 sobe</span>
                         </div>
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('users'); ?>
+                            <?php echo wohnegruen_get_icon('users'); ?>
                             <span>4-5 oseb</span>
                         </div>
                     </div>
                     <a href="#" class="btn-arrow">
                         Oglejte si več
-                        <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                        <?php echo wohnegruen_get_icon('arrow-right'); ?>
                     </a>
                 </div>
             </div>
@@ -138,21 +138,21 @@
                     <p>Sodoben dizajn z ravno streho in velikimi steklenimi površinami.</p>
                     <div class="model-specs">
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('size'); ?>
+                            <?php echo wohnegruen_get_icon('size'); ?>
                             <span>150 m²</span>
                         </div>
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('rooms'); ?>
+                            <?php echo wohnegruen_get_icon('rooms'); ?>
                             <span>5 sob</span>
                         </div>
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('users'); ?>
+                            <?php echo wohnegruen_get_icon('users'); ?>
                             <span>5-6 oseb</span>
                         </div>
                     </div>
                     <a href="#" class="btn-arrow">
                         Oglejte si več
-                        <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                        <?php echo wohnegruen_get_icon('arrow-right'); ?>
                     </a>
                 </div>
             </div>
@@ -167,21 +167,21 @@
                     <p>Prostorna družinska hiša za večje družine.</p>
                     <div class="model-specs">
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('size'); ?>
+                            <?php echo wohnegruen_get_icon('size'); ?>
                             <span>180 m²</span>
                         </div>
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('rooms'); ?>
+                            <?php echo wohnegruen_get_icon('rooms'); ?>
                             <span>6 sob</span>
                         </div>
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('users'); ?>
+                            <?php echo wohnegruen_get_icon('users'); ?>
                             <span>6-7 oseb</span>
                         </div>
                     </div>
                     <a href="#" class="btn-arrow">
                         Oglejte si več
-                        <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                        <?php echo wohnegruen_get_icon('arrow-right'); ?>
                     </a>
                 </div>
             </div>
@@ -196,21 +196,21 @@
                     <p>Luksuzna izvedba z vrhunskimi materiali in opremo.</p>
                     <div class="model-specs">
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('size'); ?>
+                            <?php echo wohnegruen_get_icon('size'); ?>
                             <span>220 m²</span>
                         </div>
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('rooms'); ?>
+                            <?php echo wohnegruen_get_icon('rooms'); ?>
                             <span>7 sob</span>
                         </div>
                         <div class="model-spec">
-                            <?php echo alpenhomes_get_icon('users'); ?>
+                            <?php echo wohnegruen_get_icon('users'); ?>
                             <span>6-8 oseb</span>
                         </div>
                     </div>
                     <a href="#" class="btn-arrow">
                         Oglejte si več
-                        <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                        <?php echo wohnegruen_get_icon('arrow-right'); ?>
                     </a>
                 </div>
             </div>
@@ -218,7 +218,7 @@
         <div class="models-cta">
             <a href="#" class="btn btn-primary">
                 Oglejte si vse modele
-                <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                <?php echo wohnegruen_get_icon('arrow-right'); ?>
             </a>
         </div>
     </div>
@@ -228,35 +228,35 @@
 <section class="about-section" id="o-nas">
     <div class="about-wrapper">
         <div class="about-image">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" alt="O podjetju Alpenhomes">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg" alt="O podjetju wohnegruen">
             <div class="about-image-overlay">
                 <p>"Naša misija je ustvariti dom, ki presega pričakovanja in postane zatočišče za generacije."</p>
             </div>
         </div>
         <div class="about-content">
             <h2>Več kot 20 let izkušenj v gradnji domov</h2>
-            <p>Alpenhomes je družinsko podjetje, ki že od leta 2003 gradi kakovostne montažne hiše po vsej Avstriji. Naša ekipa izkušenih strokovnjakov
+            <p>wohnegruen je družinsko podjetje, ki že od leta 2003 gradi kakovostne montažne hiše po vsej Avstriji. Naša ekipa izkušenih strokovnjakov
                 skrbi, da vsak projekt izpolni pričakovanja naših strank.</p>
             <p>Zaupajte nam gradnjo vašega sanjskega doma in se prepričajte o naši kakovosti.</p>
             <ul class="about-list">
                 <li>
-                    <?php echo alpenhomes_get_icon('check'); ?>
+                    <?php echo wohnegruen_get_icon('check'); ?>
                     <span>Certificirani materiali evropskih proizvajalcev</span>
                 </li>
                 <li>
-                    <?php echo alpenhomes_get_icon('check'); ?>
+                    <?php echo wohnegruen_get_icon('check'); ?>
                     <span>Lastna proizvodnja v Avstriji</span>
                 </li>
                 <li>
-                    <?php echo alpenhomes_get_icon('check'); ?>
+                    <?php echo wohnegruen_get_icon('check'); ?>
                     <span>Profesionalna ekipa z več kot 50 zaposlenimi</span>
                 </li>
                 <li>
-                    <?php echo alpenhomes_get_icon('check'); ?>
+                    <?php echo wohnegruen_get_icon('check'); ?>
                     <span>Individualno načrtovanje po vaših željah</span>
                 </li>
                 <li>
-                    <?php echo alpenhomes_get_icon('check'); ?>
+                    <?php echo wohnegruen_get_icon('check'); ?>
                     <span>Transparentne cene brez skritih stroškov</span>
                 </li>
             </ul>
@@ -277,28 +277,28 @@
             <p>Naša ekipa vam z veseljem pomaga pri vseh vprašanjih.</p>
             <div class="contact-info-grid">
                 <div class="contact-info-item">
-                    <?php echo alpenhomes_get_icon('phone'); ?>
+                    <?php echo wohnegruen_get_icon('phone'); ?>
                     <div>
                         <p>Telefon</p>
                         <p>+43 123 456 789</p>
                     </div>
                 </div>
                 <div class="contact-info-item">
-                    <?php echo alpenhomes_get_icon('email'); ?>
+                    <?php echo wohnegruen_get_icon('email'); ?>
                     <div>
                         <p>E-pošta</p>
-                        <p>info@alpenhomes.at</p>
+                        <p>info@wohnegruen.at</p>
                     </div>
                 </div>
                 <div class="contact-info-item">
-                    <?php echo alpenhomes_get_icon('location'); ?>
+                    <?php echo wohnegruen_get_icon('location'); ?>
                     <div>
                         <p>Naslov</p>
                         <p>Musterstraße 123, 1010 Wien</p>
                     </div>
                 </div>
                 <div class="contact-info-item">
-                    <?php echo halpenhomes_get_icon('clock'); ?>
+                    <?php echo hwohnegruen_get_icon('clock'); ?>
                     <div>
                         <p>Delovni čas</p>
                         <p>Pon - Pet: 8:00 - 17:00</p>
@@ -338,7 +338,7 @@
                 <div class="form-submit">
                     <button type="submit" class="btn btn-primary">
                         Pošljite sporočilo
-                        <?php echo alpenhomes_get_icon('arrow-right'); ?>
+                        <?php echo wohnegruen_get_icon('arrow-right'); ?>
                     </button>
                 </div>
             </form>

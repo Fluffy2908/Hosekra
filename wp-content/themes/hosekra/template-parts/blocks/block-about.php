@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Block Template: About
  */
@@ -7,7 +7,7 @@ $image = get_field('about_image');
 $badge_number = get_field('about_badge_number') ?: '15+';
 $badge_text = get_field('about_badge_text') ?: 'Jahre Erfahrung';
 $title = get_field('about_title') ?: 'Ihr Partner für modernes Wohnen';
-$text1 = get_field('about_text1') ?: 'AlpenHomes ist Ihr zuverlässiger Partner für hochwertige Mobilhäuser. Mit langjähriger Erfahrung und Leidenschaft für qualitatives Wohnen begleiten wir Sie von der ersten Beratung bis zur schlüsselfertigen Übergabe.';
+$text1 = get_field('about_text1') ?: 'WohneGrün ist Ihr zuverlässiger Partner für hochwertige Mobilhäuser. Mit langjähriger Erfahrung und Leidenschaft für qualitatives Wohnen begleiten wir Sie von der ersten Beratung bis zur schlüsselfertigen Übergabe.';
 $text2 = get_field('about_text2') ?: 'Unsere Mobilhäuser vereinen modernes Design mit traditionellem Handwerk und bieten Ihnen ein nachhaltiges Zuhause im Einklang mit der Natur.';
 $list = get_field('about_list');
 
@@ -50,7 +50,7 @@ if (!$list) {
                     <ul class="about-list">
                         <?php foreach ($list as $item) : ?>
                             <li>
-                                <div class="check-icon"><?php echo alpenhomes_get_icon('check'); ?></div>
+                                <div class="check-icon"><?php echo wohnegruen_get_icon('check'); ?></div>
                                 <span><?php echo esc_html($item['text']); ?></span>
                             </li>
                         <?php endforeach; ?>

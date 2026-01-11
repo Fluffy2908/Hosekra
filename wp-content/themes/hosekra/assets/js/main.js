@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Hosekra Theme JavaScript
  */
 

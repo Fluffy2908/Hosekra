@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Theme Setup and Configuration
  */
@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) exit;
 /**
  * Theme Setup
  */
-function alpenhomes_setup() {
+function wohnegruen_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('custom-logo', array(
@@ -29,16 +29,16 @@ function alpenhomes_setup() {
     add_theme_support('responsive-embeds');
 
     register_nav_menus(array(
-        'primary' => __('Primary Menu', 'alpenhomes'),
-        'footer'  => __('Footer Menu', 'alpenhomes'),
+        'primary' => __('Primary Menu', 'wohnegruen'),
+        'footer'  => __('Footer Menu', 'wohnegruen'),
     ));
 }
-add_action('after_setup_theme', 'alpenhomes_setup');
+add_action('after_setup_theme', 'wohnegruen_setup');
 
 /**
  * Custom Menu Walker for Navigation
  */
-class Alpenhomes_Nav_Walker extends Walker_Nav_Menu {
+class wohnegruen_Nav_Walker extends Walker_Nav_Menu {
     function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
         $classes = empty($item->classes) ? array() : (array) $item->classes;
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
@@ -51,7 +51,7 @@ class Alpenhomes_Nav_Walker extends Walker_Nav_Menu {
 /**
  * Get SVG Icon
  */
-function alpenhomes_get_icon($icon_name) {
+function wohnegruen_get_icon($icon_name) {
     $icons = array(
         'phone' => '<svg xmlns="http://www.w3.org/2000/svg" ...></svg>',
         'email' => '<svg xmlns="http://www.w3.org/2000/svg" ...></svg>',
@@ -80,19 +80,19 @@ function alpenhomes_get_icon($icon_name) {
 /**
  * Shortcode for icons
  */
-function alpenhomes_icon_shortcode($atts) {
+function wohnegruen_icon_shortcode($atts) {
     $atts = shortcode_atts(array(
         'name' => 'check',
     ), $atts);
 
-    return alpenhomes_get_icon($atts['name']);
+    return wohnegruen_get_icon($atts['name']);
 }
-add_shortcode('icon', 'alpenhomes_icon_shortcode');
+add_shortcode('icon', 'wohnegruen_icon_shortcode');
 
 /**
  * Helper function to get ACF field with fallback
  */
-function alpenhomes_get_field($field_name, $post_id = false, $default = '') {
+function wohnegruen_get_field($field_name, $post_id = false, $default = '') {
     if (function_exists('get_field')) {
         $value = get_field($field_name, $post_id);
         return ($value !== null && $value !== false && $value !== '') ? $value : $default;
@@ -100,16 +100,16 @@ function alpenhomes_get_field($field_name, $post_id = false, $default = '') {
     return $default;
 }
 
-function alpenhomes_get_option($field_name, $default = '') {
-    return alpenhomes_get_field($field_name, 'option', $default);
+function wohnegruen_get_option($field_name, $default = '') {
+    return wohnegruen_get_field($field_name, 'option', $default);
 }
 
 /**
  * Create required pages on theme activation
  */
-function alpenhomes_create_required_pages() {
+function wohnegruen_create_required_pages() {
     // Check if already created
-    if (get_option('alpenhomes_pages_created')) {
+    if (get_option('wohnegruen_pages_created')) {
         return;
     }
 
@@ -129,11 +129,11 @@ function alpenhomes_create_required_pages() {
 
         // Add default blocks to homepage
         $home_blocks = array(
-            '<!-- wp:acf/alpenhomes-hero {"name":"acf/alpenhomes-hero","mode":"preview"} /-->',
-            '<!-- wp:acf/alpenhomes-features {"name":"acf/alpenhomes-features","mode":"preview"} /-->',
-            '<!-- wp:acf/alpenhomes-models {"name":"acf/alpenhomes-models","mode":"preview"} /-->',
-            '<!-- wp:acf/alpenhomes-about {"name":"acf/alpenhomes-about","mode":"preview"} /-->',
-            '<!-- wp:acf/alpenhomes-contact {"name":"acf/alpenhomes-contact","mode":"preview"} /-->',
+            '<!-- wp:acf/wohnegruen-hero {"name":"acf/wohnegruen-hero","mode":"preview"} /-->',
+            '<!-- wp:acf/wohnegruen-features {"name":"acf/wohnegruen-features","mode":"preview"} /-->',
+            '<!-- wp:acf/wohnegruen-models {"name":"acf/wohnegruen-models","mode":"preview"} /-->',
+            '<!-- wp:acf/wohnegruen-about {"name":"acf/wohnegruen-about","mode":"preview"} /-->',
+            '<!-- wp:acf/wohnegruen-contact {"name":"acf/wohnegruen-contact","mode":"preview"} /-->',
         );
 
         wp_update_post(array(
@@ -146,7 +146,7 @@ function alpenhomes_create_required_pages() {
     $gallery_id = wp_insert_post(array(
         'post_title'    => 'Galerie',
         'post_name'     => 'galerie',
-        'post_content'  => '<!-- wp:acf/alpenhomes-gallery {"name":"acf/alpenhomes-gallery","mode":"preview"} /-->',
+        'post_content'  => '<!-- wp:acf/wohnegruen-gallery {"name":"acf/wohnegruen-gallery","mode":"preview"} /-->',
         'post_status'   => 'publish',
         'post_type'     => 'page',
     ));
@@ -177,24 +177,24 @@ function alpenhomes_create_required_pages() {
     ));
 
     // Store page IDs for reference
-    update_option('alpenhomes_page_ids', array(
+    update_option('wohnegruen_page_ids', array(
         'home' => $home_id,
         'gallery' => $gallery_id,
         'layouts' => $layouts_id,
         'models' => $models_id,
     ));
 
-    update_option('alpenhomes_pages_created', true);
+    update_option('wohnegruen_pages_created', true);
     flush_rewrite_rules();
 }
-add_action('after_switch_theme', 'alpenhomes_create_required_pages');
+add_action('after_switch_theme', 'wohnegruen_create_required_pages');
 
 /**
  * Create primary navigation menu
  */
-function alpenhomes_create_navigation_menu() {
+function wohnegruen_create_navigation_menu() {
     // Check if already created
-    if (get_option('alpenhomes_menu_created')) {
+    if (get_option('wohnegruen_menu_created')) {
         return;
     }
 
@@ -203,7 +203,7 @@ function alpenhomes_create_navigation_menu() {
 
     if (!$menu_exists) {
         $menu_id = wp_create_nav_menu($menu_name);
-        $page_ids = get_option('alpenhomes_page_ids', array());
+        $page_ids = get_option('wohnegruen_page_ids', array());
 
         // Menu items configuration
         $items = array(
@@ -267,7 +267,7 @@ function alpenhomes_create_navigation_menu() {
         $locations['primary'] = $menu_id;
         set_theme_mod('nav_menu_locations', $locations);
 
-        update_option('alpenhomes_menu_created', true);
+        update_option('wohnegruen_menu_created', true);
     }
 }
-add_action('after_switch_theme', 'alpenhomes_create_navigation_menu');
+add_action('after_switch_theme', 'wohnegruen_create_navigation_menu');
